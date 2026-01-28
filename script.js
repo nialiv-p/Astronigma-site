@@ -114,6 +114,90 @@ document.addEventListener('DOMContentLoaded', () => {
     resize();
     animateStars();
 
+    /* =========================================
+       AUDIO INTEGRATION
+       ========================================= */
+
+    class AudioManager {
+        constructor() {
+            this.muted = localStorage.getItem('astronigma_muted') === 'true';
+            this.sounds = {
+                tap: new Audio('assets/audio/tap.wav'),
+                click: new Audio('assets/audio/click.wav'),
+                win: new Audio('assets/audio/win.wav'),
+                reveal: new Audio('assets/audio/reveal.wav')
+            };
+
+            // Preload and volume
+            Object.values(this.sounds).forEach(s => {
+                s.volume = 0.4;
+                s.load();
+            });
+            this.sounds.tap.volume = 0.6; // Slightly louder tap
+
+            this.initUI();
+
+            // Play reveal sound on load if allowed (usually blocked by browser, but we try)
+            if (!this.muted) {
+                // Browsers block autoplay, so this might not work without interaction first
+                // We'll leave it for the first interaction instead or just skip
+            }
+        }
+
+        initUI() {
+            const toggleBtn = document.getElementById('sound-toggle');
+            if (!toggleBtn) return;
+
+            this.udpateIcon();
+
+            toggleBtn.addEventListener('click', () => {
+                this.muted = !this.muted;
+                localStorage.setItem('astronigma_muted', this.muted);
+                this.udpateIcon();
+
+                if (!this.muted) {
+                    this.play('click');
+                }
+            });
+
+            // UI Button Clicks
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    // Subtle hover click or maybe nothing to avoid annoyance
+                });
+
+                el.addEventListener('click', () => {
+                    if (el.id !== 'sound-toggle') this.play('click');
+                });
+            });
+        }
+
+        udpateIcon() {
+            const onIcon = document.querySelector('.icon-sound-on');
+            const offIcon = document.querySelector('.icon-sound-off');
+
+            if (this.muted) {
+                onIcon.classList.add('hidden');
+                offIcon.classList.remove('hidden');
+            } else {
+                onIcon.classList.remove('hidden');
+                offIcon.classList.add('hidden');
+            }
+        }
+
+        play(soundName) {
+            if (this.muted || !this.sounds[soundName]) return;
+
+            // Clone/Reset to allow rapid overlapping playback (especially for grid)
+            const sound = this.sounds[soundName].cloneNode();
+            sound.volume = this.sounds[soundName].volume;
+            sound.play().catch(e => console.log('Audio playback prevented:', e));
+        }
+    }
+
+    // Initialize Audio
+    const audio = new AudioManager();
+
     // 2. Hero Interactive Grid (Lights Out)
     const gridContainer = document.getElementById('lights-out-grid');
     const gridSize = 5;
@@ -124,7 +208,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const cell = document.createElement('div');
             cell.classList.add('grid-cell');
             cell.dataset.index = i;
-            cell.addEventListener('click', () => toggleLights(i));
+            cell.addEventListener('click', () => {
+                toggleLights(i);
+                audio.play('tap'); // Play sound
+            });
             gridContainer.appendChild(cell);
         }
 
@@ -158,7 +245,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Simulate clicks to ensure solvable state
         for (let i = 0; i < 10; i++) {
             const randomIdx = Math.floor(Math.random() * (gridSize * gridSize));
-            toggleLights(randomIdx);
+            // Don't play sound during randomization
+
+            const r = Math.floor(randomIdx / gridSize);
+            const c = randomIdx % gridSize;
+            toggleCell(r, c);
+            toggleCell(r - 1, c);
+            toggleCell(r + 1, c);
+            toggleCell(r, c - 1);
+            toggleCell(r, c + 1);
         }
     }
 
@@ -167,12 +262,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCount = Array.from(cells).filter(c => c.classList.contains('active')).length;
 
         if (activeCount === 0) {
-            // Win animation (simple flash)
+            // Win animation
             gridContainer.style.boxShadow = '0 0 50px var(--primary-color)';
+            audio.play('win'); // Play win sound
+
             setTimeout(() => {
                 gridContainer.style.boxShadow = 'none';
                 randomizeGrid(); // Restart
-            }, 1000);
+                audio.play('reveal'); // Play restart sound
+            }, 1500);
         }
     }
 });
