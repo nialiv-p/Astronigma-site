@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms of Use – Astronigma: Star Logic Puzzle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Terms of Use for Astronigma: Star Logic Puzzle. Multilingual, with language switcher. Covers license, restrictions, ads, analytics, disclaimers, liability, governing law, and contact." />
+  <style>
+    :root {
+      --bg: #080d1d;
+      --panel: rgba(13, 22, 42, 0.6);
+      --text: #e0e6ed;
+      --muted: #8b9bb4;
+      --accent: #4deeea;
+      --border: rgba(77, 238, 234, 0.2);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1a2a4a 0%, #080d1d 60%);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(8, 13, 29, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 5
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem
+    }
+
+    h1 {
+      margin: 0 0 .25rem;
+      font-size: 2rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #fff 0%, #a2d2ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .toolbar {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: .75rem
+    }
+
+    select,
+    button {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: .6rem 1rem;
+      border-radius: .6rem;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: all 0.2s
+    }
+
+    select:hover,
+    button:hover {
+      border-color: var(--accent);
+      background: rgba(77, 238, 234, 0.1)
+    }
+
+    main {
+      padding: 1rem
+    }
+
+    section {
+      max-width: 980px;
+      margin: 1rem auto 3rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(5px)
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      color: var(--accent)
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: .25rem;
+      color: #fff
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-shadow: 0 0 8px rgba(77, 238, 234, 0.4)
+    }
+
+    ul {
+      margin: .4rem 0 .9rem 1.2rem
+    }
+
+    .meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .9rem;
+      margin: .35rem 0 .75rem
+    }
+
+    footer {
+      max-width: 980px;
+      margin: 0 auto 3rem;
+      color: var(--muted);
+      padding: 0 1rem;
+      text-align: center;
+      font-size: 0.9rem
+    }
+
+    .notice {
+      background: rgba(77, 238, 234, 0.05);
+      border-left: 3px solid var(--accent);
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      margin: .75rem 0
+    }
+
+    .lang-badge {
+      display: inline-block;
+      padding: .2rem .45rem;
+      border: 1px solid var(--border);
+      border-radius: .4rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--accent);
+      font-size: .8rem;
+      margin-left: .4rem
+    }
+
+    code {
+      kbd
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: .5rem;
+      margin: .75rem 0
+    }
+
+    .toc a {
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: .6rem .7rem;
+      border-radius: .6rem;
+      transition: background 0.2s
+    }
+
+    .toc a:hover {
+      background: rgba(77, 238, 234, 0.1);
+      text-decoration: none
+    }
+
+    @media print {
+
+      header,
+      .toolbar,
+      .toc {
+        display: none
+      }
+
+      body {
+        background: #fff;
+        color: #000
+      }
+
+      section {
+        border: 0;
+        background: #fff
+      }
+
+      a {
+        color: #06c
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1 id="title">Terms of Use – Astronigma: Star Logic Puzzle</h1>
+      <div class="sub" id="subtitle">Effective date: <span id="effective"></span> · Last updated: <span
+          id="updated"></span> <span class="lang-badge" id="langBadge">EN</span></div>
+      <div class="toolbar">
+        <label for="langSel" id="langLabel">Language:</label>
+        <select id="langSel" aria-label="Language selector">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="pt">Português (Brasil)</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="tr">Türkçe</option>
+          <option value="th">ไทย</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="ru">Русский</option>
+          <option value="sr">Srpski (latinica)</option>
+        </select>
+        <button id="printBtn" type="button">Print / Save PDF</button>
+        <button id="copyLink" type="button">Copy shareable link</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="toc" id="toc"></div>
+      <div id="content"></div>
+      <div class="notice" id="note"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footNote">© <span id="year"></span> Nikita Ivanov. This page is provided for transparency. Third‑party
+      policies are linked within.</p>
+  </footer>
+
+  <script>
+    const EFFECTIVE = 'January 29, 2026';
+    const UPDATED = 'January 29, 2026';
+    const CONTACT = 'nikitaivanov95@gmail.com';
+    const LEGAL_NAME = 'Nikita Ivanov';
+    const LINKS = {
+      privacy: './index.html',
+      gameanalytics: 'https://gameanalytics.com/privacy',
+      firebase: 'https://firebase.google.com/support/privacy',
+      appodeal: 'https://www.appodeal.com/privacy-policy/',
+    };
+
+    const ORDER = ['intro', 'accept', 'license', 'restr', 'ugc', 'virtual', 'third', 'ads', 'analytics', 'warrant', 'liability', 'indemn', 'termination', 'law', 'changes', 'contact'];
+
+    const T = {
+      en: {
+        _name: 'English', title: 'Terms of Use – Astronigma: Star Logic Puzzle', note: 'These Terms govern your use of Astronigma. Please also read the Privacy Policy.', toc: 'On this page', sections: {
+          intro: { h: 'Introduction', p: [`<strong>Astronigma: Star Logic Puzzle</strong> (the “Game”) is developed and published by ${LEGAL_NAME}. These Terms of Use (the “Terms”) govern your access to and use of the Game. By installing or using the Game, you agree to these Terms and to the <a href="${LINKS.privacy}">Privacy Policy</a>.`] },
+          accept: { h: 'Acceptance of Terms', p: ['If you do not agree, do not install or use the Game. If you are under the age of majority in your jurisdiction, you must have a parent/guardian review and accept these Terms.'] },
+          license: { h: 'License', p: ['We grant you a personal, revocable, non‑exclusive, non‑transferable, limited license to install and use the Game on a device you control, solely for personal, non‑commercial entertainment.'] },
+          restr: { h: 'Restrictions', p: ['You may not: (a) copy, distribute, or publicly display the Game except as expressly permitted; (b) reverse engineer, decompile, or attempt to derive the source code except to the extent allowed by law; (c) circumvent security or access controls; (d) use the Game for any unlawful purpose; (e) sell, rent, or sublicense the Game or any rights herein.'] },
+          ugc: { h: 'User Content & Conduct', p: ['If the Game allows nicknames or other inputs, you remain responsible for your content and for complying with applicable laws and platform rules. We may remove content or restrict access at our discretion.'] },
+          virtual: { h: 'Virtual Items & Progress', p: ['Any in‑game progress, rewards, or virtual items have no monetary value and are not your property. We may modify, suspend, or discontinue features at any time.'] },
+          third: { h: 'Third‑Party Services', p: [`The Game integrates third‑party SDKs. See their policies: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>. Your use of those services may be subject to additional terms.`] },
+          ads: { h: 'Advertising', p: ['The Game may display ads from third-party advertising mediation networks (e.g., via Appodeal), including rewarded ads. Availability of rewards is not guaranteed; ad availability depends on third‑party demand and your region/device.'] },
+          analytics: { h: 'Analytics', p: ['We use aggregated analytics to improve the Game. See our <a href="${LINKS.privacy}">Privacy Policy</a>.'] },
+          warrant: { h: 'Disclaimer of Warranties', p: ['THE GAME IS PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON‑INFRINGEMENT. YOUR USE IS AT YOUR SOLE RISK.'] },
+          liability: { h: 'Limitation of Liability', p: ['TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE AND OUR AFFILIATES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, OR FOR ANY LOSS OF DATA, PROFITS, OR GOODWILL, ARISING FROM OR RELATED TO YOUR USE OF THE GAME. IN ANY CASE, OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID (IF ANY) FOR THE GAME IN THE 12 MONTHS PRECEDING THE CLAIM.'] },
+          indemn: { h: 'Indemnification', p: ['You agree to defend, indemnify, and hold harmless us and our affiliates from any claims, liabilities, damages, losses, and expenses arising out of your breach of these Terms or misuse of the Game.'] },
+          termination: { h: 'Termination', p: ['We may suspend or terminate your access to the Game at any time for any reason, including if you violate these Terms. You may stop using and uninstall the Game at any time.'] },
+          law: { h: 'Governing Law & Disputes', p: ['Unless otherwise required by law, these Terms are governed by the laws of Serbia, without regard to conflict‑of‑laws rules. Courts in Belgrade, Serbia shall have exclusive jurisdiction, and you consent to personal jurisdiction therein. Consumers in the EEA/UK may benefit from mandatory consumer protections in their country of residence.'] },
+          changes: { h: 'Changes to the Terms', p: ['We may update these Terms from time to time. The “Last updated” date will change. Continued use after changes means you accept the updated Terms.'] },
+          contact: { h: 'Contact', p: [`Questions? Email <a href="mailto:${CONTACT}">${CONTACT}</a>.`] }
+        }
+      },
+
+      es: {
+        _name: 'Español', title: 'Términos de Uso – Astronigma: Star Logic Puzzle', note: 'Estos Términos regulan tu uso de Astronigma. Lee también la Política de Privacidad.', toc: 'Contenido', sections: {
+          intro: { h: 'Introducción', p: [`<strong>Astronigma: Star Logic Puzzle</strong> es desarrollado y publicado por ${LEGAL_NAME}. Al instalar o usar el juego aceptas estos Términos y la <a href="${LINKS.privacy}">Política de Privacidad</a>.`] },
+          accept: { h: 'Aceptación', p: ['Si no estás de acuerdo, no instales ni uses el juego. Los menores deben contar con la revisión/aceptación de un tutor.'] },
+          license: { h: 'Licencia', p: ['Licencia personal, revocable, no exclusiva e intransferible para uso no comercial.'] },
+          restr: { h: 'Restricciones', p: ['Prohibido copiar/distribuir públicamente, descompilar, eludir seguridad, usar con fines ilícitos o sublicenciar.'] },
+          ugc: { h: 'Contenido del usuario', p: ['Eres responsable de cualquier entrada y de cumplir las leyes y normas de la plataforma.'] },
+          virtual: { h: 'Objetos virtuales y progreso', p: ['No tienen valor monetario y pueden cambiarse o retirarse.'] },
+          third: { h: 'Servicios de terceros', p: [`Políticas: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Publicidad', p: ['El juego puede mostrar anuncios de redes de mediación de terceros (p. ej., Appodeal), incluidos anuncios con recompensa.'] },
+          analytics: { h: 'Analíticas', p: ['Usamos datos agregados; consulta la <a href="${LINKS.privacy}">Política de Privacidad</a>.'] },
+          warrant: { h: 'Exención de garantías', p: ['El juego se ofrece “tal cual” y “según disponibilidad”.'] },
+          liability: { h: 'Limitación de responsabilidad', p: ['No seremos responsables por daños indirectos o pérdida de datos/beneficios.'] },
+          indemn: { h: 'Indemnización', p: ['Te comprometes a mantenernos indemnes por incumplimientos o usos indebidos.'] },
+          termination: { h: 'Terminación', p: ['Podemos suspender o terminar el acceso; puedes desinstalar en cualquier momento.'] },
+          law: { h: 'Ley aplicable', p: ['Derecho de Serbia; tribunales de Belgrado (con protecciones obligatorias del consumidor donde apliquen).'] },
+          changes: { h: 'Cambios', p: ['Podemos actualizar estos Términos; el uso continuado implica aceptación.'] },
+          contact: { h: 'Contacto', p: [`Email: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      pt: {
+        _name: 'Português (Brasil)', title: 'Termos de Uso – Astronigma: Star Logic Puzzle', note: 'Estes Termos regem seu uso. Veja também a Política de Privacidade.', toc: 'Nesta página', sections: {
+          intro: { h: 'Introdução', p: [`<strong>Astronigma</strong> é desenvolvido e publicado por ${LEGAL_NAME}. Ao instalar/usar, você concorda com estes Termos e com a <a href="${LINKS.privacy}">Política de Privacidade</a>.`] },
+          accept: { h: 'Aceitação', p: ['Se não concorda, não instale nem use o jogo. Menores precisam de responsável.'] },
+          license: { h: 'Licença', p: ['Licença pessoal, revogável, não exclusiva e intransferível para uso não comercial.'] },
+          restr: { h: 'Restrições', p: ['Proibido copiar/distribuir, engenharia reversa, burlar segurança, uso ilegal, vender/sublicenciar.'] },
+          ugc: { h: 'Conteúdo do usuário', p: ['Você é responsável por suas entradas e conduta.'] },
+          virtual: { h: 'Itens virtuais', p: ['Não possuem valor monetário; recursos podem mudar.'] },
+          third: { h: 'Serviços de terceiros', p: [`Políticas: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Publicidade', p: ['O Jogo pode exibir anúncios de redes de mediação de terceiros (ex: Appodeal), incluindo anúncios recompensados.'] },
+          analytics: { h: 'Métricas', p: ['Dados agregados; veja a <a href="${LINKS.privacy}">Política de Privacidade</a>.'] },
+          warrant: { h: 'Isenção de garantias', p: ['Fornecido “no estado em que se encontra”.'] },
+          liability: { h: 'Limitação de responsabilidade', p: ['Sem responsabilidade por danos indiretos/perda de dados.'] },
+          indemn: { h: 'Indenização', p: ['Você indeniza por violações.'] },
+          termination: { h: 'Rescisão', p: ['Podemos encerrar acesso; você pode desinstalar.'] },
+          law: { h: 'Lei aplicável', p: ['Leis da Sérvia; tribunais de Belgrado.'] },
+          changes: { h: 'Alterações', p: ['Podemos atualizar estes Termos.'] },
+          contact: { h: 'Contato', p: [`E-mail: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      de: {
+        _name: 'Deutsch', title: 'Nutzungsbedingungen – Astronigma: Star Logic Puzzle', note: 'Bitte auch die Datenschutzerklärung lesen.', toc: 'Inhalt', sections: {
+          intro: { h: 'Einleitung', p: [`<strong>Astronigma</strong> wird von ${LEGAL_NAME} entwickelt und veröffentlicht. Durch Installation/Nutzung stimmst du diesen Bedingungen und der <a href="${LINKS.privacy}">Datenschutzerklärung</a> zu.`] },
+          accept: { h: 'Zustimmung', p: ['Bei Nichtzustimmung: nicht installieren/nutzen. Minderjährige benötigen Zustimmung eines Erziehungsberechtigten.'] },
+          license: { h: 'Lizenz', p: ['Persönliche, widerrufliche, nicht exklusive, nicht übertragbare Lizenz.'] },
+          restr: { h: 'Beschränkungen', p: ['Kein öffentliches Verbreiten, keine Reverse‑Engineering, keine Umgehung von Schutzmaßnahmen, keine rechtswidrige Nutzung.'] },
+          ugc: { h: 'Nutzerinhalte', p: ['Du bist für eigene Eingaben verantwortlich.'] },
+          virtual: { h: 'Virtuelle Gegenstände', p: ['Kein Geldwert; Funktionen können geändert werden.'] },
+          third: { h: 'Drittanbieter', p: [`Richtlinien: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Werbung', p: ['Das Spiel kann Werbung von Drittanbieter-Vermittlungsnetzwerken (z. B. über Appodeal) anzeigen, einschließlich belohnter Anzeigen.'] },
+          analytics: { h: 'Analyse', p: ['Aggregierte Daten; siehe <a href="${LINKS.privacy}">Datenschutzerklärung</a>.'] },
+          warrant: { h: 'Gewährleistungsausschluss', p: ['Bereitstellung „wie besehen“.'] },
+          liability: { h: 'Haftungsbeschränkung', p: ['Keine Haftung für indirekte Schäden/Datenverlust.'] },
+          indemn: { h: 'Freistellung', p: ['Du stellst uns bei Verstößen frei.'] },
+          termination: { h: 'Beendigung', p: ['Zugang kann beendet werden; Deinstallation jederzeit möglich.'] },
+          law: { h: 'Anwendbares Recht', p: ['Serbisches Recht; Gerichte in Belgrad.'] },
+          changes: { h: 'Änderungen', p: ['Bedingungen können aktualisiert werden.'] },
+          contact: { h: 'Kontakt', p: [`E‑Mail: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      fr: {
+        _name: 'Français', title: "Conditions d’Utilisation – Astronigma: Star Logic Puzzle", note: 'Voir aussi la Politique de Confidentialité.', toc: 'Sommaire', sections: {
+          intro: { h: 'Introduction', p: [`<strong>Astronigma</strong> est développé et publié par ${LEGAL_NAME}. En installant/utilisant, vous acceptez ces Conditions et la <a href="${LINKS.privacy}">Politique de Confidentialité</a>.`] },
+          accept: { h: 'Acceptation', p: ['Si vous n’êtes pas d’accord, n’installez pas et n’utilisez pas le jeu.'] },
+          license: { h: 'Licence', p: ['Licence personnelle, révocable, non exclusive et non transférable.'] },
+          restr: { h: 'Restrictions', p: ['Interdiction de diffusion publique, rétro‑ingénierie, contournement des protections, usage illégal.'] },
+          ugc: { h: 'Contenu utilisateur', p: ['Vous êtes responsable de vos saisies.'] },
+          virtual: { h: 'Objets virtuels', p: ['Sans valeur monétaire; fonctionnalités susceptibles d’être modifiées.'] },
+          third: { h: 'Services tiers', p: [`Politiques : <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Publicité', p: ['Le Jeu peut afficher des publicités de réseaux de médiation tiers (par ex. via Appodeal), y compris des publicités récompensées.'] },
+          analytics: { h: 'Analytique', p: ['Données agrégées; voir <a href="${LINKS.privacy}">Politique de Confidentialité</a>.'] },
+          warrant: { h: 'Exclusion de garanties', p: ['Fourni « tel quel ».'] },
+          liability: { h: 'Limitation de responsabilité', p: ['Aucune responsabilité pour dommages indirects/perte de données.'] },
+          indemn: { h: 'Indemnisation', p: ['Vous nous garantissez contre les réclamations liées à une violation.'] },
+          termination: { h: 'Résiliation', p: ['Accès pouvant être suspendu/arrêté; vous pouvez désinstaller.'] },
+          law: { h: 'Droit applicable', p: ['Droit serbe; tribunaux de Belgrade (avec protections consommateurs obligatoires, le cas échéant).'] },
+          changes: { h: 'Modifications', p: ['Ces Conditions peuvent être mises à jour.'] },
+          contact: { h: 'Contact', p: [`E‑mail : <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      ja: {
+        _name: '日本語', title: '利用規約 – Astronigma: Star Logic Puzzle', note: 'プライバシーポリシーもご確認ください。', toc: '目次', sections: {
+          intro: { h: 'はじめに', p: [`<strong>Astronigma</strong> は ${LEGAL_NAME} が開発・配信します。本規約はゲームの利用条件を定めます。インストール/利用により本規約および <a href="${LINKS.privacy}">プライバシーポリシー</a> に同意したものとみなされます。`] },
+          accept: { h: '同意', p: ['不同意の場合はインストール/利用しないでください。未成年は保護者の同意が必要です。'] },
+          license: { h: 'ライセンス', p: ['個人的・非商用目的に限り、取消可能かつ非独占・譲渡不可のライセンスを付与します。'] },
+          restr: { h: '禁止事項', p: ['無断複製/公開、リバースエンジニアリング、セキュリティ回避、違法目的での利用、再販売/サブライセンス等。'] },
+          ugc: { h: 'ユーザーコンテンツ', p: ['入力内容には自身で責任を負います。'] },
+          virtual: { h: '仮想アイテム等', p: ['金銭的価値はありません。機能は変更される場合があります。'] },
+          third: { h: '第三者サービス', p: [`ポリシー: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>`] },
+          ads: { h: '広告', p: ['本ゲームは、第三者の広告メディエーションネットワーク（Appodeal経由など）からの広告（リワード広告を含む）を表示する場合があります。'] },
+          analytics: { h: '分析', p: ['改善のため集計データを利用します。<a href="${LINKS.privacy}">プライバシーポリシー</a>参照。'] },
+          warrant: { h: '保証の否認', p: ['本ゲームは現状有姿で提供されます。'] },
+          liability: { h: '責任制限', p: ['間接損害/データ損失等について一切の責任を負いません。'] },
+          indemn: { h: '補償', p: ['規約違反等に起因する請求から当方を免責するものとします。'] },
+          termination: { h: '利用停止', p: ['違反等があればアクセスを停止/終了することがあります。'] },
+          law: { h: '準拠法', p: ['セルビア法、ベオグラード裁判所の専属管轄。'] },
+          changes: { h: '変更', p: ['本規約は更新されることがあります。'] },
+          contact: { h: '連絡先', p: [`メール：<a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      ko: {
+        _name: '한국어', title: '이용 약관 – Astronigma: Star Logic Puzzle', note: '개인정보처리방침도 확인해 주세요.', toc: '목차', sections: {
+          intro: { h: '소개', p: [`<strong>Astronigma</strong>는 ${LEGAL_NAME}가 개발/배포합니다. 본 약관은 게임 이용에 적용되며, 설치/이용 시 본 약관과 <a href="${LINKS.privacy}">개인정보처리방침</a>에 동의한 것으로 간주됩니다.`] },
+          accept: { h: '약관 동의', p: ['동의하지 않으면 설치/이용하지 마세요. 미성년자는 보호자 동의 필요.'] },
+          license: { h: '라이선스', p: ['개인적/비상업적 용도에 한한 취소 가능, 비독점, 양도 불가 라이선스.'] },
+          restr: { h: '제한 사항', p: ['무단 복제/배포, 리버스 엔지니어링, 보안 우회, 불법 용도 금지.'] },
+          ugc: { h: '사용자 콘텐츠', p: ['입력 내용에 대한 책임은 사용자에게 있습니다.'] },
+          virtual: { h: '가상 아이템', p: ['금전적 가치 없음; 기능은 변경될 수 있음.'] },
+          third: { h: '제3자 서비스', p: [`정책: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>`] },
+          ads: { h: '광고', p: ['본 게임은 제3자 광고 중개 네트워크(예: Appodeal을 통해)의 광고(보상형 광고 포함)를 표시할 수 있습니다.'] },
+          analytics: { h: '분석', p: ['개선 목적의 집계 데이터 사용 (<a href="${LINKS.privacy}">정책</a> 참조).'] },
+          warrant: { h: '보증의 부인', p: ['현 상태 그대로 제공됩니다.'] },
+          liability: { h: '책임 제한', p: ['간접 손해/데이터 손실 등에 대한 책임 없음.'] },
+          indemn: { h: '면책', p: ['위반으로 인한 청구로부터 당사를 면책.'] },
+          termination: { h: '종료', p: ['접근을 중단/종료할 수 있음.'] },
+          law: { h: '준거법', p: ['세르비아 법, 베오그라드 법원.'] },
+          changes: { h: '변경', p: ['약관은 변경될 수 있음.'] },
+          contact: { h: '문의', p: [`이메일: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      tr: {
+        _name: 'Türkçe', title: 'Kullanım Şartları – Astronigma: Star Logic Puzzle', note: 'Lütfen Gizlilik Politikasını da okuyun.', toc: 'İçindekiler', sections: {
+          intro: { h: 'Giriş', p: [`<strong>Astronigma</strong>, ${LEGAL_NAME} tarafından geliştirilip yayımlanır. Kurulum/kullanım ile bu Şartları ve <a href="${LINKS.privacy}">Gizlilik Politikasını</a> kabul etmiş olursunuz.`] },
+          accept: { h: 'Kabul', p: ['Kabul etmiyorsanız kurmayın/kullanmayın. Reşit olmayanlar için veli onayı gerekir.'] },
+          license: { h: 'Lisans', p: ['Kişisel, iptal edilebilir, münhasır olmayan, devredilemez lisans.'] },
+          restr: { h: 'Kısıtlamalar', p: ['İzinsiz kopyalama/dağıtım, tersine mühendislik, güvenlik aşımı, yasa dışı kullanım yasaktır.'] },
+          ugc: { h: 'Kullanıcı içeriği', p: ['Girdiğiniz içerikten siz sorumlusunuz.'] },
+          virtual: { h: 'Sanal öğeler', p: ['Parasal değeri yoktur; özellikler değiştirilebilir.'] },
+          third: { h: 'Üçüncü taraflar', p: [`Politikalar: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Reklamlar', p: ['Oyun, üçüncü taraf reklam arabuluculuk ağlarından (örneğin Appodeal aracılığıyla) reklamlar (ödüllü reklamlar dahil) gösterebilir.'] },
+          analytics: { h: 'Analitik', p: ['İyileştirme için toplu veriler kullanılır (bkz. <a href="${LINKS.privacy}">Gizlilik</a>).'] },
+          warrant: { h: 'Garantilerden feragat', p: ['Olduğu gibi sunulur.'] },
+          liability: { h: 'Sorumluluk sınırı', p: ['Dolaylı zararlar/veri kaybından sorumlu değiliz.'] },
+          indemn: { h: 'Tazmin', p: ['İhlallerinizden doğan taleplere karşı bizi tazmin etmeyi kabul edersiniz.'] },
+          termination: { h: 'Fesih', p: ['Erişim askıya alınabilir/sonlandırılabilir.'] },
+          law: { h: 'Geçerli hukuk', p: ['Sırbistan hukuku; Belgrad mahkemeleri.'] },
+          changes: { h: 'Değişiklikler', p: ['Şartlar güncellenebilir.'] },
+          contact: { h: 'İletişim', p: [`E‑posta: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      th: {
+        _name: 'ไทย', title: 'ข้อกำหนดการใช้งาน – Astronigma: Star Logic Puzzle', note: 'โปรดอ่านนโยบายความเป็นส่วนตัวด้วย', toc: 'สารบัญ', sections: {
+          intro: { h: 'บทนำ', p: [`<strong>Astronigma</strong> พัฒนาและเผยแพร่โดย ${LEGAL_NAME} การติดตั้ง/ใช้งานถือว่ายอมรับข้อกำหนดนี้และ <a href="${LINKS.privacy}">นโยบายความเป็นส่วนตัว</a>.`] },
+          accept: { h: 'การยอมรับ', p: ['หากไม่ยอมรับ โปรดอย่าติดตั้งหรือใช้งาน'] },
+          license: { h: 'สัญญาอนุญาต', p: ['ให้สิทธิ์แบบส่วนตัว เพิกถอนได้ ไม่ผูกขาด และโอนสิทธิ์ไม่ได้ เพื่อความบันเทิงส่วนตัวเท่านั้น'] },
+          restr: { h: 'ข้อห้าม', p: ['ห้ามคัดลอก/เผยแพร่ วิศวกรรมย้อนกลับ เลี่ยงระบบความปลอดภัย ใช้ผิดกฎหมาย'] },
+          ugc: { h: 'เนื้อหาผู้ใช้', p: ['คุณรับผิดชอบต่อเนื้อหาที่ส่งเข้าเกม'] },
+          virtual: { h: 'ไอเท็มเสมือน/ความคืบหน้า', p: ['ไม่มีมูลค่าเป็นเงินและอาจถูกเปลี่ยนแปลงได้'] },
+          third: { h: 'บริการภายนอก', p: [`ดูนโยบาย: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>`] },
+          ads: { h: 'โฆษณา', p: ['เกมอาจแสดงโฆษณาจากเครือข่ายการไกล่เกลี่ยโฆษณาของบุคคลที่สาม (เช่น ผ่าน Appodeal) รวมถึงโฆษณาแบบรับรางวัล'] },
+          analytics: { h: 'การวิเคราะห์', p: ['ใช้ข้อมูลรวมเพื่อพัฒนาเกม (ดู <a href="${LINKS.privacy}">นโยบายความเป็นส่วนตัว</a>)'] },
+          warrant: { h: 'ข้อจำกัดความรับผิดชอบ', p: ['ให้บริการตามสภาพ'] },
+          liability: { h: 'การจำกัดความรับผิด', p: ['ไม่รับผิดชอบต่อความเสียหายทางอ้อม/การสูญหายของข้อมูล'] },
+          indemn: { h: 'การชดใช้ค่าเสียหาย', p: ['คุณตกลงชดใช้ค่าเสียหายหากฝ่าฝืนข้อกำหนด'] },
+          termination: { h: 'การยุติ', p: ['เราอาจระงับ/ยุติการเข้าถึงได้ทุกเมื่อ'] },
+          law: { h: 'กฎหมายที่ใช้บังคับ', p: ['กฎหมายเซอร์เบีย ศาลกรุงเบลเกรด'] },
+          changes: { h: 'การเปลี่ยนแปลง', p: ['ข้อกำหนดอาจได้รับการอัปเดต'] },
+          contact: { h: 'ติดต่อ', p: [`อีเมล: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      id: {
+        _name: 'Bahasa Indonesia', title: 'Ketentuan Penggunaan – Astronigma: Star Logic Puzzle', note: 'Silakan lihat juga Kebijakan Privasi.', toc: 'Daftar isi', sections: {
+          intro: { h: 'Pendahuluan', p: [`<strong>Astronigma</strong> dikembangkan & diterbitkan oleh ${LEGAL_NAME}. Dengan memasang/menggunakan, Anda menyetujui Ketentuan ini dan <a href="${LINKS.privacy}">Kebijakan Privasi</a>.`] },
+          accept: { h: 'Penerimaan', p: ['Jika tidak setuju, jangan pasang atau gunakan permainan.'] },
+          license: { h: 'Lisensi', p: ['Lisensi pribadi, dapat dicabut, non‑eksklusif, tidak dapat dipindahtangankan untuk penggunaan non‑komersial.'] },
+          restr: { h: 'Pembatasan', p: ['Dilarang menyalin/menyebarkan, rekayasa balik, melewati keamanan, penggunaan ilegal.'] },
+          ugc: { h: 'Konten Pengguna', p: ['Anda bertanggung jawab atas input Anda.'] },
+          virtual: { h: 'Item Virtual & Progres', p: ['Tidak bernilai uang; fitur dapat berubah.'] },
+          third: { h: 'Layanan Pihak Ketiga', p: [`Kebijakan: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Iklan', p: ['Game dapat menampilkan iklan dari jaringan mediasi iklan pihak ketiga (misalnya, melalui Appodeal), termasuk iklan berhadiah.'] },
+          analytics: { h: 'Analitik', p: ['Data agregat untuk peningkatan (lihat <a href="${LINKS.privacy}">Privasi</a>).'] },
+          warrant: { h: 'Penafian Jaminan', p: ['Disediakan apa adanya.'] },
+          liability: { h: 'Batasan Tanggung Jawab', p: ['Tidak bertanggung jawab atas kerugian tidak langsung/kehilangan data.'] },
+          indemn: { h: 'Ganti Rugi', p: ['Anda setuju mengganti rugi atas pelanggaran.'] },
+          termination: { h: 'Pengakhiran', p: ['Kami dapat menangguhkan/mengakhiri akses; Anda dapat mencopot kapan pun.'] },
+          law: { h: 'Hukum yang Berlaku', p: ['Hukum Serbia; pengadilan Beograd.'] },
+          changes: { h: 'Perubahan', p: ['Ketentuan dapat diperbarui.'] },
+          contact: { h: 'Kontak', p: [`Surel: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      ru: {
+        _name: 'Русский', title: 'Пользовательское соглашение – Astronigma: Star Logic Puzzle', note: 'Пожалуйста, также ознакомьтесь с Политикой конфиденциальности.', toc: 'Содержание', sections: {
+          intro: { h: 'Введение', p: [`<strong>Astronigma: Star Logic Puzzle</strong> (далее — «Игра») разработана и издаётся ${LEGAL_NAME}. Устанавливая или используя Игру, вы соглашаетесь с настоящими Условиями и с <a href="${LINKS.privacy}">Политикой конфиденциальности</a>.`] },
+          accept: { h: 'Принятие условий', p: ['Если вы не согласны — не устанавливайте и не используйте Игру. Несовершеннолетним необходима проверка и согласие законного представителя.'] },
+          license: { h: 'Лицензия', p: ['Личная, отзывная, неисключительная, непередаваемая лицензия для некоммерческого использования.'] },
+          restr: { h: 'Ограничения', p: ['Запрещены: копирование/публичное распространение, обратная разработка, обход защиты, противоправные цели, продажа/сублицензирование.'] },
+          ugc: { h: 'Контент и поведение', p: ['Вы отвечаете за введённый контент и соблюдение законов/правил площадок.'] },
+          virtual: { h: 'Виртуальные предметы и прогресс', p: ['Не имеют денежной стоимости и могут быть изменены или удалены.'] },
+          third: { h: 'Сторонние сервисы', p: [`Политики: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Реклама', p: ['Игра может показывать рекламу от сторонних сетей рекламной медиации (например, через Appodeal), включая вознаграждаемые объявления.'] },
+          analytics: { h: 'Аналитика', p: ['Используем агрегированные данные для улучшения; см. <a href="${LINKS.privacy}">Политику конфиденциальности</a>.'] },
+          warrant: { h: 'Отказ от гарантий', p: ['Игра предоставляется «как есть».'] },
+          liability: { h: 'Ограничение ответственности', p: ['Мы не несём ответственности за косвенный ущерб/потерю данных и т. п.'] },
+          indemn: { h: 'Возмещение убытков', p: ['Вы обязуетесь возмещать убытки, вызванные нарушением условий.'] },
+          termination: { h: 'Прекращение доступа', p: ['Мы можем приостановить/прекратить доступ; вы можете удалить Игру в любое время.'] },
+          law: { h: 'Применимое право', p: ['Право Сербии; суды Белграда. Для потребителей ЕЭЗ/Великобритании действуют императивные нормы защиты потребителей.'] },
+          changes: { h: 'Изменения', p: ['Мы можем обновлять Условия; продолжая использовать Игру, вы принимаете изменения.'] },
+          contact: { h: 'Контакты', p: [`Почта: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      sr: {
+        _name: 'Srpski (latinica)', title: 'Uslovi korišćenja – Astronigma: Star Logic Puzzle', note: 'Pročitajte i Politiku privatnosti.', toc: 'Sadržaj', sections: {
+          intro: { h: 'Uvod', p: [`<strong>Astronigma</strong> razvija i objavljuje ${LEGAL_NAME}. Instaliranjem/korišćenjem prihvatate ove Uslove i <a href="${LINKS.privacy}">Politiku privatnosti</a>.`] },
+          accept: { h: 'Prihvatanje', p: ['Ako se ne slažete, ne instalirajte niti koristite igru. Maloletnima je potrebna saglasnost staratelja.'] },
+          license: { h: 'Licenca', p: ['Lična, opoziva, neekskluzivna, neprenosiva licenca za nekomercijalnu upotrebu.'] },
+          restr: { h: 'Zabrane', p: ['Zabranjeno je umnožavanje/javno deljenje, reverzno inženjerstvo, zaobilaženje zaštite i nezakonita upotreba.'] },
+          ugc: { h: 'Sadržaj korisnika', p: ['Odgovorni ste za sopstvene unose i ponašanje.'] },
+          virtual: { h: 'Virtuelne stavke i napredak', p: ['Nemaju novčanu vrednost i mogu biti izmenjene/uklonjene.'] },
+          third: { h: 'Usluge trećih strana', p: [`Politike: <a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>.`] },
+          ads: { h: 'Oglasi', p: ['Igra može prikazivati oglase trećih strana putem mreža za posredovanje (npr. preko Appodeal-a), uključujući nagrađivane oglase.'] },
+          analytics: { h: 'Analitika', p: ['Koristimo zbirne podatke za unapređenje (vidi <a href="${LINKS.privacy}">Politiku privatnosti</a>).'] },
+          warrant: { h: 'Odricanje od garancija', p: ['Igra se pruža „u viđenom stanju“.'] },
+          liability: { h: 'Ograničenje odgovornosti', p: ['Nismo odgovorni za indirektne štete/gubitak podataka.'] },
+          indemn: { h: 'Naknada štete', p: ['Prihvatate da nas obeštetite u slučaju kršenja.'] },
+          termination: { h: 'Prestanak', p: ['Pristup može biti obustavljen/ukinuti; vi možete deinstalirati u svakom trenutku.'] },
+          law: { h: 'Merodavno pravo', p: ['Pravo Srbije; sudovi u Beogradu.'] },
+          changes: { h: 'Izmene', p: ['Uslovi se mogu ažurirati.'] },
+          contact: { h: 'Kontakt', p: [`Email: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      }
+    };
+
+    const yearEl = document.getElementById('year'); yearEl.textContent = new Date().getFullYear();
+    const eff = document.getElementById('effective'); eff.textContent = EFFECTIVE;
+    const upd = document.getElementById('updated'); upd.textContent = UPDATED;
+    const sel = document.getElementById('langSel');
+    const badge = document.getElementById('langBadge');
+    const titleEl = document.getElementById('title');
+    const noteEl = document.getElementById('note');
+    const content = document.getElementById('content');
+    const toc = document.getElementById('toc');
+    const langLabel = document.getElementById('langLabel');
+
+    const labels = { en: 'Language:', es: 'Idioma:', pt: 'Idioma:', de: 'Sprache:', fr: 'Langue :', ja: '言語：', ko: '언어:', tr: 'Dil:', th: 'ภาษา:', id: 'Bahasa:', ru: 'Язык:', sr: 'Jezik:' };
+
+    function sectionNode(id, h, ps) {
+      const wrap = document.createElement('div');
+      wrap.id = id;
+      wrap.style.marginBottom = '1.25rem';
+      const hh = document.createElement('h2'); hh.textContent = h; wrap.appendChild(hh);
+      (ps || []).forEach(p => { const el = document.createElement('p'); el.innerHTML = p; wrap.appendChild(el); });
+      return wrap;
+    }
+
+    function render(lang) {
+      const L = T[lang] || T.en;
+      document.documentElement.lang = lang;
+      badge.textContent = (L._name || lang).split(' ')[0].toUpperCase();
+      titleEl.textContent = L.title || T.en.title;
+      noteEl.innerHTML = L.note || '';
+      langLabel.textContent = labels[lang] || 'Language:';
+
+      toc.innerHTML = '';
+      ORDER.forEach(key => { const a = document.createElement('a'); a.href = '#' + key; a.textContent = (L.sections[key]?.h) || key; toc.appendChild(a); });
+
+      content.innerHTML = '';
+      ORDER.forEach(key => { const S = L.sections[key]; if (!S) return; content.appendChild(sectionNode(key, S.h, S.p)); });
+
+      const url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState(null, '', url.toString());
+    }
+
+    sel.addEventListener('change', e => render(e.target.value));
+    document.getElementById('copyLink').addEventListener('click', () => { navigator.clipboard.writeText(location.href).then(() => alert('Link copied!')); });
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    (function init() {
+      const urlLang = new URL(location.href).searchParams.get('lang');
+      const browser = (navigator.language || 'en').toLowerCase();
+      const map = { 'pt-br': 'pt', 'sr-rs': 'sr' };
+      let lang = urlLang || map[browser];
+      if (!lang && T[browser]) lang = browser;
+      if (!lang) { const base = browser.split('-')[0]; if (T[base]) lang = base; }
+      lang = lang || 'en';
+      sel.value = lang; render(lang);
+    })();
+  </script>
+</body>
+
+</html>

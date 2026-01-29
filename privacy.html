@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy – Astronigma: Star Logic Puzzle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Privacy Policy for Astronigma: Star Logic Puzzle covering analytics, ads, data use, rights, and contacts. Multilingual: EN, ES, PT-BR, DE, FR, JA, KO, TR, TH, ID, RU, SR-Latn." />
+  <style>
+    :root {
+      --bg: #080d1d;
+      --panel: rgba(13, 22, 42, 0.6);
+      --text: #e0e6ed;
+      --muted: #8b9bb4;
+      --accent: #4deeea;
+      --border: rgba(77, 238, 234, 0.2);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1a2a4a 0%, #080d1d 60%);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(8, 13, 29, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 5
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem
+    }
+
+    h1 {
+      margin: 0 0 .25rem;
+      font-size: 2rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #fff 0%, #a2d2ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .toolbar {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: .75rem
+    }
+
+    select,
+    button {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: .6rem 1rem;
+      border-radius: .6rem;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: all 0.2s
+    }
+
+    select:hover,
+    button:hover {
+      border-color: var(--accent);
+      background: rgba(77, 238, 234, 0.1)
+    }
+
+    main {
+      padding: 1rem
+    }
+
+    section {
+      max-width: 980px;
+      margin: 1rem auto 3rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(5px)
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      color: var(--accent)
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: .25rem;
+      color: #fff
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-shadow: 0 0 8px rgba(77, 238, 234, 0.4)
+    }
+
+    ul {
+      margin: .4rem 0 .9rem 1.2rem
+    }
+
+    .meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .9rem;
+      margin: .35rem 0 .75rem
+    }
+
+    footer {
+      max-width: 980px;
+      margin: 0 auto 3rem;
+      color: var(--muted);
+      padding: 0 1rem;
+      text-align: center;
+      font-size: 0.9rem
+    }
+
+    .notice {
+      background: rgba(77, 238, 234, 0.05);
+      border-left: 3px solid var(--accent);
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      margin: .75rem 0
+    }
+
+    .lang-badge {
+      display: inline-block;
+      padding: .2rem .45rem;
+      border: 1px solid var(--border);
+      border-radius: .4rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--accent);
+      font-size: .8rem;
+      margin-left: .4rem
+    }
+
+    code {
+      kbd
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: .5rem;
+      margin: .75rem 0
+    }
+
+    .toc a {
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: .6rem .7rem;
+      border-radius: .6rem;
+      transition: background 0.2s
+    }
+
+    .toc a:hover {
+      background: rgba(77, 238, 234, 0.1);
+      text-decoration: none
+    }
+
+    @media print {
+
+      header,
+      .toolbar,
+      .toc {
+        display: none
+      }
+
+      body {
+        background: #fff;
+        color: #000
+      }
+
+      section {
+        border: 0;
+        background: #fff
+      }
+
+      a {
+        color: #06c
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1 id="title">Privacy Policy – Astronigma: Star Logic Puzzle</h1>
+      <div class="sub" id="subtitle">Effective date: <span id="effective"></span> · Last updated: <span
+          id="updated"></span> <span class="lang-badge" id="langBadge">EN</span></div>
+      <div class="toolbar">
+        <label for="langSel" id="langLabel">Language:</label>
+        <select id="langSel" aria-label="Language selector">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="pt">Português (Brasil)</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="tr">Türkçe</option>
+          <option value="th">ไทย</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="ru">Русский</option>
+          <option value="sr">Srpski (latinica)</option>
+        </select>
+        <button id="printBtn" type="button">Print / Save PDF</button>
+        <button id="copyLink" type="button">Copy shareable link</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="toc" id="toc"></div>
+      <div id="content"></div>
+      <div class="notice" id="note"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footNote">© <span id="year"></span> Nikita Ivanov, Serbia. This page is provided for transparency.
+      Third‑party privacy policies are linked within.</p>
+  </footer>
+
+  <script>
+    // --- Config ---
+    const EFFECTIVE = 'January 29, 2026';
+    const UPDATED = 'January 29, 2026';
+    const CONTACT = 'nikitaivanov95@gmail.com'; // change if needed
+    const LEGAL_NAME = 'Nikita Ivanov';
+    const LINKS = {
+      gameanalytics: 'https://gameanalytics.com/privacy',
+      firebase: 'https://firebase.google.com/support/privacy',
+      appodeal: 'https://www.appodeal.com/privacy-policy/',
+      googleReset: 'https://support.google.com/ads/answer/2662856',
+      appleReset: 'https://support.apple.com/en-us/HT205223'
+    };
+
+    // Table of contents order
+    const ORDER = ['intro', 'collect', 'use', 'third', 'ads', 'analytics', 'kids', 'retention', 'security', 'intl', 'rights', 'ccpa', 'optout', 'changes', 'contact'];
+
+    // Translations
+    const T = {
+      en: {
+        _name: 'English',
+        title: 'Privacy Policy – Astronigma: Star Logic Puzzle',
+        note: 'This policy reflects the current release plan: analytics via GameAnalytics & Firebase (GA4) and ads via Appodeal (interstitial, banner, rewarded). The Game collects only anonymous telemetry; no PII is intentionally collected. This document is provided for information only and is not legal advice.',
+        toc: 'On this page',
+        sections: {
+          intro: {
+            h: 'Who we are',
+            p: [`<strong>Astronigma: Star Logic Puzzle</strong> (the “Game”) is developed and published by ${LEGAL_NAME}. This document explains what data the Game collects, how it is used, and your choices.`,
+              `Scope: mobile release with analytics (GameAnalytics & Firebase) and advertising (Appodeal).`]
+          },
+          collect: {
+            h: 'Data we collect',
+            p: [
+              '• Anonymous gameplay and device data (e.g., level events, board size, country/region, language, app version, platform).',
+              '• Advertising identifier (IDFA/AAID) and related signals for ad delivery and frequency capping (via Appodeal SDK).',
+              '• IP address and coarse location (e.g., country/region) transmitted with network requests for fraud prevention, security, analytics, and ad delivery.',
+              '• Crash and performance data (via Firebase/GA4).',
+              '<em>We do not intentionally collect data that directly identifies you (name, email, precise location).</em>'
+            ]
+          },
+          use: { h: 'How we use data', p: ['Improve gameplay balance and stability.', 'Measure usage and retention.', 'Serve ads (including rewarded ads) and prevent abuse.', 'Diagnose crashes and performance issues.'] },
+          third: {
+            h: 'Third‑party services', p: [
+              `• <a href="${LINKS.gameanalytics}">GameAnalytics – Privacy Policy</a>`,
+              `• <a href="${LINKS.firebase}">Google Firebase – Privacy & Security</a>`,
+              `• <a href="${LINKS.appodeal}">Appodeal – Privacy Policy</a> (Ad Mediation). Partners include:`,
+              `&nbsp;&nbsp;&nbsp;- Google AdMob`,
+              `&nbsp;&nbsp;&nbsp;- Unity Ads`,
+              `&nbsp;&nbsp;&nbsp;- Meta Audience Network`,
+              `&nbsp;&nbsp;&nbsp;- AppLovin`
+            ]
+          },
+          ads: {
+            h: 'Advertising', p: [
+              'The Game shows interstitial and banner ads, and offers rewarded ads for extra moves/hearts as described in‑game.',
+              'Ad partners may use device identifiers to personalize or limit ads, subject to your platform settings and consent prompts (where applicable).'
+            ]
+          },
+          analytics: { h: 'Analytics', p: ['We use aggregated event data to understand how players interact with the Game. Events exclude direct identifiers and are processed under providers’ terms.'] },
+          kids: { h: "Children's privacy", p: ['The Game is not directed to children under 13 (or under the applicable age in your region). We do not knowingly collect information from children. If you believe a child has provided data, contact us to request deletion.'] },
+          retention: { h: 'Data retention', p: ['Analytics and ad data are stored by providers and retained per their policies. We keep no separate player accounts or servers for this Game.'] },
+          security: { h: 'Security', p: ['We rely on reputable third‑party SDKs and industry‑standard safeguards provided by those services. No method of transmission or storage is 100% secure.'] },
+          intl: { h: 'International transfers', p: ['Data may be processed on servers outside your country. Where required, providers implement appropriate safeguards.'] },
+          rights: { h: 'Your rights (EEA/UK and similar jurisdictions)', p: ['Depending on your location, you may have rights to access, correct, delete, restrict, or object to processing; and to withdraw consent where processing is based on consent. To exercise, contact us or follow the instructions in the third‑party policies linked above.'] },
+          ccpa: { h: 'California privacy (CCPA/CPRA)', p: ['We do not sell personal information as defined by CPRA. We use ads/analytics service providers as “service providers.” You may exercise platform‑level ad preferences and limit ad tracking as described below.'] },
+          optout: {
+            h: 'Ad choices & opt‑out', p: [
+              `Reset or limit your device advertising ID: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>.`,
+              `Manage consent prompts where available, and review partner policies for additional choices (see links above).`
+            ]
+          },
+          changes: { h: 'Changes to this policy', p: ['We may update this policy; the “Last updated” date will change. Significant changes will be reflected on this page.'] },
+          contact: { h: 'Contact', p: [`Questions or requests: <a href="mailto:${CONTACT}">${CONTACT}</a>.`] }
+        }
+      },
+
+      es: {
+        _name: 'Español',
+        title: 'Política de Privacidad – Astronigma: Star Logic Puzzle',
+        note: 'Este juego usa GameAnalytics y Firebase (analíticas) y Appodeal (anuncios). Solo se recopilan datos anónimos; no recopilamos datos que te identifiquen directamente. Este documento es informativo y no constituye asesoramiento legal.',
+        toc: 'Contenido',
+        sections: {
+          intro: { h: 'Quiénes somos', p: ["Astronigma: Star Logic Puzzle es desarrollado y publicado por " + LEGAL_NAME + ". Este documento describe qué datos se recopilan, cómo se usan y tus opciones.", 'Ámbito: lanzamiento móvil con analíticas (GameAnalytics, Firebase) y anuncios (Appodeal).'] },
+          collect: { h: 'Datos que recopilamos', p: ['• Datos anónimos de juego y del dispositivo (eventos de nivel, idioma, país/región, versión, plataforma).', '• Identificador publicitario (IDFA/AAID) y señales relacionadas para mostrar/limitar anuncios (SDK de Appodeal).', '• Dirección IP y ubicación aproximada (p. ej., país/región) enviada con solicitudes de red para prevención de fraude, seguridad, analíticas y entrega de anuncios.', '• Datos de fallos y rendimiento (Firebase/GA4).', '<em>No recopilamos intencionalmente datos que te identifiquen directamente.</em>'] },
+          use: { h: 'Cómo usamos los datos', p: ['Mejorar el juego y su estabilidad.', 'Medir uso y retención.', 'Mostrar anuncios y evitar abusos.', 'Diagnosticar fallos y rendimiento.'] },
+          third: { h: 'Servicios de terceros', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics – Privacidad</a>`, `• <a href="${LINKS.firebase}">Google Firebase – Privacidad</a>`, `• <a href="${LINKS.appodeal}">Appodeal – Privacidad</a> (Mediación de anuncios). Los socios incluyen:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Publicidad', p: ['El juego muestra anuncios intersticiales y de banner, y ofrece anuncios recompensados según se describe en el juego.', 'Los socios publicitarios pueden usar identificadores del dispositivo, sujetos a la configuración de tu plataforma y consentimiento.'] },
+          analytics: { h: 'Analíticas', p: ['Usamos datos agregados para entender el uso del juego. No incluyen identificadores directos.'] },
+          kids: { h: 'Privacidad de menores', p: ['El juego no está dirigido a menores de 13 años. Si crees que un menor proporcionó datos, contáctanos para solicitar su eliminación.'] },
+          retention: { h: 'Conservación', p: ['Los datos se almacenan por los proveedores y se conservan según sus políticas.'] },
+          security: { h: 'Seguridad', p: ['Confiamos en SDKs de terceros y medidas estándar. Ningún método es 100% seguro.'] },
+          intl: { h: 'Transferencias internacionales', p: ['Los datos pueden procesarse fuera de tu país; los proveedores aplican salvaguardas cuando corresponde.'] },
+          rights: { h: 'Tus derechos (UE/EEE/UK)', p: ['Puedes tener derechos de acceso, rectificación, eliminación, restricción u oposición; y retirar el consentimiento. Para ejercerlos, contáctanos o revisa las políticas enlazadas.'] },
+          ccpa: { h: 'Privacidad en California', p: ['No vendemos “información personal” según CPRA. Usamos proveedores de servicios para anuncios/analíticas.'] },
+          optout: { h: 'Opciones de anuncios', p: [`Restablece o limita tu ID publicitario: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>.`, `Gestiona el consentimiento y revisa las políticas de los socios.`] },
+          changes: { h: 'Cambios', p: ['Podemos actualizar esta política. Revisa la fecha de “Última actualización”.'] },
+          contact: { h: 'Contacto', p: [`Preguntas/solicitudes: <a href="mailto:${CONTACT}">${CONTACT}</a>.`] }
+        }
+      },
+
+      pt: {
+        _name: 'Português (Brasil)', title: 'Política de Privacidade – Astronigma: Star Logic Puzzle', note: 'Usamos GameAnalytics & Firebase (métricas) e Appodeal (anúncios). Coletamos apenas dados anônimos; isto não é aconselhamento jurídico.', toc: 'Nesta página', sections: {
+          intro: { h: 'Quem somos', p: [`Astronigma é desenvolvido e publicado por ${LEGAL_NAME}. Este documento explica os dados coletados, como são usados e suas escolhas.`, 'Escopo: versão móvel com analíticas e publicidade.'] },
+          collect: { h: 'Dados coletados', p: ['• Dados anônimos de jogo/dispositivo (eventos, idioma, país, versão, plataforma).', '• Identificador de publicidade (IDFA/AAID) e sinais correlatos para exibir/limitar anúncios (SDK Appodeal).', '• Endereço IP e localização aproximada (ex.: país/região) enviados com requisições para prevenção de fraude, segurança, métricas e entrega de anúncios.', '• Dados de falhas e desempenho (Firebase/GA4).', '<em>Não coletamos dados que identifiquem você diretamente.</em>'] },
+          use: { h: 'Como usamos', p: ['Melhorar jogabilidade e estabilidade.', 'Medir uso e retenção.', 'Exibir anúncios e evitar abuso.', 'Diagnosticar falhas.'] },
+          third: { h: 'Serviços de terceiros', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics – Privacidade</a>`, `• <a href="${LINKS.firebase}">Firebase – Privacidade</a>`, `• <a href="${LINKS.appodeal}">Appodeal – Privacidade</a> (Mediação de anúncios). Parceiros incluem:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Publicidade', p: ['Anúncios intersticiais e banner; anúncios recompensados opcionais.', 'Parceiros podem usar identificadores do dispositivo conforme suas configurações.'] },
+          analytics: { h: 'Métricas', p: ['Usamos dados agregados sem identificadores diretos.'] },
+          kids: { h: 'Crianças', p: ['O jogo não é destinado a menores de 13 anos.'] },
+          retention: { h: 'Retenção', p: ['Dados ficam com os provedores e seguem suas políticas.'] },
+          security: { h: 'Segurança', p: ['Usamos SDKs confiáveis; nenhum método é 100% seguro.'] },
+          intl: { h: 'Transferências internacionais', p: ['Dados podem ser processados fora do seu país.'] },
+          rights: { h: 'Seus direitos', p: ['Dependendo da sua região, você pode ter direitos de acesso, correção, exclusão etc.'] },
+          ccpa: { h: 'Califórnia', p: ['Não vendemos informações pessoais conforme a CPRA.'] },
+          optout: { h: 'Opções de anúncios', p: [`Redefina/limite seu ID de publicidade: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>.`] },
+          changes: { h: 'Alterações', p: ['Podemos atualizar esta política.'] },
+          contact: { h: 'Contato', p: [`E-mail: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      de: {
+        _name: 'Deutsch', title: 'Datenschutzerklärung – Astronigma: Star Logic Puzzle', note: 'Wir verwenden GameAnalytics & Firebase (Analyse) und Appodeal (Werbung). Es werden nur anonyme Daten erfasst; keine direkt personenbezogenen Daten. Dies ist keine Rechtsberatung.', toc: 'Inhalt', sections: {
+          intro: { h: 'Wer wir sind', p: [`Astronigma wird von ${LEGAL_NAME} entwickelt und veröffentlicht. Dieses Dokument erläutert, welche Daten erhoben werden und wofür sie verwendet werden.`] },
+          collect: { h: 'Welche Daten', p: ['• Anonyme Spiel- und Gerätedaten (Ereignisse, Sprache, Land, Version, Plattform).', '• Werbe-ID (IDFA/AAID) und zugehörige Signale (Appodeal).', '• IP-Adresse und grober Standort (z. B. Land/Region) für Betrugsprävention, Sicherheit, Analyse und Anzeigenauslieferung.', '• Absturz-/Leistungsdaten (Firebase/GA4).', '<em>Keine bewusste Erhebung direkt personenbezogener Daten.</em>'] },
+          use: { h: 'Zwecke', p: ['Verbesserung von Gameplay und Stabilität.', 'Reichweiten-/Retention-Messung.', 'Werbeausspielung und Missbrauchsvermeidung.', 'Fehlerdiagnose.'] },
+          third: { h: 'Drittanbieter', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics – Datenschutz</a>`, `• <a href="${LINKS.firebase}">Firebase – Datenschutz</a>`, `• <a href="${LINKS.appodeal}">Appodeal – Datenschutz</a> (Werbevermittlung). Partner sind u. a.:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Werbung', p: ['Interstitial- und Bannerwerbung; optional belohnte Anzeigen.'] },
+          analytics: { h: 'Analyse', p: ['Aggregierte Ereignisdaten ohne direkte Kennungen.'] },
+          kids: { h: 'Kinder', p: ['Nicht für Kinder unter 13 Jahren bestimmt.'] },
+          retention: { h: 'Aufbewahrung', p: ['Daten werden von den Anbietern gemäß deren Richtlinien gespeichert.'] },
+          security: { h: 'Sicherheit', p: ['Branchenübliche Maßnahmen; keine 100%ige Sicherheit.'] },
+          intl: { h: 'Internationale Übermittlungen', p: ['Verarbeitung außerhalb Ihres Landes möglich.'] },
+          rights: { h: 'Ihre Rechte', p: ['Je nach Region: Auskunft, Berichtigung, Löschung, Widerspruch usw.'] },
+          ccpa: { h: 'Kalifornien', p: ['Kein „Verkauf“ personenbezogener Daten i.S.d. CPRA.'] },
+          optout: { h: 'Werbeoptionen', p: [`Werbe-ID zurücksetzen/begrenzen: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>.`] },
+          changes: { h: 'Änderungen', p: ['Diese Richtlinie kann aktualisiert werden.'] },
+          contact: { h: 'Kontakt', p: [`E-Mail: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      fr: {
+        _name: 'Français', title: 'Politique de Confidentialité – Astronigma: Star Logic Puzzle', note: "Analytique via GameAnalytics & Firebase et publicités via Appodeal. Données anonymes uniquement. Ce document n’est pas un conseil juridique.", toc: 'Sommaire', sections: {
+          intro: { h: 'Qui sommes-nous', p: [`Astronigma est développé et publié par ${LEGAL_NAME}. Ce document explique les données collectées et leur usage.`] },
+          collect: { h: 'Données collectées', p: ['• Données anonymes de jeu/appareil.', '• Identifiant publicitaire (IDFA/AAID) et signaux associés (Appodeal).', '• Adresse IP et localisation approximative (p. ex. pays/région) pour la prévention de la fraude, la sécurité, l’analyse et la diffusion des publicités.', '• Données de crash/performance (Firebase/GA4).', '<em>Pas de collecte intentionnelle de données identifiantes.</em>'] },
+          use: { h: 'Utilisation', p: ['Amélioration du jeu.', 'Mesure d’audience.', 'Diffusion d’annonces.', 'Diagnostic des pannes.'] },
+          third: { h: 'Tiers', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics – Confidentialité</a>`, `• <a href="${LINKS.firebase}">Firebase – Confidentialité</a>`, `• <a href="${LINKS.appodeal}">Appodeal – Confidentialité</a> (Médiation publicitaire). Partenaires incluant :`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Publicité', p: ['Interstitiels, bannières et annonces récompensées.'] },
+          analytics: { h: 'Analytique', p: ['Données agrégées sans identifiants directs.'] },
+          kids: { h: 'Enfants', p: ['Non destiné aux moins de 13 ans.'] },
+          retention: { h: 'Conservation', p: ['Selon les politiques des fournisseurs.'] },
+          security: { h: 'Sécurité', p: ['Mesures standard; aucune méthode n’est infaillible.'] },
+          intl: { h: 'Transferts internationaux', p: ['Traitement possible hors de votre pays.'] },
+          rights: { h: 'Vos droits', p: ['Accès, rectification, suppression, limitation, opposition… selon votre région.'] },
+          ccpa: { h: 'Californie', p: ["Nous ne vendons pas d'informations personnelles au sens de la CPRA."] },
+          optout: { h: 'Choix publicitaires', p: [`Réinitialiser/limiter l’ID publicitaire : <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>.`] },
+          changes: { h: 'Modifications', p: ['Cette politique peut être mise à jour.'] },
+          contact: { h: 'Contact', p: [`Email : <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      ja: {
+        _name: '日本語', title: 'プライバシーポリシー – Astronigma: Star Logic Puzzle', note: 'GameAnalytics・Firebase による分析、Appodeal による広告。収集するのは匿名データのみです。本書は法的助言ではありません。', toc: '目次', sections: {
+          intro: { h: '運営主体', p: [`本ゲームは ${LEGAL_NAME} が開発・配信します。本書は収集データと利用目的を説明します。`] },
+          collect: { h: '収集するデータ', p: ['・匿名のゲーム／デバイス情報', '・広告識別子（IDFA/AAID）等（Appodeal）', '・IP アドレスおよび概略位置（例：国／地域）は、不正対策・セキュリティ・分析・広告配信のために送信されます。', '・クラッシュ／パフォーマンス情報（Firebase/GA4）', '<em>氏名等の個人を直接特定する情報は取得しません。</em>'] },
+          use: { h: '利用目的', p: ['ゲーム改善', '利用状況の把握', '広告配信・不正防止', '不具合の解析'] },
+          third: { h: '第三者サービス', p: [`・<a href="${LINKS.gameanalytics}">GameAnalytics</a>`, `・<a href="${LINKS.firebase}">Firebase</a>`, `・<a href="${LINKS.appodeal}">Appodeal</a>（広告メディエーション）パートナーには以下が含まれます：`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: '広告', p: ['インタースティシャル／バナー広告、リワード広告を表示します。'] },
+          analytics: { h: '分析', p: ['集計データのみを利用します。'] },
+          kids: { h: '子どものプライバシー', p: ['13歳未満を対象としていません。'] },
+          retention: { h: '保存期間', p: ['各提供事業者の方針に従います。'] },
+          security: { h: 'セキュリティ', p: ['業界標準の対策に依拠します。'] },
+          intl: { h: '国外移転', p: ['データは国外で処理される場合があります。'] },
+          rights: { h: '利用者の権利', p: ['地域により、開示・訂正・削除等を請求できる場合があります。'] },
+          ccpa: { h: 'カリフォルニア州法', p: ['CPRA に定義される「販売」は行いません。'] },
+          optout: { h: 'オプトアウト', p: [`広告IDのリセット／制限：<a href="${LINKS.appleReset}">iOS</a>・<a href="${LINKS.googleReset}">Android</a>`] },
+          changes: { h: '改定', p: ['本方針は更新されることがあります。'] },
+          contact: { h: '連絡先', p: [`メール：<a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      ko: {
+        _name: '한국어', title: '개인정보 처리방침 – Astronigma: Star Logic Puzzle', note: 'GameAnalytics/ Firebase 분석 및 Appodeal 광고 사용. 익명 데이터만 수집합니다. 본 문서는 법률 자문이 아닙니다.', toc: '목차', sections: {
+          intro: { h: '회사 정보', p: [`본 게임은 ${LEGAL_NAME} 가 개발/배포합니다.`] },
+          collect: { h: '수집 항목', p: ['• 익명 게임/기기 데이터', '• 광고 식별자(IDFA/AAID) 및 관련 신호(Appodeal)', '• IP 주소 및 대략적 위치(예: 국가/지역): 부정 방지, 보안, 분석, 광고 게재 목적', '• 크래시/성능 데이터(Firebase/GA4)', '<em>개인 식별 정보는 의도적으로 수집하지 않습니다.</em>'] },
+          use: { h: '이용 목적', p: ['게임 개선', '이용 분석', '광고 제공 및 오남용 방지', '오류 진단'] },
+          third: { h: '제3자 서비스', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics</a>`, `• <a href="${LINKS.firebase}">Firebase</a>`, `• <a href="${LINKS.appodeal}">Appodeal</a> (광고 중개). 파트너 포함:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: '광고', p: ['전면/배너 및 리워드 광고를 표시합니다.'] },
+          analytics: { h: '분석', p: ['집계 데이터만 사용합니다.'] },
+          kids: { h: '아동 보호', p: ['13세 미만 대상 아님.'] },
+          retention: { h: '보관', p: ['제공업체 정책을 따릅니다.'] },
+          security: { h: '보안', p: ['표준 보안 조치에 의존합니다.'] },
+          intl: { h: '국외 이전', p: ['국외 서버에서 처리될 수 있습니다.'] },
+          rights: { h: '권리', p: ['지역에 따라 열람/정정/삭제 등 권리가 있을 수 있습니다.'] },
+          ccpa: { h: '캘리포니아', p: ['CPRA상 판매 행위 없음.'] },
+          optout: { h: '옵트아웃', p: [`광고 ID 재설정/제한: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>`] },
+          changes: { h: '변경', p: ['정책은 변경될 수 있습니다.'] },
+          contact: { h: '문의', p: [`이메일: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      tr: {
+        _name: 'Türkçe', title: 'Gizlilik Politikası – Astronigma: Star Logic Puzzle', note: 'GameAnalytics & Firebase analiz, Appodeal reklam. Yalnızca anonim veriler toplanır. Bu belge hukuki danışmanlık değildir.', toc: 'İçindekiler', sections: {
+          intro: { h: 'Hakkımızda', p: [`Oyun ${LEGAL_NAME} tarafından geliştirilip yayımlanmaktadır.`] },
+          collect: { h: 'Toplanan veriler', p: ['• Anonim oyun/cihaz verileri', '• Reklam tanımlayıcısı (IDFA/AAID) ve ilgili sinyaller (Appodeal)', '• IP adresi ve yaklaşık konum (ör. ülke/bölge): dolandırıcılığı önleme, güvenlik, analitik ve reklam sunumu için', '• Çökme/perf. verileri (Firebase/GA4)', '<em>Doğrudan kimlik bilgisi toplamıyoruz.</em>'] },
+          use: { h: 'Kullanım amaçları', p: ['Oyun iyileştirme', 'Kullanım ölçümü', 'Reklam gösterimi', 'Hata analizi'] },
+          third: { h: 'Üçüncü taraflar', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics</a>`, `• <a href="${LINKS.firebase}">Firebase</a>`, `• <a href="${LINKS.appodeal}">Appodeal</a> (Reklam Arabuluculuğu). Ortaklar şunları içerir:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Reklamcılık', p: ['Geçiş ve banner reklamlar; ödüllü reklamlar.'] },
+          analytics: { h: 'Analitik', p: ['Toplu olay verileri.'] },
+          kids: { h: 'Çocukların gizliliği', p: ['13 yaş altına yönelik değildir.'] },
+          retention: { h: 'Saklama', p: ['Sağlayıcıların politikalarına göre.'] },
+          security: { h: 'Güvenlik', p: ['Standart önlemler.'] },
+          intl: { h: 'Uluslararası aktarımlar', p: ['Veriler ülkeniz dışında işlenebilir.'] },
+          rights: { h: 'Haklarınız', p: ['Bölgene bağlı olarak erişim/düzeltme/silme vb. haklar.'] },
+          ccpa: { h: 'Kaliforniya', p: ['CPRA kapsamında “satış” yapılmaz.'] },
+          optout: { h: 'Reklam tercihleri', p: [`Reklam kimliği sıfırla/sınırla: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>`] },
+          changes: { h: 'Değişiklikler', p: ['Güncellenebilir.'] },
+          contact: { h: 'İletişim', p: [`E-posta: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      th: {
+        _name: 'ไทย', title: 'นโยบายความเป็นส่วนตัว – Astronigma: Star Logic Puzzle', note: 'ใช้ GameAnalytics และ Firebase (วิเคราะห์) และ Appodeal (โฆษณา) เก็บเฉพาะข้อมูลไม่ระบุตัวตน เอกสารนี้ไม่ใช่คำแนะนำทางกฎหมาย', toc: 'สารบัญ', sections: {
+          intro: { h: 'ผู้ให้บริการ', p: [`พัฒนาและเผยแพร่โดย ${LEGAL_NAME}`] },
+          collect: { h: 'ข้อมูลที่เก็บ', p: ['• ข้อมูลการเล่น/อุปกรณ์แบบไม่ระบุตัวตน', '• ตัวระบุโฆษณา (IDFA/AAID) และสัญญาณที่เกี่ยวข้อง (Appodeal)', '• ที่อยู่ IP และตำแหน่งโดยสังเขป (เช่น ประเทศ/ภูมิภาค) เพื่อการป้องกันการฉ้อโกง ความปลอดภัย การวิเคราะห์ และการแสดงโฆษณา', '• ข้อมูลแครช/ประสิทธิภาพ (Firebase/GA4)', '<em>ไม่เก็บข้อมูลที่ระบุตัวตนโดยตรง</em>'] },
+          use: { h: 'การใช้งาน', p: ['ปรับปรุงเกม', 'วัดการใช้งาน', 'แสดงโฆษณา', 'วิเคราะห์ข้อขัดข้อง'] },
+          third: { h: 'ผู้ให้บริการภายนอก', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics</a>`, `• <a href="${LINKS.firebase}">Firebase</a>`, `• <a href="${LINKS.appodeal}">Appodeal</a> (การไกล่เกลี่ยโฆษณา) พาร์ทเนอร์รวมถึง:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'โฆษณา', p: ['โฆษณาแบบแทรกและแบนเนอร์ รวมถึงโฆษณาแบบรับรางวัล'] },
+          analytics: { h: 'การวิเคราะห์', p: ['ใช้ข้อมูลแบบรวมเท่านั้น'] },
+          kids: { h: 'เด็กและเยาวชน', p: ['ไม่ได้มุ่งเป้าไปที่อายุต่ำกว่า 13 ปี'] },
+          retention: { h: 'การเก็บรักษา', p: ['เป็นไปตามนโยบายของผู้ให้บริการ'] },
+          security: { h: 'ความปลอดภัย', p: ['ใช้มาตรการมาตรฐานของอุตสาหกรรม'] },
+          intl: { h: 'การโอนย้ายข้อมูล', p: ['อาจประมวลผลนอกประเทศของคุณ'] },
+          rights: { h: 'สิทธิของคุณ', p: ['อาจมีสิทธิ์ในการเข้าถึง แก้ไข ลบ ตามกฎหมายท้องถิ่น'] },
+          ccpa: { h: 'แคลิฟอร์เนีย', p: ['เราไม่ได้ขายข้อมูลส่วนบุคคลตามกฎหมาย CPRA'] },
+          optout: { h: 'การตั้งค่าโฆษณา', p: [`รีเซ็ต/จำกัดรหัสโฆษณา: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>`] },
+          changes: { h: 'การเปลี่ยนแปลง', p: ['นโยบายนี้อาจได้รับการอัปเดต'] },
+          contact: { h: 'ติดต่อ', p: [`อีเมล: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      id: {
+        _name: 'Bahasa Indonesia', title: 'Kebijakan Privasi – Astronigma: Star Logic Puzzle', note: 'Menggunakan GameAnalytics & Firebase (analitik) dan Appodeal (iklan). Hanya data anonim yang dikumpulkan. Dokumen ini bukan nasihat hukum.', toc: 'Daftar isi', sections: {
+          intro: { h: 'Tentang kami', p: [`Dikembangkan & diterbitkan oleh ${LEGAL_NAME}.`] },
+          collect: { h: 'Data yang dikumpulkan', p: ['• Data permainan/perangkat anonim', '• ID iklan (IDFA/AAID) dan sinyal terkait (Appodeal)', '• Alamat IP dan lokasi perkiraan (mis. negara/wilayah) untuk pencegahan penipuan, keamanan, analitik, dan penayangan iklan', '• Data crash/kinerja (Firebase/GA4)', '<em>Tidak mengumpulkan data yang mengidentifikasi Anda secara langsung.</em>'] },
+          use: { h: 'Penggunaan', p: ['Meningkatkan game', 'Mengukur penggunaan', 'Menayangkan iklan', 'Mendiagnosis gangguan'] },
+          third: { h: 'Layanan pihak ketiga', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics</a>`, `• <a href="${LINKS.firebase}">Firebase</a>`, `• <a href="${LINKS.appodeal}">Appodeal</a> (Mediasi Iklan). Mitra termasuk:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Periklanan', p: ['Iklan interstisial & banner, serta iklan berhadiah.'] },
+          analytics: { h: 'Analitik', p: ['Data peristiwa agregat.'] },
+          kids: { h: 'Privasi anak', p: ['Tidak ditujukan untuk anak di bawah 13 tahun.'] },
+          retention: { h: 'Retensi', p: ['Mengikuti kebijakan penyedia.'] },
+          security: { h: 'Keamanan', p: ['Langkah standar industri.'] },
+          intl: { h: 'Transfer internasional', p: ['Pemrosesan dapat terjadi di luar negara Anda.'] },
+          rights: { h: 'Hak Anda', p: ['Tergantung wilayah, Anda mungkin memiliki hak akses/koreksi/penghapusan.'] },
+          ccpa: { h: 'California', p: ['Kami tidak menjual “informasi pribadi” menurut CPRA.'] },
+          optout: { h: 'Pilihan iklan', p: [`Setel ulang/batasi ID iklan: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>`] },
+          changes: { h: 'Perubahan', p: ['Kebijakan dapat diperbarui.'] },
+          contact: { h: 'Kontak', p: [`Surel: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      ru: {
+        _name: 'Русский', title: 'Политика конфиденциальности – Astronigma: Star Logic Puzzle', note: 'Используем GameAnalytics и Firebase для аналитики, Appodeal — для рекламы. Собираются лишь анонимные данные; PII не собираем. Этот документ не является юридической консультацией.', toc: 'Содержание', sections: {
+          intro: { h: 'О нас', p: [`Игра разработана и издаётся ${LEGAL_NAME}. В документе описано, какие данные собираются и зачем.`] },
+          collect: { h: 'Какие данные собираем', p: ['• Анонимные игровые и технические события (уровни, язык, страна/регион, версия приложения, платформа).', '• Рекламный идентификатор (IDFA/AAID) и связанные сигналы для показа/ограничения рекламы (SDK Appodeal).', '• IP‑адрес и приблизительное местоположение (например, страна/регион) передаются с сетевыми запросами для предотвращения мошенничества, обеспечения безопасности, аналитики и показа рекламы.', '• Данные о сбоях и производительности (Firebase/GA4).', '<em>Мы не собираем данные, позволяющие напрямую вас идентифицировать.</em>'] },
+          use: { h: 'Как используем', p: ['Улучшение баланса и стабильности игры.', 'Измерение использования и удержания.', 'Показ рекламы (включая вознаграждаемую) и предотвращение злоупотреблений.', 'Диагностика сбоев.'] },
+          third: { h: 'Сторонние сервисы', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics — Политика</a>`, `• <a href="${LINKS.firebase}">Google Firebase — Конфиденциальность</a>`, `• <a href="${LINKS.appodeal}">Appodeal — Политика</a> (Рекламная медиация). Партнёры включают:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Реклама', p: ['В игре показываются межстраничные и баннерные объявления, а также доступны вознаграждаемые объявления.'] },
+          analytics: { h: 'Аналитика', p: ['Используем агрегированные события без прямых идентификаторов.'] },
+          kids: { h: 'Дети', p: ['Игра не предназначена для лиц младше 13 лет.'] },
+          retention: { h: 'Хранение', p: ['Данные хранятся у провайдеров и подчиняются их политикам.'] },
+          security: { h: 'Безопасность', p: ['Опираемся на стандартные меры SDK; 100% безопасности не существует.'] },
+          intl: { h: 'Международные передачи', p: ['Обработка может выполняться за пределами вашей страны.'] },
+          rights: { h: 'Ваши права', p: ['В зависимости от юрисдикции вы можете иметь права на доступ, исправление, удаление и возражение.'] },
+          ccpa: { h: 'Калифорния (CCPA/CPRA)', p: ['Мы не продаём персональную информацию по CPRA; используем провайдеров как «service providers».'] },
+          optout: { h: 'Выбор и отказ', p: [`Сброс/ограничение рекламного ID устройства: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>.`, `Управляйте согласием и настройками у партнёров.`] },
+          changes: { h: 'Изменения', p: ['Мы можем обновлять политику; дата обновления изменится.'] },
+          contact: { h: 'Контакты', p: [`Почта: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      },
+
+      sr: {
+        _name: 'Srpski (latinica)', title: 'Politika privatnosti – Astronigma: Star Logic Puzzle', note: 'Koristimo GameAnalytics i Firebase (analitika) i Appodeal (oglasi). Prikupljaju se samo anonimni podaci. Ovaj dokument nije pravni savet.', toc: 'Sadržaj', sections: {
+          intro: { h: 'Ko smo', p: [`Igru razvija i objavljuje ${LEGAL_NAME}.`] },
+          collect: { h: 'Koje podatke prikupljamo', p: ['• Anonimni podaci o igri/uređaju (događaji, jezik, država, verzija, platforma).', '• Oglašivački identifikator (IDFA/AAID) i povezani signali (Appodeal).', '• IP adresa i približna lokacija (npr. država/region) – radi sprečavanja zloupotreba, bezbednosti, analitike i isporuke oglasa.', '• Podaci o padovima i performansama (Firebase/GA4).', '<em>Ne prikupljamo podatke koji vas direktno identifikuju.</em>'] },
+          use: { h: 'Kako koristimo', p: ['Unapređenje igre i stabilnosti.', 'Merenje korišćenja i zadržavanja.', 'Prikazivanje oglasa i sprečavanje zloupotreba.', 'Dijagnostika grešaka.'] },
+          third: { h: 'Treće strane', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics</a>`, `• <a href="${LINKS.firebase}">Firebase</a>`, `• <a href="${LINKS.appodeal}">Appodeal</a> (Posredovanje u oglašavanju). Partneri uključuju:`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: 'Oglasi', p: ['Intersticijalni i baner oglasi; nagrađivani oglasi.'] },
+          analytics: { h: 'Analitika', p: ['Koristimo zbirne podatke bez direktnih identifikatora.'] },
+          kids: { h: 'Deca', p: ['Igra nije namenjena osobama mlađim od 13 godina.'] },
+          retention: { h: 'Zadržavanje podataka', p: ['Podaci se čuvaju kod provajdera, prema njihovim politikama.'] },
+          security: { h: 'Bezbednost', p: ['Oslanjamo se na standardne mere trećih strana.'] },
+          intl: { h: 'Međunarodni prenos', p: ['Obrada je moguća van vaše zemlje.'] },
+          rights: { h: 'Vaša prava', p: ['Prava pristupa, ispravke, brisanja – u skladu sa propisima vaše zemlje.'] },
+          ccpa: { h: 'Kalifornija', p: ['Ne prodajemo lične podatke u smislu CPRA.'] },
+          optout: { h: 'Izbor oglasa', p: [`Poništite/ograničite reklamni ID: <a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>`] },
+          changes: { h: 'Izmene', p: ['Politika se može ažurirati.'] },
+          contact: { h: 'Kontakt', p: [`Email: <a href="mailto:${CONTACT}">${CONTACT}</a>`] }
+        }
+      }
+    };
+
+    // --- Render ---
+    const yearEl = document.getElementById('year'); yearEl.textContent = new Date().getFullYear();
+    const eff = document.getElementById('effective'); eff.textContent = EFFECTIVE;
+    const upd = document.getElementById('updated'); upd.textContent = UPDATED;
+    const sel = document.getElementById('langSel');
+    const badge = document.getElementById('langBadge');
+    const titleEl = document.getElementById('title');
+    const noteEl = document.getElementById('note');
+    const content = document.getElementById('content');
+    const toc = document.getElementById('toc');
+    const langLabel = document.getElementById('langLabel');
+
+    function sectionNode(id, h, ps) {
+      const wrap = document.createElement('div');
+      wrap.id = id;
+      wrap.style.marginBottom = '1.25rem';
+      const hh = document.createElement('h2'); hh.textContent = h; wrap.appendChild(hh);
+      (ps || []).forEach(p => { const el = document.createElement('p'); el.innerHTML = p; wrap.appendChild(el); });
+      return wrap;
+    }
+
+    function render(lang) {
+      const L = T[lang] || T.en;
+      document.documentElement.lang = lang;
+      badge.textContent = (L._name || lang).split(' ')[0].toUpperCase();
+      titleEl.textContent = L.title || T.en.title;
+      noteEl.innerHTML = L.note || '';
+
+      // i18n of header labels
+      const labels = { en: 'Language:', es: 'Idioma:', pt: 'Idioma:', de: 'Sprache:', fr: 'Langue :', ja: '言語：', ko: '언어:', tr: 'Dil:', th: 'ภาษา:', id: 'Bahasa:', ru: 'Язык:', sr: 'Jezik:' };
+      langLabel.textContent = labels[lang] || 'Language:';
+
+      // TOC
+      toc.innerHTML = '';
+      ORDER.forEach(key => {
+        const a = document.createElement('a'); a.href = '#' + key; a.textContent = (L.sections[key]?.h) || key; toc.appendChild(a);
+      });
+
+      // Content
+      content.innerHTML = '';
+      ORDER.forEach(key => {
+        const S = L.sections[key]; if (!S) return; content.appendChild(sectionNode(key, S.h, S.p));
+      });
+
+      // Update URL hash for shareable deep link
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url.toString());
+    }
+
+    // Language select handling
+    sel.addEventListener('change', e => render(e.target.value));
+
+    // Copy shareable link
+    document.getElementById('copyLink').addEventListener('click', () => {
+      navigator.clipboard.writeText(location.href).then(() => { alert('Link copied!'); });
+    });
+
+    // Print button
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    // Bootstrap language: URL ?lang=, else browser language fallback to our set
+    (function init() {
+      const urlLang = new URL(location.href).searchParams.get('lang');
+      const browser = (navigator.language || 'en').toLowerCase();
+      const map = { 'pt-br': 'pt', 'sr-rs': 'sr' };
+      let lang = urlLang || map[browser];
+      if (!lang && T[browser]) lang = browser;
+      if (!lang) { const base = browser.split('-')[0]; if (T[base]) lang = base; }
+      lang = lang || 'en';
+      sel.value = lang; render(lang);
+    })();
+  </script>
+</body>
+
+</html>

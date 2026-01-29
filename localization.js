@@ -19,8 +19,8 @@ const translations = {
         "cta_title": "Ready to Play?",
         "cta_subtitle": "Available now on iOS and Android.",
         "cta_button": "Download Now",
-        "footer_press": "Press Kit",
         "footer_privacy": "Privacy Policy",
+        "footer_terms": "Terms of Use",
         "footer_support": "Support",
         "footer_rights": "© 2026 Nikita Ivanov. All rights reserved."
     },
@@ -44,8 +44,8 @@ const translations = {
         "cta_title": "Готовы играть?",
         "cta_subtitle": "Доступно на iOS и Android.",
         "cta_button": "Скачать Сейчас",
-        "footer_press": "Пресс-кит",
         "footer_privacy": "Политика конфиденциальности",
+        "footer_terms": "Условия использования",
         "footer_support": "Поддержка",
         "footer_rights": "© 2026 Никита Иванов. Все права защищены."
     }
