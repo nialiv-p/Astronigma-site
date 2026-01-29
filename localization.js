@@ -439,7 +439,7 @@ class LocalizationManager {
 
             img.src = thumbSrc;
             img.alt = `Screenshot ${i}`;
-            img.loading = 'lazy'; // Performance
+            // img.loading = 'lazy'; // Removed to fix Safari horizontal scroll issue
 
             // Lightbox trigger
             img.addEventListener('click', () => {

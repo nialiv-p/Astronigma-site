@@ -52,9 +52,9 @@ def process_screenshots():
             shutil.copy2(source_path, dest_path)
             
             # Generate thumbnail using sips (macOS built-in image processor)
-            # Resizing to width 300px
+            # Resizing to width 800px for Retina display sharpness (at 300px CSS width)
             subprocess.run([
-                "sips", "-Z", "400", source_path, "--out", thumb_path
+                "sips", "-Z", "800", source_path, "--out", thumb_path
             ], check=True, stdout=subprocess.DEVNULL)
             
     print("Done processing screenshots.")
