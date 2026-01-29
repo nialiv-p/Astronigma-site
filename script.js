@@ -15,7 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+
+            // Handle "Back to Top" or empty links
+            if (href === '#') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
@@ -59,53 +70,93 @@ document.addEventListener('DOMContentLoaded', () => {
        IDENTITY POLISH FEATURES
        ========================================= */
 
-    // 1. Parallax Starfield
+    // 1. Grid-based Starfield (Unity Shader Port)
     const canvas = document.getElementById('starfield');
     const ctx = canvas.getContext('2d');
+
+    // Config matches Unity "StarfieldUI" & MainScene
+    const DENSITY = 16; // 8x8 grid
+    const SPEED = 5;   // px per second
+    const STAR_SIZE_BASE = 1;
+    const TWINKLE_STRENGTH = 0.5;
+    const STAR_COLOR = '#66d9ff'; // Light Cyan tint
+
     let width, height;
-    let stars = [];
+    let startTime = performance.now();
 
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
         canvas.width = width;
         canvas.height = height;
-        initStars();
     }
 
-    function initStars() {
-        stars = [];
-        const numStars = Math.floor((width * height) / 4000); // Density
-        for (let i = 0; i < numStars; i++) {
-            stars.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                size: Math.random() * 2,
-                opacity: Math.random(),
-                speed: Math.random() * 0.2 + 0.05
-            });
-        }
+    // Shader-like mock hash function
+    function hash(x, y) {
+        const dot = x * 12.9898 + y * 78.233;
+        const sin = Math.sin(dot) * 43758.5453;
+        return Math.abs(sin - Math.floor(sin));
     }
 
     function animateStars() {
+        const now = performance.now();
+        const t = (now - startTime) / 1000; // seconds
+
         ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = '#fff';
+        ctx.fillStyle = STAR_COLOR;
 
-        stars.forEach(star => {
-            ctx.globalAlpha = star.opacity;
-            ctx.beginPath();
-            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-            ctx.fill();
+        // Current scroll offset in pixels
+        const scrollX = t * SPEED;
+        const scrollY = t * SPEED;
 
-            // Move star slightly to left (drifting)
-            star.x -= star.speed;
+        // Cell dimensions
+        const cellW = width / DENSITY;
+        const cellH = height / DENSITY;
 
-            // Wrap around
-            if (star.x < 0) {
-                star.x = width;
-                star.y = Math.random() * height;
+        // Determine visible cell range (buffer +1 to cover edges)
+        const startCol = Math.floor(scrollX / cellW) - 1;
+        const startRow = Math.floor(scrollY / cellH) - 1;
+        // We draw DENSITY + 2 rows/cols to ensure coverage during scroll
+        const endCol = startCol + DENSITY + 2;
+        const endRow = startRow + DENSITY + 2;
+
+        for (let col = startCol; col <= endCol; col++) {
+            for (let row = startRow; row <= endRow; row++) {
+
+                // 1. Random position in cell (Deterministic based on col/row index)
+                const randX = hash(col, row);
+                const randY = hash(row, col + 50); // different seed for Y
+
+                // Local position in cell [0..1]
+                const posX = randX;
+                const posY = randY;
+
+                // Screen position
+                // (Index * Size) - GlobalScroll
+                const screenX = (col * cellW) + (posX * cellW) - scrollX;
+                const screenY = (row * cellH) + (posY * cellH) - scrollY;
+
+                // 2. Twinkle Logic
+                // Random phase per star
+                const seedTwinkle = hash(col + 10, row - 10);
+                const freq = 0.8 + 1.4 * seedTwinkle; // 0.8 .. 2.2
+                const phase = seedTwinkle * 6.28;
+
+                // Sine wave 0..1
+                const sine = 0.5 + 0.5 * Math.sin(t * freq + phase);
+                const alphaBase = 1.0 - TWINKLE_STRENGTH;
+                const opacity = alphaBase + (sine * TWINKLE_STRENGTH); // 0.75 .. 1.0 range usually
+
+                // Draw Star
+                // Softness is simulated by globalAlpha or gradient, here simple circle
+                ctx.globalAlpha = opacity;
+                ctx.beginPath();
+                // Size variation
+                const sizeMod = 0.8 + 0.4 * hash(col * row, col);
+                ctx.arc(screenX, screenY, STAR_SIZE_BASE * sizeMod, 0, Math.PI * 2);
+                ctx.fill();
             }
-        });
+        }
 
         requestAnimationFrame(animateStars);
     }
