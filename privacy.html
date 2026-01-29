@@ -53,6 +53,7 @@
       font-size: 2rem;
       font-weight: 600;
       background: linear-gradient(135deg, #fff 0%, #a2d2ff 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -165,8 +166,9 @@
       margin-left: .4rem
     }
 
-    code {
-      kbd
+    code,
+    kbd {
+      font-family: monospace;
     }
 
     .toc {
@@ -234,6 +236,7 @@
           <option value="tr">Türkçe</option>
           <option value="th">ไทย</option>
           <option value="id">Bahasa Indonesia</option>
+          <option value="zh">简体中文</option>
           <option value="ru">Русский</option>
           <option value="sr">Srpski (latinica)</option>
         </select>
@@ -516,6 +519,26 @@
         }
       },
 
+      zh: {
+        _name: '简体中文', title: '隐私政策 – Astronigma: Star Logic Puzzle', note: '本政策反映当前的发布计划：通过 GameAnalytics 和 Firebase (GA4) 进行分析，通过 Appodeal 进行广告（插页式、横幅、奖励视频）。游戏仅收集匿名遥测数据；无意收集个人身份信息 (PII)。本文档仅供参考，不构成法律建议。', toc: '目录', sections: {
+          intro: { h: '我们是谁', p: [`<strong>Astronigma: Star Logic Puzzle</strong>（“游戏”）由 ${LEGAL_NAME} 开发和发布。本文档解释游戏收集什么数据、如何使用以及您的选择。`, '范围：带有分析（GameAnalytics 和 Firebase）和广告（Appodeal）的移动版本。'] },
+          collect: { h: '我们收集的数据', p: ['• 匿名游戏和设备数据（例如关卡事件、棋盘大小、国家/地区、语言、应用版本、平台）。', '• 广告标识符 (IDFA/AAID) 及用于广告投放和频次控制的相关信号（通过 Appodeal SDK）。', '• 随网络请求发送的 IP 地址和粗略位置（例如国家/地区），用于防欺诈、安全、分析和广告投放。', '• 崩溃和性能数据（通过 Firebase/GA4）。', '<em>我们不有意收集直接识别您身份的数据（姓名、电子邮件、精确位置）。</em>'] },
+          use: { h: '我们如何使用数据', p: ['改善游戏平衡性和稳定性。', '衡量使用情况和留存率。', '投放广告（包括奖励广告）并防止滥用。', '诊断崩溃和性能问题。'] },
+          third: { h: '第三方服务', p: [`• <a href="${LINKS.gameanalytics}">GameAnalytics – 隐私政策</a>`, `• <a href="${LINKS.firebase}">Google Firebase – 隐私与安全</a>`, `• <a href="${LINKS.appodeal}">Appodeal – 隐私政策</a> (广告聚合)。合作伙伴包括：`, `&nbsp;&nbsp;&nbsp;- Google AdMob`, `&nbsp;&nbsp;&nbsp;- Unity Ads`, `&nbsp;&nbsp;&nbsp;- Meta Audience Network`, `&nbsp;&nbsp;&nbsp;- AppLovin`] },
+          ads: { h: '广告', p: ['游戏显示插页式和横幅广告，并按游戏内描述提供获取额外步数/生命的奖励广告。', '广告合作伙伴可能会使用设备标识符来个性化或限制广告，受您的平台设置和同意提示（如适用）的约束。'] },
+          analytics: { h: '分析', p: ['我们使用聚合事件数据来了解玩家如何与游戏互动。事件不包含直接标识符，并根据提供商的条款进行处理。'] },
+          kids: { h: '儿童隐私', p: ['本游戏不针对 13 岁以下的儿童（或您所在地区的适用年龄）。我们不有意收集儿童的信息。如果您认为儿童提供了数据，请联系我们请求删除。'] },
+          retention: { h: '数据保留', p: ['分析和广告数据由提供商存储，并根据其政策保留。我们要不为此游戏保留单独的玩家帐户或服务器。'] },
+          security: { h: '安全', p: ['我们要依赖信誉良好的第三方 SDK 和这些服务提供的行业标准保护措施。没有任何传输或存储方法是 100% 安全的。'] },
+          intl: { h: '国际传输', p: ['数据可能会在您所在国家/地区以外的服务器上处理。如有要求，提供商将实施适当的保护措施。'] },
+          rights: { h: '您的权利（EEA/UK 和类似司法管辖区）', p: ['根据您的位置，您可能有权访问、更正、删除、限制或反对处理；并在处理基于同意的情况下撤回同意。要行使权利，请联系我们或遵循上述第三方政策中的说明。'] },
+          ccpa: { h: '加州隐私 (CCPA/CPRA)', p: ['根据 CPRA 定义，我们不出售个人信息。我们使用广告/分析服务提供商作为“服务提供商”。您可以行使平台级广告偏好并限制广告跟踪，如下所述。'] },
+          optout: { h: '广告选择和退出', p: [`重置或限制您的设备广告 ID：<a href="${LINKS.appleReset}">iOS</a> · <a href="${LINKS.googleReset}">Android</a>。`, `管理同意提示（如果可用），并查看合作伙伴政策以获取更多选择（见上文链接）。`] },
+          changes: { h: '本政策的变更', p: ['我们可能会更新本政策；“最后更新”日期将会更改。重大变更将反映在此页面上。'] },
+          contact: { h: '联系方式', p: [`问题或请求：<a href="mailto:${CONTACT}">${CONTACT}</a>。`] }
+        }
+      },
+
       ru: {
         _name: 'Русский', title: 'Политика конфиденциальности – Astronigma: Star Logic Puzzle', note: 'Используем GameAnalytics и Firebase для аналитики, Appodeal — для рекламы. Собираются лишь анонимные данные; PII не собираем. Этот документ не является юридической консультацией.', toc: 'Содержание', sections: {
           intro: { h: 'О нас', p: [`Игра разработана и издаётся ${LEGAL_NAME}. В документе описано, какие данные собираются и зачем.`] },
@@ -586,7 +609,7 @@
       noteEl.innerHTML = L.note || '';
 
       // i18n of header labels
-      const labels = { en: 'Language:', es: 'Idioma:', pt: 'Idioma:', de: 'Sprache:', fr: 'Langue :', ja: '言語：', ko: '언어:', tr: 'Dil:', th: 'ภาษา:', id: 'Bahasa:', ru: 'Язык:', sr: 'Jezik:' };
+      const labels = { en: 'Language:', es: 'Idioma:', pt: 'Idioma:', de: 'Sprache:', fr: 'Langue :', ja: '言語：', ko: '언어:', tr: 'Dil:', th: 'ภาษา:', id: 'Bahasa:', zh: '语言：', ru: 'Язык:', sr: 'Jezik:' };
       langLabel.textContent = labels[lang] || 'Language:';
 
       // TOC

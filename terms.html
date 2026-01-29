@@ -53,6 +53,7 @@
       font-size: 2rem;
       font-weight: 600;
       background: linear-gradient(135deg, #fff 0%, #a2d2ff 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -165,8 +166,9 @@
       margin-left: .4rem
     }
 
-    code {
-      kbd
+    code,
+    kbd {
+      font-family: monospace;
     }
 
     .toc {
@@ -234,6 +236,7 @@
           <option value="tr">Türkçe</option>
           <option value="th">ไทย</option>
           <option value="id">Bahasa Indonesia</option>
+          <option value="zh">简体中文</option>
           <option value="ru">Русский</option>
           <option value="sr">Srpski (latinica)</option>
         </select>
@@ -481,6 +484,27 @@
         }
       },
 
+      zh: {
+        _name: '简体中文', title: '使用条款 – Astronigma: Star Logic Puzzle', note: '这些条款管辖您对 Astronigma 的使用。请同时也阅读隐私政策。', toc: '目录', sections: {
+          intro: { h: '简介', p: [`<strong>Astronigma: Star Logic Puzzle</strong>（“游戏”）由 ${LEGAL_NAME} 开发和发布。这些使用条款（“条款”）管辖您对游戏的访问和使用。安装或使用游戏即表示您同意这些条款和<a href="${LINKS.privacy}">隐私政策</a>。`] },
+          accept: { h: '接受条款', p: ['如果您不同意，请勿安装或使用游戏。如果您在您所在司法管辖区未达到法定成年年龄，您必须让父母/监护人审阅并接受这些条款。'] },
+          license: { h: '许可', p: ['我们授予您个人的、可撤销的、非独占的、不可转让的有限许可，仅用于个人、非商业娱乐目的在您控制的设备上安装和使用游戏。'] },
+          restr: { h: '限制', p: ['您不得：(a) 复制、分发或公开展示游戏（除非明确允许）；(b) 对源代码进行反向工程、反编译或尝试提取源代码（除非法律允许）；(c) 规避安全或访问控制；(d) 将游戏用于任何非法目的；(e) 出售、出租或分许可游戏或其中的任何权利。'] },
+          ugc: { h: '用户内容和行为', p: ['如果游戏允许昵称或其他输入，您应对您的内容以及遵守适用法律和平台规则负责。我们可以自行决定删除内容或限制访问。'] },
+          virtual: { h: '虚拟物品和进度', p: ['任何游戏内进度、奖励或虚拟物品均无货币价值，也不属于您的财产。我们可以随时修改、暂停或终止功能。'] },
+          third: { h: '第三方服务', p: [`游戏集成了第三方 SDK。请参阅其政策：<a href="${LINKS.gameanalytics}">GameAnalytics</a>, <a href="${LINKS.firebase}">Firebase</a>, <a href="${LINKS.appodeal}">Appodeal</a>。您对这些服务的使用可能受附加条款的约束。`] },
+          ads: { h: '广告', p: ['游戏可能会显示来自第三方广告聚合网络（例如通过 Appodeal）的广告，包括奖励广告。不保证奖励的可用性；广告可用性取决于第三方需求和您的地区/设备。'] },
+          analytics: { h: '分析', p: ['我们使用聚合分析来改进游戏。请参阅我们的<a href="${LINKS.privacy}">隐私政策</a>。'] },
+          warrant: { h: '免责声明', p: ['游戏“按原样”和“按可用状态”提供，不提供任何形式的明示或暗示保证，包括但不限于适销性、特定用途适用性和非侵权性。使用风险完全由您自行承担。'] },
+          liability: { h: '责任限制', p: ['在法律允许的最大范围内，对于因您使用游戏而引起或与之相关的任何间接、附带、特殊、后果性或惩罚性损害，或数据、利润或商誉损失，我们及我们的关联公司概不负责。在任何情况下，我们的总责任不超过您在索赔前 12 个月内为游戏支付的金额（如有）。'] },
+          indemn: { h: '赔偿', p: ['您同意就因您违反这些条款或滥用游戏而引起的任何索赔、责任、损害、损失和费用，为我们及我们的关联公司辩护、赔偿并使其免受损害。'] },
+          termination: { h: '终止', p: ['我们可以随时因任何原因暂停或终止您对游戏的访问，包括如果您违反这些条款。您可以随时停止使用并卸载游戏。'] },
+          law: { h: '适用法律和争议', p: ['除非法律另有规定，否则这些条款受塞尔维亚法律管辖，不考虑法律冲突规则。塞尔维亚贝尔格莱德法院拥有专属管辖权，您同意接受其属人管辖。EEA/UK 的消费者可能受益于其居住国的强制性消费者保护。'] },
+          changes: { h: '条款变更', p: ['我们可能会不时更新这些条款。“最后更新”日期将会更改。更改后继续使用即表示您接受更新后的条款。'] },
+          contact: { h: '联系方式', p: [`有问题？请发送电子邮件至 <a href="mailto:${CONTACT}">${CONTACT}</a>。`] }
+        }
+      },
+
       ru: {
         _name: 'Русский', title: 'Пользовательское соглашение – Astronigma: Star Logic Puzzle', note: 'Пожалуйста, также ознакомьтесь с Политикой конфиденциальности.', toc: 'Содержание', sections: {
           intro: { h: 'Введение', p: [`<strong>Astronigma: Star Logic Puzzle</strong> (далее — «Игра») разработана и издаётся ${LEGAL_NAME}. Устанавливая или используя Игру, вы соглашаетесь с настоящими Условиями и с <a href="${LINKS.privacy}">Политикой конфиденциальности</a>.`] },
@@ -535,7 +559,7 @@
     const toc = document.getElementById('toc');
     const langLabel = document.getElementById('langLabel');
 
-    const labels = { en: 'Language:', es: 'Idioma:', pt: 'Idioma:', de: 'Sprache:', fr: 'Langue :', ja: '言語：', ko: '언어:', tr: 'Dil:', th: 'ภาษา:', id: 'Bahasa:', ru: 'Язык:', sr: 'Jezik:' };
+    const labels = { en: 'Language:', es: 'Idioma:', pt: 'Idioma:', de: 'Sprache:', fr: 'Langue :', ja: '言語：', ko: '언어:', tr: 'Dil:', th: 'ภาษา:', id: 'Bahasa:', zh: '语言：', ru: 'Язык:', sr: 'Jezik:' };
 
     function sectionNode(id, h, ps) {
       const wrap = document.createElement('div');
