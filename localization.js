@@ -16,23 +16,23 @@ const translations = {
         "rule_2": "Tapping a light toggles it and its neighbors (creating a cross shape).",
         "rule_3": "Turn off all the lights to clear the board and collect Light Shards.",
         "gallery_title": "Gallery",
-        "cta_title": "Ready to Launch?",
+        "cta_title": "Ready to Play?",
         "cta_subtitle": "Available now on iOS and Android.",
         "cta_button": "Download Now",
         "footer_press": "Press Kit",
         "footer_privacy": "Privacy Policy",
         "footer_support": "Support",
-        "footer_rights": "© 2026 Astronigma Games. All rights reserved."
+        "footer_rights": "© 2026 Nikita Ivanov. All rights reserved."
     },
     "ru": {
         "nav_about": "Как играть",
         "nav_download": "Скачать",
-        "hero_subtitle": "Решай головоломки.<br>Настраивай телескоп.<br>Открывай созвездия.",
+        "hero_subtitle": "Решайте головоломки.<br>Настраивайте телескоп.<br>Открывайте созвездия.",
         "store_apple_small": "Загрузите в",
         "store_apple_large": "App Store",
         "store_google_small": "ДОСТУПНО В",
         "store_google_large": "Google Play",
-        "grid_hint": "НАЖМИ, ЧТОБЫ ВЫРОВНЯТЬ ЗВЕЗДЫ",
+        "grid_hint": "НАЖМИТЕ, ЧТОБЫ ВЫРОВНЯТЬ ЗВЕЗДЫ",
         "how_to_play_title": "Как играть",
         "story_title": "История",
         "story_text": "Вы нашли древний телескоп, позволяющий увидеть забытые созвездия. Чтобы использовать его, нужно настраивать линзы с помощью Осколков Света, которые вы получаете за решение головоломок.",
@@ -41,13 +41,13 @@ const translations = {
         "rule_2": "Нажатие на огонек переключает его и соседние (крестом).",
         "rule_3": "Погасите все огни, чтобы очистить доску и собрать Осколки Света.",
         "gallery_title": "Галерея",
-        "cta_title": "Готов к взлету?",
+        "cta_title": "Готовы играть?",
         "cta_subtitle": "Доступно на iOS и Android.",
         "cta_button": "Скачать Сейчас",
         "footer_press": "Пресс-кит",
         "footer_privacy": "Политика конфиденциальности",
         "footer_support": "Поддержка",
-        "footer_rights": "© 2026 Astronigma Games. Все права защищены."
+        "footer_rights": "© 2026 Никита Иванов. Все права защищены."
     }
 };
 
