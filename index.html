@@ -3,20 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Astronigma</title>
+    <title>Astronigma: Star Logic Puzzle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Astronigma - Unravel the Cosmos">
+    <meta name="description"
+        content="Rebuild the ancient telescope. Solve logic puzzles. Discover the unknown. Available now on iOS and Android.">
+    <meta name="theme-color" content="#080d1d">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Astronigma: Star Logic Puzzle">
     <meta property="og:description"
         content="Rebuild the ancient telescope. Solve logic puzzles. Discover the unknown. Available now.">
-    <meta property="og:image" content="assets/images/og_image.png">
-    <meta property="og:url" content="https://yourusername.github.io/astronigma-site">
+    <meta property="og:image" content="https://astronigma.net/assets/images/og_image.png">
+    <meta property="og:url" content="https://astronigma.net">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Astronigma: Star Logic Puzzle">
+    <meta name="twitter:description"
+        content="Rebuild the ancient telescope. Solve logic puzzles. Discover the unknown.">
+    <meta name="twitter:image" content="https://astronigma.net/assets/images/og_image.png">
 
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://astronigma.net">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Astronigma",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "GameApplication",
+      "genre": "Puzzle",
+      "description": "Rebuild the ancient telescope. Solve logic puzzles. Discover the unknown.",
+      "image": "https://astronigma.net/assets/images/og_image.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Nikita Ivanov"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -62,14 +99,16 @@
                     <p class="hero-subtitle" data-i18n="hero_subtitle">Unravel the Cosmos. Solve the Void.</p>
                     <div class="cta-group">
                         <a href="#" class="store-btn">
-                            <img src="assets/images/logo-apple.svg" alt="Apple Logo" class="store-icon">
+                            <img src="assets/images/logo-apple.svg" alt="Apple Logo" class="store-icon" width="28"
+                                height="28">
                             <div class="store-text">
                                 <span class="small-text" data-i18n="store_apple_small">Download on the</span>
                                 <span class="large-text" data-i18n="store_apple_large">App Store</span>
                             </div>
                         </a>
                         <a href="#" class="store-btn">
-                            <img src="assets/images/logo-google.svg" alt="Google Play Logo" class="store-icon">
+                            <img src="assets/images/logo-google.svg" alt="Google Play Logo" class="store-icon"
+                                width="28" height="28">
                             <div class="store-text">
                                 <span class="small-text" data-i18n="store_google_small">GET IT ON</span>
                                 <span class="large-text" data-i18n="store_google_large">Google Play</span>
@@ -79,7 +118,8 @@
                 </div>
 
                 <div class="hero-grid-interactive">
-                    <img src="assets/images/game-icon.png" alt="Astronigma Game Icon" class="hero-game-icon">
+                    <img src="assets/images/game-icon.png" alt="Astronigma Game Icon" class="hero-game-icon" width="180"
+                        height="180">
                 </div>
             </div>
         </section>
@@ -177,15 +217,15 @@
                 </div>
             </div>
             <div class="footer-bottom" data-i18n="footer_rights">
-                &copy; 2026 Astronigma Games. All rights reserved.
+                &copy; 2026 Nikita Ivanov. All rights reserved.
             </div>
         </div>
     </footer>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
-        <span id="lightbox-close" class="lightbox-close">&times;</span>
         <img id="lightbox-img" class="lightbox-img" src="" alt="Screenshot">
+        <span id="lightbox-close" class="lightbox-close">&times;</span>
     </div>
 
     <script src="localization.js"></script>
