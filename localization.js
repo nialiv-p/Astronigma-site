@@ -23,7 +23,9 @@ const translations = {
         "store_apple_small": "Download on the",
         "store_apple_large": "App Store",
         "store_google_small": "GET IT ON",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Star Logic Puzzle",
+        "meta_description": "Solve cosmic logic puzzles to discover hidden constellations."
     },
     "ru": {
         "hero_title": "ASTRONIGMA",
@@ -49,7 +51,9 @@ const translations = {
         "store_apple_small": "Загрузите в",
         "store_apple_large": "App Store",
         "store_google_small": "ДОСТУПНО В",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Космический Пазл",
+        "meta_description": "Решайте космические гoловоломки и открывайте созвездия."
     },
     "sr": {
         "hero_title": "ASTRONIGMA",
@@ -75,7 +79,9 @@ const translations = {
         "store_apple_small": "Preuzmite na",
         "store_apple_large": "App Store",
         "store_google_small": "NABAVITE NA",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Zvezdana Slagalica",
+        "meta_description": "Rešite logičke zagonetke i otkrijte sazvezđa."
     },
     "es": {
         "hero_title": "ASTRONIGMA",
@@ -101,7 +107,9 @@ const translations = {
         "store_apple_small": "Descárgalo en el",
         "store_apple_large": "App Store",
         "store_google_small": "DISPONIBLE EN",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Puzle Estelar",
+        "meta_description": "Resuelve puzles lógicos para descubrir constelaciones."
     },
     "pt": {
         "hero_title": "ASTRONIGMA",
@@ -127,7 +135,9 @@ const translations = {
         "store_apple_small": "Baixar na",
         "store_apple_large": "App Store",
         "store_google_small": "DISPONÍVEL NO",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Puzzle Estelar",
+        "meta_description": "Resolva quebra-cabeças para descobrir constelações."
     },
     "de": {
         "hero_title": "ASTRONIGMA",
@@ -153,7 +163,9 @@ const translations = {
         "store_apple_small": "Laden im",
         "store_apple_large": "App Store",
         "store_google_small": "JETZT BEI",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Sternenrätsel",
+        "meta_description": "Löse Logikrätsel und entdecke verborgene Sternbilder."
     },
     "fr": {
         "hero_title": "ASTRONIGMA",
@@ -179,7 +191,9 @@ const translations = {
         "store_apple_small": "Télécharger dans",
         "store_apple_large": "l'App Store",
         "store_google_small": "DISPONIBLE SUR",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Puzzle Stellaire",
+        "meta_description": "Résolvez des énigmes pour découvrir des constellations."
     },
     "ja": {
         "hero_title": "ASTRONIGMA",
@@ -205,7 +219,9 @@ const translations = {
         "store_apple_small": "ダウンロード",
         "store_apple_large": "App Store",
         "store_google_small": "手に入れよう",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: 星の論理パズル",
+        "meta_description": "論理パズルを解いて、隠された星座を見つけよう。"
     },
     "ko": {
         "hero_title": "ASTRONIGMA",
@@ -231,7 +247,9 @@ const translations = {
         "store_apple_small": "다운로드 하기",
         "store_apple_large": "App Store",
         "store_google_small": "다운로드하기",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: 별자리 논리 퍼즐",
+        "meta_description": "논리 퍼즐을 풀고 숨겨진 별자리를 발견하세요."
     },
     "tr": {
         "hero_title": "ASTRONIGMA",
@@ -257,7 +275,9 @@ const translations = {
         "store_apple_small": "İndirin",
         "store_apple_large": "App Store",
         "store_google_small": "EDİNİN",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Yıldız Bulmacası",
+        "meta_description": "Gizli takımyıldızları keşfetmek için bulmacaları çöz."
     },
     "th": {
         "hero_title": "ASTRONIGMA",
@@ -283,7 +303,9 @@ const translations = {
         "store_apple_small": "ดาวน์โหลดได้ที่",
         "store_apple_large": "App Store",
         "store_google_small": "ดาวน์โหลดได้จาก",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: ปริศนาดวงดาว",
+        "meta_description": "แก้ปริศนาตรรกะเพื่อค้นพบกลุ่มดาวที่ซ่อนอยู่"
     },
     "id": {
         "hero_title": "ASTRONIGMA",
@@ -309,7 +331,9 @@ const translations = {
         "store_apple_small": "Unduh di",
         "store_apple_large": "App Store",
         "store_google_small": "TEMUKAN DI",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: Teka-teki Bintang",
+        "meta_description": "Selesaikan teka-teki untuk menemukan rasi bintang."
     },
     "zh": {
         "hero_title": "ASTRONIGMA",
@@ -335,7 +359,9 @@ const translations = {
         "store_apple_small": "下载",
         "store_apple_large": "App Store",
         "store_google_small": "即刻下载",
-        "store_google_large": "Google Play"
+        "store_google_large": "Google Play",
+        "meta_title": "Astronigma: 星际逻辑谜题",
+        "meta_description": "解开逻辑谜题，发现隐藏的星座。"
     }
 };
 
@@ -405,6 +431,28 @@ class LocalizationManager {
                 }
             }
         });
+
+        // Update Meta Tags (SEO)
+        if (translations[this.currentLang]) {
+            // Title
+            if (translations[this.currentLang]["meta_title"]) {
+                document.title = translations[this.currentLang]["meta_title"];
+            }
+
+            // Description
+            if (translations[this.currentLang]["meta_description"]) {
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.content = translations[this.currentLang]["meta_description"];
+                }
+
+                // Update OG Description as well if you want (optional but good practice)
+                const ogDesc = document.querySelector('meta[property="og:description"]');
+                if (ogDesc) {
+                    ogDesc.content = translations[this.currentLang]["meta_description"];
+                }
+            }
+        }
 
         // Update language switcher active state
         const select = document.getElementById('lang-select');
