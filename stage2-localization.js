@@ -47,3 +47,23 @@ window.stageTwoTranslations = {
         hero_eyebrow:'宁静的 5×5 十字翻转逻辑谜题',hero_title_stage2:'轻触十字。<br>揭开宇宙。',hero_description:'每次轻触都会改变十字形灯组。按自己的节奏清空棋盘，获得光之碎片，调校七枚镜片，发现 100 个星座之一。',hero_fact_timer:'无计时',hero_fact_constellations:'100 个星座',hero_fact_offline:'离线游玩',nav_features:'游玩方式',demo_live:'可玩演示',demo_title:'熄灭所有灯光',demo_instruction:'选择一个格子，它和上下左右四格会改变状态。',demo_reset:'重置棋盘',demo_reveal_eyebrow:'星座已揭示',demo_reveal_title:'梦之钥',demo_reveal_lore:'传说中能开启记忆与梦境边界的一把静谧钥匙。',demo_play_again:'再试一道谜题',demo_cell_label:'第 {row} 行，第 {column} 列，{state}',demo_state_on:'亮起',demo_state_off:'熄灭',demo_move_one:'{count} 步',demo_moves:'{count} 步',journey_eyebrow:'完整的星空循环',journey_intro:'每解开一个棋盘，望远镜就更接近天空中的新故事。',journey_solve_title:'解开网格',journey_solve_body:'一次轻触会改变所选灯光和它的四个邻格。',journey_shards_title:'收集光之碎片',journey_shards_body:'清空棋盘即可获得驱动望远镜的能量。',journey_lenses_title:'调校七枚镜片',journey_lenses_body:'用七种镜片设置让隐藏图案清晰呈现。',journey_reveal_title:'揭开故事',journey_reveal_body:'把星座和它的传说加入你的星空档案。',features_eyebrow:'每日谜题仪式',features_title:'按你的方式游玩',feature_calm_title:'宁静逻辑，无计时',feature_calm_body:'读懂十字图案，不受倒计时干扰，提前思考。',feature_daily_title:'每日挑战',feature_daily_body:'每天都有一条穿越星空的全新五阶段路线。',feature_missions_title:'赛季任务',feature_missions_body:'完成每周目标，抵达里程碑并领取奖励。',feature_practice_title:'随处练习',feature_practice_body:'在练习模式磨炼核心谜题。核心玩法支持离线。',collection_eyebrow:'等待完成的星空档案',collection_title:'100 个星座。100 个故事。',collection_body:'修复望远镜，揭示梦之钥等星图，把每次发现收入收藏。',collection_stat:'个星座等待揭示',gallery_eyebrow:'真实游戏画面',gallery_intro:'从第一张网格，到不断扩展的星空故事档案。',final_eyebrow:'你的望远镜正在等待',cta_title:'让第一个星座显现。',cta_subtitle:'在 iOS 或 Android 免费开始，按自己的节奏解谜。',skip_link:'跳到主要内容',menu_open:'打开菜单',menu_close:'关闭菜单',sound_on:'打开声音',sound_off:'关闭声音',lightbox_close:'关闭截图',gallery_screenshot:'游戏截图 {count}'
     }
 };
+
+const languageSelectTranslations = {
+    en: 'Language',
+    ru: 'Язык',
+    sr: 'Jezik',
+    es: 'Idioma',
+    pt: 'Idioma',
+    de: 'Sprache',
+    fr: 'Langue',
+    ja: '言語',
+    ko: '언어',
+    tr: 'Dil',
+    th: 'ภาษา',
+    id: 'Bahasa',
+    zh: '语言'
+};
+
+Object.entries(languageSelectTranslations).forEach(([language, label]) => {
+    window.stageTwoTranslations[language].language_select = label;
+});

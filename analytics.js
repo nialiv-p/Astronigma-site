@@ -170,7 +170,18 @@
             if (!this.dialog) return;
             this.dialog.hidden = false;
             this.dialog.classList.add('is-visible');
-            this.acceptButton?.focus({ preventScroll: true });
+
+            const focusAcceptButton = () => {
+                if (!this.dialog.hidden) {
+                    this.acceptButton?.focus({ preventScroll: true });
+                }
+            };
+
+            if (typeof window.requestAnimationFrame === 'function') {
+                window.requestAnimationFrame(() => window.requestAnimationFrame(focusAcceptButton));
+            } else {
+                focusAcceptButton();
+            }
         }
 
         closeSettings() {

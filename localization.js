@@ -475,6 +475,7 @@ class LocalizationManager {
         const select = document.getElementById('lang-select');
         if (select) {
             select.value = this.currentLang;
+            select.setAttribute('aria-label', this.translate('language_select'));
         }
 
         // Update Gallery
@@ -545,6 +546,7 @@ class LocalizationManager {
         const select = document.createElement('select');
         select.id = 'lang-select';
         select.className = 'nav-lang-select';
+        select.setAttribute('aria-label', this.translate('language_select'));
 
         const options = [
             { code: 'en', label: 'English' },
