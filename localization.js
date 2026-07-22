@@ -365,6 +365,10 @@ const translations = {
     }
 };
 
+Object.entries(window.stageTwoTranslations || {}).forEach(([language, copy]) => {
+    if (translations[language]) Object.assign(translations[language], copy);
+});
+
 class LocalizationManager {
     constructor() {
         this.currentLang = 'en';
@@ -377,6 +381,10 @@ class LocalizationManager {
         this.currentLang = this.determineLanguage();
         this.updateContent();
         this.createLanguageSwitcher();
+    }
+
+    translate(key) {
+        return translations[this.currentLang]?.[key] || translations.en?.[key] || key;
     }
 
     determineLanguage() {
@@ -432,6 +440,10 @@ class LocalizationManager {
             }
         });
 
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+            element.setAttribute('aria-label', this.translate(element.getAttribute('data-i18n-aria-label')));
+        });
+
         // Update Meta Tags (SEO)
         if (translations[this.currentLang]) {
             // Title
@@ -477,29 +489,28 @@ class LocalizationManager {
 
         // We have 5 screenshots per language
         for (let i = 1; i <= 5; i++) {
-            const item = document.createElement('div');
+            const item = document.createElement('figure');
             item.className = 'gallery-item glass-card';
-
-            // Container for image with placeholder/loading state
-            const imgContainer = document.createElement('div');
-            imgContainer.className = 'image-placeholder';
-            imgContainer.style.background = 'none'; // Overwrite CSS placeholder
-            imgContainer.style.padding = '0';
-
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'gallery-button';
+            const picture = document.createElement('picture');
+            const source = document.createElement('source');
+            source.type = 'image/webp';
+            source.srcset = `assets/screenshots/thumbs-webp/${this.currentLang}_${i}.webp`;
             const img = document.createElement('img');
             const thumbSrc = `assets/screenshots/thumbs/${this.currentLang}_${i}.png`;
             const fullSrc = `assets/screenshots/${this.currentLang}_${i}.png`;
-
+            const caption = this.translate('gallery_screenshot').replace('{count}', i);
             img.src = thumbSrc;
-            img.alt = `Screenshot ${i}`;
-            // img.loading = 'lazy'; // Removed to fix Safari horizontal scroll issue
-
-            // Lightbox trigger
-            img.addEventListener('click', () => {
-                if (window.openLightbox) window.openLightbox(fullSrc);
-            });
-
-            item.appendChild(img);
+            img.alt = caption;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            button.setAttribute('aria-label', caption);
+            button.addEventListener('click', () => window.openLightbox?.(fullSrc, caption, button));
+            picture.append(source, img);
+            button.appendChild(picture);
+            item.appendChild(button);
             track.appendChild(item);
         }
     }

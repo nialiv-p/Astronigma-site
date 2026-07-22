@@ -107,6 +107,10 @@ def validate_manifest(manifest: dict[str, Any], report: Report) -> None:
 def validate_site(site_root: Path, manifest: dict[str, Any], report: Report, require_ga4: bool) -> None:
     index = (site_root / "index.html").read_text(encoding="utf-8")
     localization = (site_root / "localization.js").read_text(encoding="utf-8")
+    stage2_localization = (site_root / "stage2-localization.js").read_text(encoding="utf-8")
+    script = (site_root / "script.js").read_text(encoding="utf-8")
+    lights_out = (site_root / "lights-out.js").read_text(encoding="utf-8")
+    stylesheet = (site_root / "style.css").read_text(encoding="utf-8")
     analytics = (site_root / "analytics.js").read_text(encoding="utf-8")
     privacy = (site_root / "privacy.html").read_text(encoding="utf-8")
     terms = (site_root / "terms.html").read_text(encoding="utf-8")
@@ -122,17 +126,65 @@ def validate_site(site_root: Path, manifest: dict[str, Any], report: Report, req
     consent_locales = set(re.findall(r"^\s{8}([a-z]{2}): \{", consent_block, re.MULTILINE))
     report.require(set(locales) == consent_locales, "product locales and consent translations differ")
 
+    stage2_blocks = re.findall(
+        r"^    ([a-z]{2}): \{\n(.*?)(?=^    [a-z]{2}: \{|^\};)",
+        stage2_localization,
+        re.MULTILINE | re.DOTALL,
+    )
+    stage2_locales = {locale for locale, _ in stage2_blocks}
+    report.require(set(locales) == stage2_locales, "product locales and Stage 2 translation blocks differ")
+    stage2_key_sets = {
+        locale: set(re.findall(r"(?:^|,)\s*([a-z][a-z0-9_]*):", block, re.MULTILINE))
+        for locale, block in stage2_blocks
+    }
+    english_stage2_keys = stage2_key_sets.get("en", set())
+    report.require(len(english_stage2_keys) >= 50, "Stage 2 localization must contain the complete conversion-page key set")
+    for locale in locales:
+        report.require(stage2_key_sets.get(locale) == english_stage2_keys, f"Stage 2 translation keys differ for {locale}")
+
     for locale in locales:
         for number in range(1, 6):
             report.require((site_root / f"assets/screenshots/{locale}_{number}.png").is_file(), f"missing full screenshot {locale}_{number}.png")
             report.require((site_root / f"assets/screenshots/thumbs/{locale}_{number}.png").is_file(), f"missing thumbnail {locale}_{number}.png")
+            report.require((site_root / f"assets/screenshots/thumbs-webp/{locale}_{number}.webp").is_file(), f"missing WebP thumbnail {locale}_{number}.webp")
 
     platforms = manifest.get("platforms", {})
     for platform, data in platforms.items():
         store_url = data.get("store_url", "")
-        report.require(index.count(f'href="{store_url}"') == 2, f"{platform} store URL must appear exactly twice in index.html")
+        report.require(index.count(f'href="{store_url}"') == 3, f"{platform} store URL must appear exactly three times in index.html")
     report.require(index.count('data-placement="hero"') == 2, "hero must contain two instrumented store links")
-    report.require(index.count('data-placement="footer"') == 2, "download section must contain two instrumented store links")
+    report.require(index.count('data-placement="demo_reveal"') == 2, "demo reveal must contain two instrumented store links")
+    report.require(index.count('data-placement="final"') == 2, "final CTA must contain two instrumented store links")
+
+    for section_id in ("hero", "journey", "features", "collection", "gallery", "download"):
+        report.require(f'id="{section_id}"' in index, f"conversion page section is missing: {section_id}")
+    report.require('<div id="lights-out-grid"' in index, "playable Lights Out grid is missing")
+    report.require('aria-pressed' in script, "demo cells must expose aria-pressed")
+    report.require('document.hidden' in script, "starfield must pause in hidden tabs")
+    report.require("Math.min(window.devicePixelRatio || 1, 1.5)" in script, "starfield DPR must be capped")
+    report.require("prefers-reduced-motion" in script and "prefers-reduced-motion" in stylesheet, "reduced motion support is missing")
+    report.require("new Audio" in script and "ensureSounds()" in script, "lazy audio manager is missing")
+    report.require("new Audio" not in index, "audio must not be created from the initial HTML")
+    report.require("createBoardFromMask" in lights_out and "SOLUTION_MASKS" in lights_out, "solvable-mask demo engine is missing")
+
+    required_assets = [
+        "assets/images/game/constellation-key.png", "assets/images/game/constellation-key.webp",
+        "assets/images/game/calendar.png", "assets/images/game/calendar.webp",
+        "assets/images/game/missions.png", "assets/images/game/missions.webp",
+        "assets/images/game/light-shards.png", "assets/images/game/light-shards.webp",
+        "assets/images/game/lenses.png", "assets/images/game/lenses.webp",
+        "assets/fonts/Inter-Regular.woff2", "assets/fonts/Inter-Bold.woff2", "assets/fonts/Inter-LICENSE.txt",
+    ]
+    for relative_path in required_assets:
+        report.require((site_root / relative_path).is_file(), f"missing Stage 2 asset: {relative_path}")
+    report.require("fonts.googleapis.com" not in index and "fonts.gstatic.com" not in index, "external Google Fonts requests are forbidden")
+    report.require("loading = 'lazy'" in localization and "decoding = 'async'" in localization, "gallery thumbnails must be lazy and async-decoded")
+    report.require("thumbs-webp" in localization, "gallery must use WebP thumbnails")
+    report.require("assets/screenshots/${this.currentLang}_${i}.png" in localization, "lightbox full-size screenshot source is missing")
+
+    initial_files = ["index.html", "style.css", "localization.js", "stage2-localization.js", "analytics.js", "lights-out.js", "script.js", "assets/fonts/Inter-Regular.woff2", "assets/fonts/Inter-Bold.woff2"]
+    initial_bytes = sum((site_root / relative_path).stat().st_size for relative_path in initial_files)
+    report.require(initial_bytes <= 750 * 1024, f"estimated initial transfer is {initial_bytes / 1024:.1f} KiB; target is 750 KiB")
 
     count = manifest.get("constellation_count")
     report.require(str(count) in index, "index.html must contain the manifest constellation count")
@@ -144,7 +196,7 @@ def validate_site(site_root: Path, manifest: dict[str, Any], report: Report, req
     report.require("https://policies.google.com/privacy" in privacy, "Privacy must link to Google's Privacy Policy")
 
     for event in ("page_view", "language_change", "store_click", "demo_start", "demo_complete"):
-        report.require(f"'{event}'" in analytics or f"'{event}'" in (site_root / "script.js").read_text(encoding="utf-8"), f"missing analytics event contract: {event}")
+        report.require(f"'{event}'" in analytics or f"'{event}'" in script, f"missing analytics event contract: {event}")
     report.require("send_page_view: false" in analytics, "GA4 automatic page_view must be disabled")
     report.require("astronigma_analytics_consent_v1" in analytics, "versioned analytics consent key is missing")
     report.require("googletagmanager.com/gtag/js" not in index, "Google Tag must not load directly from index.html")
