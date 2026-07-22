@@ -505,7 +505,8 @@ class LocalizationManager {
     }
 
     setLanguage(lang) {
-        if (this.supportedLangs.includes(lang)) {
+        if (this.supportedLangs.includes(lang) && lang !== this.currentLang) {
+            const previousLanguage = this.currentLang;
             this.currentLang = lang;
             localStorage.setItem('astronigma_lang', lang);
 
@@ -515,6 +516,9 @@ class LocalizationManager {
             window.history.pushState({}, '', url);
 
             this.updateContent();
+            window.dispatchEvent(new CustomEvent('astronigma:languagechange', {
+                detail: { previousLanguage, language: lang }
+            }));
         }
     }
 

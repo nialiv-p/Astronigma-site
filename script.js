@@ -273,6 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Hero Interactive Grid (Lights Out)
     const gridContainer = document.getElementById('lights-out-grid');
     const gridSize = 5;
+    let demoMoves = 0;
+    let demoStartedAt = null;
+    let demoCompleted = false;
 
     // Create Grid
     if (gridContainer) {
@@ -281,6 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cell.classList.add('grid-cell');
             cell.dataset.index = i;
             cell.addEventListener('click', () => {
+                if (demoStartedAt === null) {
+                    demoStartedAt = performance.now();
+                    window.astronigmaAnalytics?.track('demo_start');
+                }
+                demoMoves += 1;
                 toggleLights(i);
                 audio.play('tap'); // Play sound
             });
@@ -314,6 +322,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function randomizeGrid() {
+        demoMoves = 0;
+        demoStartedAt = null;
+        demoCompleted = false;
+
         // Simulate clicks to ensure solvable state
         for (let i = 0; i < 10; i++) {
             const randomIdx = Math.floor(Math.random() * (gridSize * gridSize));
@@ -333,7 +345,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const cells = document.querySelectorAll('.grid-cell');
         const activeCount = Array.from(cells).filter(c => c.classList.contains('active')).length;
 
-        if (activeCount === 0) {
+        if (activeCount === 0 && !demoCompleted) {
+            demoCompleted = true;
+            window.astronigmaAnalytics?.track('demo_complete', {
+                moves_count: demoMoves,
+                duration_ms: demoStartedAt === null ? 0 : Math.round(performance.now() - demoStartedAt)
+            });
+
             // Win animation
             gridContainer.style.boxShadow = '0 0 50px var(--primary-color)';
             audio.play('win'); // Play win sound

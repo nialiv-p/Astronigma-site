@@ -266,7 +266,7 @@
     const CONTACT = 'nikitaivanov95@gmail.com';
     const LEGAL_NAME = 'Nikita Ivanov';
     const LINKS = {
-      privacy: './index.html',
+      privacy: './privacy.html',
       gameanalytics: 'https://gameanalytics.com/privacy',
       firebase: 'https://firebase.google.com/support/privacy',
       appodeal: 'https://www.appodeal.com/privacy-policy/',
@@ -567,7 +567,11 @@
       wrap.id = id;
       wrap.style.marginBottom = '1.25rem';
       const hh = document.createElement('h2'); hh.textContent = h; wrap.appendChild(hh);
-      (ps || []).forEach(p => { const el = document.createElement('p'); el.innerHTML = p; wrap.appendChild(el); });
+      (ps || []).forEach(p => {
+        const el = document.createElement('p');
+        el.innerHTML = p.replaceAll('${LINKS.privacy}', LINKS.privacy);
+        wrap.appendChild(el);
+      });
       return wrap;
     }
 

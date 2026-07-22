@@ -99,7 +99,7 @@
                     <p class="hero-subtitle" data-i18n="hero_subtitle">Unravel the Cosmos. Solve the Void.</p>
                     <div class="cta-group">
                         <a href="https://apps.apple.com/app/id6751862462"
-                            class="store-btn">
+                            class="store-btn" data-store="app_store" data-placement="hero">
                             <img src="assets/images/logo-apple.svg" alt="Apple Logo" class="store-icon" width="28"
                                 height="28">
                             <div class="store-text">
@@ -108,7 +108,7 @@
                             </div>
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild"
-                            class="store-btn">
+                            class="store-btn" data-store="google_play" data-placement="hero">
                             <img src="assets/images/logo-google.svg" alt="Google Play Logo" class="store-icon"
                                 width="28" height="28">
                             <div class="store-text">
@@ -181,7 +181,8 @@
                 </div>
                 <p data-i18n="cta_subtitle">Available now on iOS and Android.</p>
                 <div class="cta-group justify-center">
-                    <a href="https://apps.apple.com/app/id6751862462" class="store-btn">
+                    <a href="https://apps.apple.com/app/id6751862462" class="store-btn" data-store="app_store"
+                        data-placement="footer">
                         <img src="assets/images/logo-apple.svg" alt="Apple Logo" class="store-icon">
                         <div class="store-text">
                             <span class="small-text" data-i18n="store_apple_small">Download on the</span>
@@ -189,7 +190,7 @@
                         </div>
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild"
-                        class="store-btn">
+                        class="store-btn" data-store="google_play" data-placement="footer">
                         <img src="assets/images/logo-google.svg" alt="Google Play Logo" class="store-icon">
                         <div class="store-text">
                             <span class="small-text" data-i18n="store_google_small">GET IT ON</span>
@@ -209,6 +210,7 @@
                     <a href="privacy.html" target="_blank" data-i18n="footer_privacy">Privacy Policy</a>
                     <a href="terms.html" target="_blank" data-i18n="footer_terms">Terms of Use</a>
                     <a href="mailto:nikitaivanov95@gmail.com" data-i18n="footer_support">Support</a>
+                    <button type="button" id="analytics-settings" class="footer-link-button">Analytics settings</button>
                 </div>
                 <div class="socials">
                     <a href="https://www.instagram.com/nialiv.games/" target="_blank" aria-label="Instagram">
@@ -231,7 +233,21 @@
         <span id="lightbox-close" class="lightbox-close">&times;</span>
     </div>
 
+    <section id="analytics-consent" class="analytics-consent" role="dialog" aria-modal="false"
+        aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-description" hidden>
+        <div class="analytics-consent-copy">
+            <h2 id="analytics-consent-title">Help improve Astronigma</h2>
+            <p id="analytics-consent-description">With your permission, we use Google Analytics to understand visits
+                and interactions on this website. Analytics stays off until you accept.</p>
+        </div>
+        <div class="analytics-consent-actions">
+            <button type="button" id="analytics-consent-reject" class="consent-button">Reject</button>
+            <button type="button" id="analytics-consent-accept" class="consent-button">Accept</button>
+        </div>
+    </section>
+
     <script src="localization.js"></script>
+    <script src="analytics.js"></script>
     <script src="script.js"></script>
 </body>
 
