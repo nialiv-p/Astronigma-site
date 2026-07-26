@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Astronigma: Star Logic Puzzle</title>
-    <meta name="description" content="Tap a cell to change a cross, solve calm 5×5 puzzles, and reveal 100 constellations.">
+    <meta name="description" content="Flip grid cells, solve calm 5×5 logic puzzles, and reveal 100 constellations.">
     <meta name="theme-color" content="#070b18">
-    <meta property="og:title" content="Astronigma: Tap the cross. Reveal the cosmos.">
+    <meta property="og:title" content="Astronigma: Tap a cell. Reveal the cosmos.">
     <meta property="og:description" content="Solve calm 5×5 logic puzzles, collect Light Shards, and reveal 100 constellations.">
     <meta property="og:image" content="https://astronigma.net/assets/images/og_image.png">
     <meta property="og:url" content="https://astronigma.net">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Astronigma: Tap the cross. Reveal the cosmos.">
+    <meta name="twitter:title" content="Astronigma: Tap a cell. Reveal the cosmos.">
     <meta name="twitter:description" content="Solve calm 5×5 logic puzzles and reveal 100 constellations.">
     <meta name="twitter:image" content="https://astronigma.net/assets/images/og_image.png">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -28,7 +28,7 @@
       "operatingSystem": "iOS, Android",
       "applicationCategory": "GameApplication",
       "genre": "Puzzle",
-      "description": "Tap a cell to change a cross, solve calm 5×5 puzzles, and reveal 100 constellations.",
+      "description": "Flip grid cells, solve calm 5×5 logic puzzles, and reveal 100 constellations.",
       "image": "https://astronigma.net/assets/images/og_image.png",
       "installUrl": [
         "https://apps.apple.com/app/id6751862462",
@@ -70,9 +70,9 @@
         <section id="hero" class="hero-section">
             <div class="container hero-layout">
                 <div class="hero-copy">
-                    <p class="eyebrow" data-i18n="hero_eyebrow">Calm 5×5 cross-toggle puzzle</p>
-                    <h1 data-i18n="hero_title_stage2">Tap the cross.<br>Reveal the cosmos.</h1>
-                    <p class="hero-lead" data-i18n="hero_description">Each tap changes a cross of lights. Clear the grid at your own pace, earn Light Shards, tune seven lenses, and uncover one of 100 constellations.</p>
+                    <p class="eyebrow" data-i18n="hero_eyebrow">Calm 5×5 brain teasers</p>
+                    <h1 data-i18n="hero_title_stage2">Tap a cell.<br>Reveal the cosmos.</h1>
+                    <p class="hero-lead" data-i18n="hero_description">Tap a cell to switch it and its adjacent cells. Clear all lights, collect Light Shards, adjust seven telescope lenses, and reveal one of 100 constellations.</p>
                     <ul class="hero-facts" aria-label="Game highlights">
                         <li data-i18n="hero_fact_timer">No timer</li>
                         <li data-i18n="hero_fact_constellations">100 constellations</li>
@@ -96,8 +96,8 @@
                         <span id="demo-moves" aria-live="polite">0 moves</span>
                     </div>
                     <div id="demo-play" class="demo-play">
-                        <h2 id="demo-title" data-i18n="demo_title">Turn every light off</h2>
-                        <p id="demo-instruction" data-i18n="demo_instruction">Choose a cell. It and its orthogonal neighbours will change.</p>
+                        <h2 id="demo-title" data-i18n="demo_title">Clear all lights</h2>
+                        <p id="demo-instruction" data-i18n="demo_instruction">Tap a cell — it and its adjacent cells will switch their state.</p>
                         <div id="lights-out-grid" class="lights-out-grid" role="group" aria-describedby="demo-instruction"></div>
                         <div class="demo-actions">
                             <button id="demo-reset" type="button" class="text-button" data-i18n="demo_reset">Reset board</button>
@@ -113,7 +113,7 @@
                         </div>
                         <p class="eyebrow" data-i18n="demo_reveal_eyebrow">Constellation revealed</p>
                         <h2 data-i18n="demo_reveal_title">Key of Dreams</h2>
-                        <p data-i18n="demo_reveal_lore">A quiet key said to unlock the border between memory and dream.</p>
+                        <p data-i18n="demo_reveal_lore">The Key of Dreams was said to unlock hidden celestial paths.</p>
                         <button id="demo-new-game" type="button" class="btn secondary" data-i18n="demo_play_again">Try another puzzle</button>
                         <div class="store-row compact">
                             <a href="https://apps.apple.com/app/id6751862462" class="store-btn" data-store="app_store" data-placement="demo_reveal"><img src="assets/images/logo-apple.svg" alt="" width="22" height="22"><span><small data-i18n="store_apple_small">Download on the</small><strong data-i18n="store_apple_large">App Store</strong></span></a>
@@ -127,27 +127,27 @@
         <section id="journey" class="section journey-section">
             <div class="container">
                 <div class="section-heading">
-                    <p class="eyebrow" data-i18n="journey_eyebrow">One complete celestial loop</p>
+                    <p class="eyebrow" data-i18n="journey_eyebrow">From puzzle to constellation</p>
                     <h2 data-i18n="how_to_play_title">How it works</h2>
-                    <p data-i18n="journey_intro">Every solved board moves your telescope closer to a new story in the sky.</p>
+                    <p data-i18n="journey_intro">Solve puzzles, adjust seven lenses, and capture a new constellation.</p>
                 </div>
                 <ol class="journey-grid">
-                    <li class="journey-card"><span class="step-number">01</span><div class="mini-grid" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on core"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div><h3 data-i18n="journey_solve_title">Solve the grid</h3><p data-i18n="journey_solve_body">One tap changes the selected light and its four neighbours.</p></li>
-                    <li class="journey-card"><span class="step-number">02</span><picture><source srcset="assets/images/game/light-shards.webp" type="image/webp"><img src="assets/images/game/light-shards.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_shards_title">Collect Light Shards</h3><p data-i18n="journey_shards_body">A clear board rewards the energy that powers the telescope.</p></li>
-                    <li class="journey-card"><span class="step-number">03</span><picture><source srcset="assets/images/game/lenses.webp" type="image/webp"><img src="assets/images/game/lenses.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_lenses_title">Tune seven lenses</h3><p data-i18n="journey_lenses_body">Use seven lens settings to bring the hidden pattern into focus.</p></li>
-                    <li class="journey-card"><span class="step-number">04</span><picture><source srcset="assets/images/game/constellation-key.webp" type="image/webp"><img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_reveal_title">Reveal its story</h3><p data-i18n="journey_reveal_body">Add a constellation and its lore to your celestial archive.</p></li>
+                    <li class="journey-card"><span class="step-number">01</span><div class="mini-grid" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on core"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div><h3 data-i18n="journey_solve_title">Solve the puzzle</h3><p data-i18n="journey_solve_body">Tap a cell — it and its adjacent cells will switch their state.</p></li>
+                    <li class="journey-card"><span class="step-number">02</span><picture><source srcset="assets/images/game/light-shards.webp" type="image/webp"><img src="assets/images/game/light-shards.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_shards_title">Collect Light Shards</h3><p data-i18n="journey_shards_body">Solve puzzles to collect Light Shards.</p></li>
+                    <li class="journey-card"><span class="step-number">03</span><picture><source srcset="assets/images/game/lenses.webp" type="image/webp"><img src="assets/images/game/lenses.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_lenses_title">Adjust seven lenses</h3><p data-i18n="journey_lenses_body">Each solved puzzle helps adjust one lens.</p></li>
+                    <li class="journey-card"><span class="step-number">04</span><picture><source srcset="assets/images/game/constellation-key.webp" type="image/webp"><img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_reveal_title">Reveal a constellation</h3><p data-i18n="journey_reveal_body">Add its illustrated story to your Constellation archive.</p></li>
                 </ol>
             </div>
         </section>
 
         <section id="features" class="section features-section">
             <div class="container">
-                <div class="section-heading"><p class="eyebrow" data-i18n="features_eyebrow">A puzzle ritual for every day</p><h2 data-i18n="features_title">Play your way</h2></div>
+                <div class="section-heading"><p class="eyebrow" data-i18n="features_eyebrow">New goals every day</p><h2 data-i18n="features_title">Play your way</h2></div>
                 <div class="features-grid">
-                    <article class="feature-card calm-card"><div class="feature-symbol" aria-hidden="true">5×5</div><h3 data-i18n="feature_calm_title">Calm logic, no timer</h3><p data-i18n="feature_calm_body">Read the cross pattern and think ahead without a countdown.</p></article>
-                        <article class="feature-card"><picture><source srcset="assets/images/game/daily-challenge.webp" type="image/webp"><img src="assets/images/game/daily-challenge.png" alt="" width="114" height="128" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_daily_title">Daily Challenge</h3><p data-i18n="feature_daily_body">A fresh five-stage route through the stars every day.</p></article>
-                    <article class="feature-card"><picture><source srcset="assets/images/game/missions.webp" type="image/webp"><img src="assets/images/game/missions.png" alt="" width="72" height="72" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_missions_title">Seasonal Missions</h3><p data-i18n="feature_missions_body">Complete weekly goals, reach milestones, and claim rewards.</p></article>
-                    <article class="feature-card"><div class="feature-symbol" aria-hidden="true">∞</div><h3 data-i18n="feature_practice_title">Practice anywhere</h3><p data-i18n="feature_practice_body">Sharpen the core puzzle in Practice. Core gameplay works offline.</p></article>
+                    <article class="feature-card calm-card"><div class="feature-symbol" aria-hidden="true">5×5</div><h3 data-i18n="feature_calm_title">No timer—think at your own pace</h3><p data-i18n="feature_calm_body">Plan each move and clear the grid within the move limit.</p></article>
+                        <article class="feature-card"><picture><source srcset="assets/images/game/daily-challenge.webp" type="image/webp"><img src="assets/images/game/daily-challenge.png" alt="" width="114" height="128" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_daily_title">Daily Challenge</h3><p data-i18n="feature_daily_body">Every day has five stages. Clear all five to complete the day.</p></article>
+                    <article class="feature-card"><picture><source srcset="assets/images/game/missions.webp" type="image/webp"><img src="assets/images/game/missions.png" alt="" width="72" height="72" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_missions_title">Missions</h3><p data-i18n="feature_missions_body">Complete goals as you play, earn Mission points, and claim milestone rewards.</p></article>
+                    <article class="feature-card"><div class="feature-symbol" aria-hidden="true">∞</div><h3 data-i18n="feature_practice_title">Practice</h3><p data-i18n="feature_practice_body">Keep solving without rewards when you run out of Hearts. Core puzzles work offline.</p></article>
                 </div>
             </div>
         </section>
@@ -155,13 +155,13 @@
         <section id="collection" class="section collection-section">
             <div class="container collection-layout">
                 <div class="collection-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><picture><source srcset="assets/images/game/constellation-key.webp" type="image/webp"><img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" loading="lazy" decoding="async"></picture></div>
-                <div class="collection-copy"><p class="eyebrow" data-i18n="collection_eyebrow">A celestial archive to complete</p><h2 data-i18n="collection_title">100 constellations. 100 stories.</h2><p data-i18n="collection_body">Restore the telescope, reveal figures like the Key of Dreams, and keep every discovery in your collection.</p><div class="collection-stat"><strong>100</strong><span data-i18n="collection_stat">constellations to reveal</span></div></div>
+                <div class="collection-copy"><p class="eyebrow" data-i18n="collection_eyebrow">Constellation archive</p><h2 data-i18n="collection_title">100 constellations. 100 stories.</h2><p data-i18n="collection_body">Rebuild your telescope, reveal the Key of Dreams, and add every illustrated story to your archive.</p><div class="collection-stat"><strong>100</strong><span data-i18n="collection_stat">constellations to reveal</span></div></div>
             </div>
         </section>
 
         <section id="gallery" class="section gallery-section">
             <div class="container">
-                <div class="section-heading"><p class="eyebrow" data-i18n="gallery_eyebrow">Real in-game screens</p><h2 data-i18n="gallery_title">Gallery</h2><p data-i18n="gallery_intro">From the first grid to a growing archive of celestial stories.</p></div>
+                <div class="section-heading"><p class="eyebrow" data-i18n="gallery_eyebrow">In-game screenshots</p><h2 data-i18n="gallery_title">Gallery</h2><p data-i18n="gallery_intro">From the first grid to a growing archive of celestial stories.</p></div>
                 <div class="gallery-track" id="gallery-track"></div>
             </div>
         </section>
@@ -202,8 +202,8 @@
         <div class="analytics-consent-actions"><button type="button" id="analytics-consent-reject" class="consent-button">Reject</button><button type="button" id="analytics-consent-accept" class="consent-button">Accept</button></div>
     </section>
 
-    <script src="stage2-localization.js?v=stage2" defer></script>
-    <script src="localization.js?v=stage2" defer></script>
+    <script src="stage2-localization.js?v=stage3-copy" defer></script>
+    <script src="localization.js?v=stage3-copy" defer></script>
     <script src="lights-out.js?v=stage2" defer></script>
     <script src="analytics.js?v=stage2" defer></script>
     <script src="script.js?v=stage2" defer></script>

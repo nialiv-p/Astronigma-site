@@ -39,6 +39,21 @@ EXPECTED_ASO_FIELDS = {
     "Description",
     "Release Notes",
 }
+EXPORT_LOCALE_COLUMNS = {
+    "en": "English(en)",
+    "ru": "Russian(ru)",
+    "sr": "Serbian (Latin)(sr-Latn)",
+    "es": "Spanish(es)",
+    "pt": "Portuguese (Brazil)(pt-BR)",
+    "de": "German(de)",
+    "fr": "French(fr)",
+    "ja": "Japanese(ja)",
+    "ko": "Korean(ko)",
+    "tr": "Turkish(tr)",
+    "th": "Thai(th)",
+    "id": "Indonesian(id)",
+    "zh": "Chinese (Simplified)(zh-CN)",
+}
 
 
 @dataclass
@@ -126,9 +141,10 @@ def validate_site(site_root: Path, manifest: dict[str, Any], report: Report, req
     consent_locales = set(re.findall(r"^\s{8}([a-z]{2}): \{", consent_block, re.MULTILINE))
     report.require(set(locales) == consent_locales, "product locales and consent translations differ")
 
+    stage2_base_localization = stage2_localization.split("// Product copy aligned", 1)[0]
     stage2_blocks = re.findall(
         r"^    ([a-z]{2}): \{\n(.*?)(?=^    [a-z]{2}: \{|^\};)",
-        stage2_localization,
+        stage2_base_localization,
         re.MULTILINE | re.DOTALL,
     )
     stage2_locales = {locale for locale, _ in stage2_blocks}
@@ -257,6 +273,50 @@ def validate_aso(aso_path: Path, manifest: dict[str, Any], report: Report) -> No
         report.require(count in description.get(locale, ""), f"ASO Description/{locale} does not mention {count} constellations")
 
 
+def validate_localization_exports(exports_root: Path, site_root: Path, report: Report) -> None:
+    term_sources = {
+        "demo_reveal_title": ("Saga.csv", "constellation1.title"),
+        "feature_daily_title": ("DailyChallenge.csv", "info.popup_title"),
+        "feature_missions_title": ("Missions.csv", "popup.title"),
+        "feature_practice_title": ("Saga.csv", "noHearts.practice"),
+        "collection_eyebrow": ("Saga.csv", "collection.title"),
+    }
+    source_rows: dict[tuple[str, str], dict[str, str]] = {}
+    for file_name in sorted({file_name for file_name, _ in term_sources.values()}):
+        path = exports_root / file_name
+        try:
+            with path.open(encoding="utf-8-sig", newline="") as handle:
+                rows = list(csv.DictReader(handle))
+        except OSError as error:
+            report.errors.append(f"Cannot read localization export {path}: {error}")
+            continue
+        for row in rows:
+            source_rows[(file_name, row.get("Key", ""))] = row
+
+    stage2_source = (site_root / "stage2-localization.js").read_text(encoding="utf-8")
+    aligned_marker = "const alignedProductCopy = {"
+    report.require(aligned_marker in stage2_source, "aligned product-copy block is missing")
+    if aligned_marker not in stage2_source:
+        return
+    aligned_source = stage2_source.split(aligned_marker, 1)[1].split("Object.entries(alignedProductCopy)", 1)[0]
+    locale_blocks = dict(re.findall(
+        r"^    ([a-z]{2}): \{\n(.*?)(?=^    [a-z]{2}: \{|^\};)",
+        aligned_source,
+        re.MULTILINE | re.DOTALL,
+    ))
+
+    for locale, column in EXPORT_LOCALE_COLUMNS.items():
+        block = locale_blocks.get(locale, "")
+        report.require(bool(block), f"aligned product-copy block is missing locale {locale}")
+        for site_key, source in term_sources.items():
+            match = re.search(rf"(?:^|,)\s*{re.escape(site_key)}:'([^']*)'", block, re.MULTILINE)
+            actual = match.group(1) if match else None
+            expected = source_rows.get(source, {}).get(column)
+            report.require(expected is not None, f"missing {source[1]} in {source[0]} for {locale}")
+            if expected is not None:
+                report.require(actual == expected, f"{locale}.{site_key} differs from {source[0]}:{source[1]}")
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     default_root = Path(__file__).resolve().parents[1]
@@ -264,6 +324,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--manifest", type=Path, help="Override product.json (useful for validation tests)")
     parser.add_argument("--unity-project", type=Path, help="Validate version, chapters, and release features against Unity")
     parser.add_argument("--aso-metadata", type=Path, help="Validate locales and product facts against ASO_Metadata.csv")
+    parser.add_argument("--localization-exports", type=Path, help="Validate public product terms against Unity Localization CSV exports")
     parser.add_argument("--require-ga4", action="store_true", help="Fail if GA4_MEASUREMENT_ID is not configured")
     return parser.parse_args()
 
@@ -281,6 +342,8 @@ def main() -> int:
             validate_unity(args.unity_project.resolve(), manifest, report)
         if args.aso_metadata:
             validate_aso(args.aso_metadata.resolve(), manifest, report)
+        if args.localization_exports:
+            validate_localization_exports(args.localization_exports.resolve(), site_root, report)
 
     for warning in report.warnings:
         print(f"WARNING: {warning}")

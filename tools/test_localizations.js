@@ -21,4 +21,29 @@ for (const locale of locales) {
     }
     if (locale !== 'en' && identicalEnglishValues > 3) throw new Error(`${locale} contains too much English fallback copy.`);
 }
+
+const canonicalProductTerms = {
+    en: ['Key of Dreams', 'Daily Challenge', 'Missions', 'Practice', 'Constellation archive'],
+    ru: ['Ключ Снов', 'Ежедневное испытание', 'Миссии', 'Тренировка', 'Архив созвездий'],
+    sr: ['Ključ Snova', 'Dnevni izazov', 'Misije', 'Trening', 'Arhiva sazvežđa'],
+    es: ['Llave de los Sueños', 'Reto Diario', 'Misiones', 'Entrenamiento', 'Archivo de constelaciones'],
+    pt: ['Chave dos Sonhos', 'Desafio Diário', 'Missões', 'Treinamento', 'Arquivo de constelações'],
+    de: ['Schlüssel der Träume', 'Tägliche Herausforderung', 'Missionen', 'Training', 'Sternbildarchiv'],
+    fr: ['Clé des Rêves', 'Défi Quotidien', 'Missions', 'Entraînement', 'Archive des constellations'],
+    ja: ['夢の鍵', 'デイリーチャレンジ', 'ミッション', 'トレーニング', '星座アーカイブ'],
+    ko: ['꿈의 열쇠', '데일리 챌린지', '미션', '연습 모드', '별자리 아카이브'],
+    tr: ['Rüyaların Anahtarı', 'Günlük Görev', 'Görevler', 'Antrenman', 'Takımyıldız arşivi'],
+    th: ['กุญแจแห่งความฝัน', 'ภารกิจประจำวัน', 'ภารกิจ', 'ฝึกฝน', 'คลังกลุ่มดาว'],
+    id: ['Kunci Mimpi', 'Tantangan Harian', 'Misi', 'Latihan', 'Arsip rasi bintang'],
+    zh: ['梦之钥匙', '每日挑战', '任务', '训练模式', '星座档案'],
+};
+const canonicalKeys = ['demo_reveal_title', 'feature_daily_title', 'feature_missions_title', 'feature_practice_title', 'collection_eyebrow'];
+for (const locale of locales) {
+    canonicalKeys.forEach((key, index) => {
+        const expected = canonicalProductTerms[locale][index];
+        if (translations[locale][key] !== expected) {
+            throw new Error(`${locale}.${key} must match the in-game term "${expected}".`);
+        }
+    });
+}
 console.log(`Localization test passed: ${locales.length} locales × ${englishKeys.length} Stage 2 keys.`);
