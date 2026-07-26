@@ -1,387 +1,250 @@
 document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
 
-    // Header Scroll Effect
-    const header = document.querySelector('.main-header');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('noscroll'); // Optional: prevent body scroll
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a, .nav-links button').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.classList.remove('noscroll');
-            });
-        });
-    }
-
-    // Smooth Scroll for Anchors
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-
-            // Handle "Back to Top" or empty links
-            if (href === '#') {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                return;
-            }
-
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Intersection Observer for Reveal on Scroll
-    const observerOptions = {
-        threshold: 0.1
+    const t = (key, replacements = {}) => {
+        const value = window.localizationManager?.translate(key) || key;
+        return Object.entries(replacements).reduce((copy, [name, replacement]) => copy.replace(`{${name}}`, replacement), value);
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Add reveal class to elements you want to animate
-    const animatedElements = document.querySelectorAll('.about-text, .visual-card, .section-header');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
+    const header = document.querySelector('.main-header');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const closeMenu = () => {
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        menuToggle?.setAttribute('aria-label', t('menu_open'));
+        navLinks?.classList.remove('active');
+        document.body.classList.remove('noscroll');
+    };
+    window.addEventListener('scroll', () => header?.classList.toggle('scrolled', window.scrollY > 28), { passive: true });
+    menuToggle?.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') !== 'true';
+        menuToggle.setAttribute('aria-expanded', String(expanded));
+        menuToggle.setAttribute('aria-label', t(expanded ? 'menu_close' : 'menu_open'));
+        navLinks?.classList.toggle('active', expanded);
+        document.body.classList.toggle('noscroll', expanded);
+    });
+    navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') {
+            closeMenu();
+            menuToggle.focus();
+        }
     });
 
-    // Handle Reveal Logic
-    setInterval(() => {
-        document.querySelectorAll('.visible').forEach(el => {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        });
-    }, 100);
-
-    /* =========================================
-       IDENTITY POLISH FEATURES
-       ========================================= */
-
-    // 1. Grid-based Starfield (Unity Shader Port)
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-
-    // Config matches Unity "StarfieldUI" & MainScene
-    const DENSITY = 16; // 8x8 grid
-    const SPEED = 5;   // px per second
-    const STAR_SIZE_BASE = 1;
-    const TWINKLE_STRENGTH = 0.5;
-    const STAR_COLOR = '#66d9ff'; // Light Cyan tint
-
-    let width, height;
-    let startTime = performance.now();
-
-    function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-    }
-
-    // Shader-like mock hash function
-    function hash(x, y) {
-        const dot = x * 12.9898 + y * 78.233;
-        const sin = Math.sin(dot) * 43758.5453;
-        return Math.abs(sin - Math.floor(sin));
-    }
-
-    function animateStars() {
-        const now = performance.now();
-        const t = (now - startTime) / 1000; // seconds
-
-        ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = STAR_COLOR;
-
-        // Current scroll offset in pixels
-        const scrollX = t * SPEED;
-        const scrollY = t * SPEED;
-
-        // Cell dimensions
-        const cellW = width / DENSITY;
-        const cellH = height / DENSITY;
-
-        // Determine visible cell range (buffer +1 to cover edges)
-        const startCol = Math.floor(scrollX / cellW) - 1;
-        const startRow = Math.floor(scrollY / cellH) - 1;
-        // We draw DENSITY + 2 rows/cols to ensure coverage during scroll
-        const endCol = startCol + DENSITY + 2;
-        const endRow = startRow + DENSITY + 2;
-
-        for (let col = startCol; col <= endCol; col++) {
-            for (let row = startRow; row <= endRow; row++) {
-
-                // 1. Random position in cell (Deterministic based on col/row index)
-                const randX = hash(col, row);
-                const randY = hash(row, col + 50); // different seed for Y
-
-                // Local position in cell [0..1]
-                const posX = randX;
-                const posY = randY;
-
-                // Screen position
-                // (Index * Size) - GlobalScroll
-                const screenX = (col * cellW) + (posX * cellW) - scrollX;
-                const screenY = (row * cellH) + (posY * cellH) - scrollY;
-
-                // 2. Twinkle Logic
-                // Random phase per star
-                const seedTwinkle = hash(col + 10, row - 10);
-                const freq = 0.8 + 1.4 * seedTwinkle; // 0.8 .. 2.2
-                const phase = seedTwinkle * 6.28;
-
-                // Sine wave 0..1
-                const sine = 0.5 + 0.5 * Math.sin(t * freq + phase);
-                const alphaBase = 1.0 - TWINKLE_STRENGTH;
-                const opacity = alphaBase + (sine * TWINKLE_STRENGTH); // 0.75 .. 1.0 range usually
-
-                // Draw Star
-                // Softness is simulated by globalAlpha or gradient, here simple circle
-                ctx.globalAlpha = opacity;
-                ctx.beginPath();
-                // Size variation
-                const sizeMod = 0.8 + 0.4 * hash(col * row, col);
-                ctx.arc(screenX, screenY, STAR_SIZE_BASE * sizeMod, 0, Math.PI * 2);
-                ctx.fill();
-            }
+    class Starfield {
+        constructor(canvas) {
+            this.canvas = canvas;
+            this.context = canvas?.getContext('2d');
+            this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            this.running = false;
+            this.startedAt = performance.now();
+            if (!this.context || this.reducedMotion) return;
+            this.resize = this.resize.bind(this);
+            this.frame = this.frame.bind(this);
+            window.addEventListener('resize', this.resize, { passive: true });
+            document.addEventListener('visibilitychange', () => document.hidden ? this.stop() : this.start());
+            this.resize();
+            this.start();
         }
-
-        requestAnimationFrame(animateStars);
+        resize() {
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            this.width = window.innerWidth;
+            this.height = window.innerHeight;
+            this.canvas.width = Math.floor(this.width * dpr);
+            this.canvas.height = Math.floor(this.height * dpr);
+            this.canvas.style.width = `${this.width}px`;
+            this.canvas.style.height = `${this.height}px`;
+            this.context.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        hash(x, y) { const value = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453; return Math.abs(value - Math.floor(value)); }
+        start() { if (this.running || document.hidden) return; this.running = true; this.animationFrame = requestAnimationFrame(this.frame); }
+        stop() { this.running = false; cancelAnimationFrame(this.animationFrame); }
+        frame(now) {
+            if (!this.running) return;
+            const context = this.context;
+            const time = (now - this.startedAt) / 1000;
+            context.clearRect(0, 0, this.width, this.height);
+            context.fillStyle = '#79e9ef';
+            const columns = Math.max(10, Math.ceil(this.width / 90));
+            const rows = Math.max(8, Math.ceil(this.height / 90));
+            const cellWidth = this.width / columns;
+            const cellHeight = this.height / rows;
+            for (let column = -1; column <= columns; column += 1) {
+                for (let row = -1; row <= rows; row += 1) {
+                    const x = column * cellWidth + this.hash(column, row) * cellWidth;
+                    const y = (row * cellHeight + this.hash(row, column + 31) * cellHeight + time * 3) % (this.height + cellHeight) - cellHeight;
+                    context.globalAlpha = .28 + .48 * (.5 + .5 * Math.sin(time + this.hash(column + 9, row) * 8));
+                    context.beginPath();
+                    context.arc(x, y, .55 + this.hash(row, column) * .8, 0, Math.PI * 2);
+                    context.fill();
+                }
+            }
+            context.globalAlpha = 1;
+            this.animationFrame = requestAnimationFrame(this.frame);
+        }
     }
-
-    window.addEventListener('resize', resize);
-    resize();
-    animateStars();
-
-    /* =========================================
-       AUDIO INTEGRATION
-       ========================================= */
+    new Starfield(document.getElementById('starfield'));
 
     class AudioManager {
         constructor() {
-            this.muted = localStorage.getItem('astronigma_muted') === 'true';
-            this.sounds = {
-                tap: new Audio('assets/audio/tap.wav'),
-                click: new Audio('assets/audio/click.wav'),
-                win: new Audio('assets/audio/win.wav'),
-                reveal: new Audio('assets/audio/reveal.wav')
-            };
-
-            // Preload and volume
-            Object.values(this.sounds).forEach(s => {
-                s.volume = 0.4;
-                s.load();
-            });
-            this.sounds.tap.volume = 0.6; // Slightly louder tap
-
-            this.initUI();
-
-            // Play reveal sound on load if allowed (usually blocked by browser, but we try)
-            if (!this.muted) {
-                // Browsers block autoplay, so this might not work without interaction first
-                // We'll leave it for the first interaction instead or just skip
-            }
-        }
-
-        initUI() {
-            const toggleBtn = document.getElementById('sound-toggle');
-            if (!toggleBtn) return;
-
-            this.udpateIcon();
-
-            toggleBtn.addEventListener('click', () => {
-                this.muted = !this.muted;
-                localStorage.setItem('astronigma_muted', this.muted);
-                this.udpateIcon();
-
-                if (!this.muted) {
-                    this.play('click');
-                }
-            });
-
-            // UI Button Clicks
-            document.querySelectorAll('a, button').forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    // Subtle hover click or maybe nothing to avoid annoyance
-                });
-
-                el.addEventListener('click', () => {
-                    if (el.id !== 'sound-toggle') this.play('click');
-                });
+            this.enabled = localStorage.getItem('astronigma_sound_enabled') === 'true';
+            this.sounds = null;
+            this.toggle = document.getElementById('sound-toggle');
+            this.render();
+            this.toggle?.addEventListener('click', () => {
+                this.enabled = !this.enabled;
+                localStorage.setItem('astronigma_sound_enabled', String(this.enabled));
+                if (this.enabled) { this.ensureSounds(); this.play('click'); }
+                this.render();
             });
         }
-
-        udpateIcon() {
-            const onIcon = document.querySelector('.icon-sound-on');
-            const offIcon = document.querySelector('.icon-sound-off');
-
-            if (this.muted) {
-                onIcon.classList.add('hidden');
-                offIcon.classList.remove('hidden');
-            } else {
-                onIcon.classList.remove('hidden');
-                offIcon.classList.add('hidden');
-            }
+        ensureSounds() {
+            if (this.sounds) return;
+            this.sounds = Object.fromEntries(['tap', 'click', 'win', 'reveal'].map(name => [name, new Audio(`assets/audio/${name}.wav`)]));
+            Object.values(this.sounds).forEach(sound => { sound.preload = 'none'; sound.volume = .38; });
         }
-
-        play(soundName) {
-            if (this.muted || !this.sounds[soundName]) return;
-
-            // Clone/Reset to allow rapid overlapping playback (especially for grid)
-            const sound = this.sounds[soundName].cloneNode();
-            sound.volume = this.sounds[soundName].volume;
-            sound.play().catch(e => console.log('Audio playback prevented:', e));
+        play(name) {
+            if (!this.enabled) return;
+            this.ensureSounds();
+            const sound = this.sounds[name]?.cloneNode();
+            if (!sound) return;
+            sound.volume = name === 'tap' ? .55 : .38;
+            sound.play().catch(() => {});
+        }
+        render() {
+            if (!this.toggle) return;
+            this.toggle.setAttribute('aria-pressed', String(this.enabled));
+            this.toggle.setAttribute('aria-label', t(this.enabled ? 'sound_off' : 'sound_on'));
         }
     }
-
-    // Initialize Audio
     const audio = new AudioManager();
 
-    // 2. Hero Interactive Grid (Lights Out)
-    const gridContainer = document.getElementById('lights-out-grid');
-    const gridSize = 5;
-
-    // Create Grid
-    if (gridContainer) {
-        for (let i = 0; i < gridSize * gridSize; i++) {
-            const cell = document.createElement('div');
-            cell.classList.add('grid-cell');
-            cell.dataset.index = i;
-            cell.addEventListener('click', () => {
-                toggleLights(i);
-                audio.play('tap'); // Play sound
+    class Demo {
+        constructor() {
+            this.api = window.AstronigmaLightsOut;
+            this.grid = document.getElementById('lights-out-grid');
+            this.playPanel = document.getElementById('demo-play');
+            this.revealPanel = document.getElementById('demo-reveal');
+            this.movesLabel = document.getElementById('demo-moves');
+            this.round = 0;
+            this.startedAt = null;
+            if (!this.api || !this.grid) return;
+            this.cells = Array.from({ length: this.api.CELL_COUNT }, (_, index) => this.createCell(index));
+            this.game = this.api.createGame(this.round);
+            this.render();
+            document.getElementById('demo-reset')?.addEventListener('click', () => this.reset());
+            document.getElementById('demo-new-game')?.addEventListener('click', () => this.newGame());
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && !this.revealPanel.hidden && this.revealPanel.contains(document.activeElement)) {
+                    this.newGame();
+                }
             });
-            gridContainer.appendChild(cell);
         }
-
-        // Randomly activate some cells to start
-        randomizeGrid();
-    }
-
-    function toggleLights(index) {
-        const row = Math.floor(index / gridSize);
-        const col = index % gridSize;
-
-        // Toggle clicked and neighbors (Up, Down, Left, Right)
-        toggleCell(row, col);
-        toggleCell(row - 1, col);
-        toggleCell(row + 1, col);
-        toggleCell(row, col - 1);
-        toggleCell(row, col + 1);
-
-        checkWin();
-    }
-
-    function toggleCell(r, c) {
-        if (r >= 0 && r < gridSize && c >= 0 && c < gridSize) {
-            const index = r * gridSize + c;
-            const cells = document.querySelectorAll('.grid-cell');
-            cells[index].classList.toggle('active');
+        createCell(index) {
+            const cell = document.createElement('button');
+            cell.type = 'button';
+            cell.className = 'grid-cell';
+            cell.addEventListener('click', () => this.move(index));
+            cell.addEventListener('pointerenter', () => this.preview(index, true));
+            cell.addEventListener('pointerleave', () => this.preview(index, false));
+            cell.addEventListener('focus', () => this.preview(index, true));
+            cell.addEventListener('blur', () => this.preview(index, false));
+            this.grid.appendChild(cell);
+            return cell;
         }
-    }
-
-    function randomizeGrid() {
-        // Simulate clicks to ensure solvable state
-        for (let i = 0; i < 10; i++) {
-            const randomIdx = Math.floor(Math.random() * (gridSize * gridSize));
-            // Don't play sound during randomization
-
-            const r = Math.floor(randomIdx / gridSize);
-            const c = randomIdx % gridSize;
-            toggleCell(r, c);
-            toggleCell(r - 1, c);
-            toggleCell(r + 1, c);
-            toggleCell(r, c - 1);
-            toggleCell(r, c + 1);
-        }
-    }
-
-    function checkWin() {
-        const cells = document.querySelectorAll('.grid-cell');
-        const activeCount = Array.from(cells).filter(c => c.classList.contains('active')).length;
-
-        if (activeCount === 0) {
-            // Win animation
-            gridContainer.style.boxShadow = '0 0 50px var(--primary-color)';
-            audio.play('win'); // Play win sound
-
-            setTimeout(() => {
-                gridContainer.style.boxShadow = 'none';
-                randomizeGrid(); // Restart
-                audio.play('reveal'); // Play restart sound
-            }, 1500);
-        }
-    }
-    /* =========================================
-       LIGHTBOX UI
-       ========================================= */
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-
-    if (lightbox) {
-        window.openLightbox = (src) => {
-            lightboxImg.src = src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scroll
-        };
-
-        const closeLightbox = () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                lightboxImg.src = '';
-            }, 300);
-        };
-
-        lightboxClose.addEventListener('click', closeLightbox);
-
-        // Close on background click
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
+        preview(index, visible) { this.api.affectedIndices(index).forEach(cellIndex => this.cells[cellIndex].classList.toggle('preview', visible)); }
+        move(index) {
+            if (this.game.complete) return;
+            if (this.startedAt === null) {
+                this.startedAt = performance.now();
+                window.astronigmaAnalytics?.track('demo_start');
             }
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                closeLightbox();
-            }
-        });
+            this.game = this.api.playMove(this.game, index);
+            audio.play('tap');
+            this.render();
+            if (this.game.complete) this.complete();
+        }
+        reset() {
+            this.game = this.api.resetGame(this.game);
+            this.startedAt = null;
+            this.render();
+            this.cells[0]?.focus();
+            audio.play('click');
+        }
+        newGame() {
+            this.round += 1;
+            this.game = this.api.createGame(this.round);
+            this.startedAt = null;
+            this.playPanel.hidden = false;
+            this.revealPanel.hidden = true;
+            this.render();
+            this.cells[0]?.focus();
+            audio.play('reveal');
+        }
+        complete() {
+            window.astronigmaAnalytics?.track('demo_complete', {
+                moves_count: this.game.moves,
+                duration_ms: Math.max(0, Math.round(performance.now() - this.startedAt))
+            });
+            audio.play('win');
+            window.setTimeout(() => {
+                this.playPanel.hidden = true;
+                this.revealPanel.hidden = false;
+                this.revealPanel.focus({ preventScroll: true });
+                audio.play('reveal');
+            }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 280);
+        }
+        render() {
+            this.cells.forEach((cell, index) => {
+                const on = this.game.board[index];
+                const row = Math.floor(index / this.api.SIZE) + 1;
+                const column = index % this.api.SIZE + 1;
+                cell.setAttribute('aria-pressed', String(on));
+                cell.setAttribute('aria-label', t('demo_cell_label', { row, column, state: t(on ? 'demo_state_on' : 'demo_state_off') }));
+            });
+            this.movesLabel.textContent = t(this.game.moves === 1 ? 'demo_move_one' : 'demo_moves', { count: this.game.moves });
+        }
     }
+    const demo = new Demo();
+
+    class Lightbox {
+        constructor() {
+            this.element = document.getElementById('lightbox');
+            this.image = document.getElementById('lightbox-img');
+            this.caption = document.getElementById('lightbox-caption');
+            this.closeButton = document.getElementById('lightbox-close');
+            this.trigger = null;
+            this.close = this.close.bind(this);
+            this.closeButton?.addEventListener('click', this.close);
+            this.element?.addEventListener('click', event => { if (event.target === this.element) this.close(); });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && !this.element.hidden) this.close();
+                if (event.key === 'Tab' && !this.element.hidden) event.preventDefault(), this.closeButton.focus();
+            });
+        }
+        open(src, caption, trigger) {
+            this.trigger = trigger;
+            this.image.src = src;
+            this.image.alt = caption;
+            this.caption.textContent = caption;
+            this.element.hidden = false;
+            document.body.classList.add('dialog-open');
+            this.closeButton.focus();
+        }
+        close() {
+            if (this.element.hidden) return;
+            this.element.hidden = true;
+            this.image.removeAttribute('src');
+            document.body.classList.remove('dialog-open');
+            this.trigger?.focus();
+        }
+    }
+    const lightbox = new Lightbox();
+    window.openLightbox = (src, caption, trigger) => lightbox.open(src, caption, trigger);
+
+    window.addEventListener('astronigma:languagechange', () => {
+        closeMenu();
+        audio.render();
+        demo.render();
+    });
 });

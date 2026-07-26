@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#081225"/>
+      <stop offset="1" stop-color="#1a304f"/>
+    </linearGradient>
+    <radialGradient id="orbitGlow">
+      <stop offset="0" stop-color="#60e8e3" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#60e8e3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="930" cy="265" r="235" fill="url(#orbitGlow)"/>
+  <circle cx="930" cy="265" r="210" fill="none" stroke="#60e8e3" stroke-opacity="0.28" stroke-width="2"/>
+  <ellipse cx="930" cy="265" rx="150" ry="205" fill="none" stroke="#60e8e3" stroke-opacity="0.2" stroke-width="2" transform="rotate(55 930 265)"/>
+
+  <g transform="translate(84 94)">
+    <g fill="#60dedc">
+      <rect x="0" y="0" width="55" height="55" rx="10"/><rect x="61" y="0" width="55" height="55" rx="10"/><rect x="122" y="0" width="55" height="55" rx="10"/><rect x="183" y="0" width="55" height="55" rx="10"/><rect x="244" y="0" width="55" height="55" rx="10"/>
+      <rect x="0" y="61" width="55" height="55" rx="10"/><rect x="61" y="61" width="55" height="55" rx="10"/><rect x="122" y="61" width="55" height="55" rx="10"/><rect x="183" y="61" width="55" height="55" rx="10"/><rect x="244" y="61" width="55" height="55" rx="10"/>
+      <rect x="0" y="122" width="55" height="55" rx="10"/><rect x="61" y="122" width="55" height="55" rx="10"/><rect x="122" y="122" width="55" height="55" rx="10"/><rect x="183" y="122" width="55" height="55" rx="10"/><rect x="244" y="122" width="55" height="55" rx="10"/>
+      <rect x="0" y="183" width="55" height="55" rx="10"/><rect x="61" y="183" width="55" height="55" rx="10"/><rect x="122" y="183" width="55" height="55" rx="10"/><rect x="183" y="183" width="55" height="55" rx="10"/><rect x="244" y="183" width="55" height="55" rx="10"/>
+      <rect x="0" y="244" width="55" height="55" rx="10"/><rect x="61" y="244" width="55" height="55" rx="10"/><rect x="122" y="244" width="55" height="55" rx="10"/><rect x="183" y="244" width="55" height="55" rx="10"/><rect x="244" y="244" width="55" height="55" rx="10"/>
+    </g>
+    <g fill="#f8fbff">
+      <rect x="122" y="61" width="55" height="55" rx="10"/>
+      <rect x="61" y="122" width="55" height="55" rx="10"/>
+      <rect x="122" y="122" width="55" height="55" rx="10"/>
+      <rect x="183" y="122" width="55" height="55" rx="10"/>
+      <rect x="122" y="183" width="55" height="55" rx="10"/>
+    </g>
+  </g>
+
+  <image x="720" y="65" width="410" height="410" xlink:href="game/constellation-key.png"/>
+  <text x="84" y="495" fill="#f8fbff" font-family="Arial" font-size="58" font-weight="700">TAP A CELL.</text>
+  <text x="84" y="560" fill="#60e8e3" font-family="Arial" font-size="58" font-weight="700">REVEAL THE COSMOS.</text>
+</svg>

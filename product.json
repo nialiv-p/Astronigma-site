@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "app_version": "1.2.0",
+  "content_updated": "2026-07-26",
+  "constellation_count": 100,
+  "platforms": {
+    "ios": {
+      "store_url": "https://apps.apple.com/app/id6751862462"
+    },
+    "android": {
+      "store_url": "https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild"
+    }
+  },
+  "locales": [
+    "en",
+    "ru",
+    "sr",
+    "es",
+    "pt",
+    "de",
+    "fr",
+    "ja",
+    "ko",
+    "tr",
+    "th",
+    "id",
+    "zh"
+  ],
+  "features": {
+    "saga": true,
+    "practice": true,
+    "daily_challenge": true,
+    "seasonal_missions": true
+  }
+}

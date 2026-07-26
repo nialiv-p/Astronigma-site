@@ -1,38 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Astronigma: Star Logic Puzzle</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Solve star logic puzzles, reveal 80 hidden constellations, and play offline at your own pace. A new Daily Challenge awaits every day. Available on iOS and Android.">
-    <meta name="theme-color" content="#080d1d">
-
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="Astronigma: Star Logic Puzzle">
-    <meta property="og:description"
-        content="Solve star logic puzzles, reveal 80 hidden constellations, and play offline. A new Daily Challenge awaits every day.">
+    <meta name="description" content="Flip grid cells, solve calm 5×5 logic puzzles, and reveal 100 constellations.">
+    <meta name="theme-color" content="#070b18">
+    <meta property="og:title" content="Astronigma: Tap a cell. Reveal the cosmos.">
+    <meta property="og:description" content="Solve calm 5×5 logic puzzles, collect Light Shards, and reveal 100 constellations.">
     <meta property="og:image" content="https://astronigma.net/assets/images/og_image.png">
     <meta property="og:url" content="https://astronigma.net">
     <meta property="og:type" content="website">
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Astronigma: Star Logic Puzzle">
-    <meta name="twitter:description"
-        content="Solve star logic puzzles, reveal 80 hidden constellations, and play offline. A new Daily Challenge awaits every day.">
+    <meta name="twitter:title" content="Astronigma: Tap a cell. Reveal the cosmos.">
+    <meta name="twitter:description" content="Solve calm 5×5 logic puzzles and reveal 100 constellations.">
     <meta name="twitter:image" content="https://astronigma.net/assets/images/og_image.png">
-
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css?v=stage3-copy2">
     <link rel="canonical" href="https://astronigma.net">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -41,198 +28,184 @@
       "operatingSystem": "iOS, Android",
       "applicationCategory": "GameApplication",
       "genre": "Puzzle",
-      "description": "Solve star logic puzzles, reveal 80 hidden constellations, and play offline at your own pace. A new Daily Challenge awaits every day.",
+      "description": "Flip grid cells, solve calm 5×5 logic puzzles, and reveal 100 constellations.",
       "image": "https://astronigma.net/assets/images/og_image.png",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Nikita Ivanov"
-      }
+      "installUrl": [
+        "https://apps.apple.com/app/id6751862462",
+        "https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild"
+      ],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Nikita Ivanov" }
     }
     </script>
 </head>
-
 <body>
-    <canvas id="starfield" class="starfield"></canvas>
-    <!-- Removed .noise-overlay -->
+    <a class="skip-link" href="#main" data-i18n="skip_link">Skip to content</a>
+    <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
 
     <header class="main-header">
         <div class="container">
-            <nav class="nav">
-                <a href="#" class="logo">ASTRONIGMA</a>
-
-                <button class="menu-toggle" aria-label="Open Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <nav class="nav" aria-label="Primary">
+                <a href="#hero" class="logo" aria-label="Astronigma home">ASTRONIGMA</a>
+                <button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false" data-i18n-aria-label="menu_open">
+                    <span></span><span></span><span></span>
                 </button>
-
-                <ul class="nav-links">
-                    <li><a href="#about" data-i18n="how_to_play_title">How to Play</a></li>
+                <ul id="primary-menu" class="nav-links">
+                    <li><a href="#journey" data-i18n="how_to_play_title">How it works</a></li>
+                    <li><a href="#features" data-i18n="nav_features">Ways to play</a></li>
                     <li><a href="#gallery" data-i18n="gallery_title">Gallery</a></li>
-                    <li><button id="sound-toggle" class="sound-toggle" aria-label="Toggle Sound">
-                            <svg class="icon-sound-on" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                <path
-                                    d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
-                            </svg>
-                            <svg class="icon-sound-off hidden" viewBox="0 0 24 24" width="20" height="20"
-                                fill="currentColor">
-                                <path
-                                    d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
-                            </svg>
-                        </button></li>
-                    <li><a href="#download" class="btn btn-primary sm" data-i18n="nav_download">Download</a></li>
+                    <li>
+                        <button id="sound-toggle" class="icon-button sound-toggle" type="button" aria-pressed="false" data-i18n-aria-label="sound_on">
+                            <svg class="icon-sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.62v8.76A4.5 4.5 0 0 0 16.5 12zm-2.5-9v2.06a7 7 0 0 1 0 13.88V21a9 9 0 0 0 0-18z"/></svg>
+                            <svg class="icon-sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="m4.27 3 16.46 16.46-1.27 1.27-3.02-3.02A8.9 8.9 0 0 1 14 19v-2.08c.35-.1.68-.24 1-.4L12 13.5V20l-5-5H3V9h3.73L3 4.27 4.27 3zM12 4v4.18L9.91 6.09 12 4zm4.5 8c0-.74-.18-1.44-.5-2.05l-1.55-1.55A4.49 4.49 0 0 1 16.5 12zm4.5 0a9 9 0 0 0-7-8.77v2.06A7 7 0 0 1 19 12c0 .94-.19 1.83-.52 2.65l1.5 1.5A8.94 8.94 0 0 0 21 12z"/></svg>
+                        </button>
+                    </li>
+                    <li><a href="#download" class="btn btn-small" data-i18n="nav_download">Download</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section id="hero" class="hero-section">
-            <div class="container hero-content-wrapper">
-                <div class="hero-content">
-                    <h1 class="hero-title glitch" data-text="ASTRONIGMA">ASTRONIGMA</h1>
-                    <p class="hero-subtitle" data-i18n="hero_subtitle">Unravel the Cosmos. Solve the Void.</p>
-                    <div class="cta-group">
-                        <a href="https://apps.apple.com/rs/app/astronigma-star-logic-puzzle/id6751862462"
-                            class="store-btn">
-                            <img src="assets/images/logo-apple.svg" alt="Apple Logo" class="store-icon" width="28"
-                                height="28">
-                            <div class="store-text">
-                                <span class="small-text" data-i18n="store_apple_small">Download on the</span>
-                                <span class="large-text" data-i18n="store_apple_large">App Store</span>
-                            </div>
+            <div class="container hero-layout">
+                <div class="hero-copy">
+                    <p class="eyebrow" data-i18n="hero_eyebrow">Calm 5×5 brain teasers</p>
+                    <h1 data-i18n="hero_title_stage2">Tap a cell.<br>Reveal the cosmos.</h1>
+                    <p class="hero-lead" data-i18n="hero_description">Tap a cell to switch it and its adjacent cells. Clear all lights, collect Light Shards, adjust seven telescope lenses, and reveal one of 100 constellations.</p>
+                    <ul class="hero-facts" aria-label="Game highlights">
+                        <li data-i18n="hero_fact_timer">No timer</li>
+                        <li data-i18n="hero_fact_constellations">100 constellations</li>
+                        <li data-i18n="hero_fact_offline">Play offline</li>
+                    </ul>
+                    <div class="store-row">
+                        <a href="https://apps.apple.com/app/id6751862462" class="store-btn" data-store="app_store" data-placement="hero">
+                            <img src="assets/images/logo-apple.svg" alt="" width="26" height="26">
+                            <span><small data-i18n="store_apple_small">Download on the</small><strong data-i18n="store_apple_large">App Store</strong></span>
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild"
-                            class="store-btn">
-                            <img src="assets/images/logo-google.svg" alt="Google Play Logo" class="store-icon"
-                                width="28" height="28">
-                            <div class="store-text">
-                                <span class="small-text" data-i18n="store_google_small">GET IT ON</span>
-                                <span class="large-text" data-i18n="store_google_large">Google Play</span>
-                            </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild" class="store-btn" data-store="google_play" data-placement="hero">
+                            <img src="assets/images/logo-google.svg" alt="" width="26" height="26">
+                            <span><small data-i18n="store_google_small">GET IT ON</small><strong data-i18n="store_google_large">Google Play</strong></span>
                         </a>
                     </div>
                 </div>
 
-                <div class="hero-grid-interactive">
-                    <img src="assets/images/game-icon.png" alt="Astronigma Game Icon" class="hero-game-icon" width="180"
-                        height="180">
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="how_to_play_title">How to Play</h2>
-                    <div class="line"></div>
-                </div>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h3 data-i18n="story_title">The Story</h3>
-                        <p data-i18n="story_text">You are the keeper of an ancient telescope, lost in the void. Your
-                            mission is to rebuild its lenses and reveal the hidden constellations of the cosmos. But the
-                            stars are out of alignment.</p>
-
-                        <h3 data-i18n="rules_title" style="margin-top: 2rem;">The Rules</h3>
-                        <ul class="rules-list">
-                            <li><span class="rule-icon">1</span> <span data-i18n="rule_1">The game is played on a 5x5
-                                    grid of lights.</span></li>
-                            <li><span class="rule-icon">2</span> <span data-i18n="rule_2">Tapping a light toggles it and
-                                    its neighbors (creating a cross shape).</span></li>
-                            <li><span class="rule-icon">3</span> <span data-i18n="rule_3">Turn off all the lights to
-                                    clear the board and collect Light Shards.</span></li>
-                        </ul>
+                <div class="demo-shell" aria-labelledby="demo-title">
+                    <div class="demo-topline">
+                        <div><span class="status-dot"></span><span data-i18n="demo_live">Playable demo</span></div>
+                        <span id="demo-moves" aria-live="polite">0 moves</span>
                     </div>
-                    <div class="about-visual">
-                        <div id="lights-out-grid" class="lights-out-grid">
-                            <!-- Grid cells will be generated by JS -->
+                    <div id="demo-play" class="demo-play">
+                        <h2 id="demo-title" data-i18n="demo_title">Clear all lights</h2>
+                        <p id="demo-instruction" data-i18n="demo_instruction">Tap a cell to switch it and the cells above, below, left, and right.</p>
+                        <div id="lights-out-grid" class="lights-out-grid" role="group" aria-describedby="demo-instruction"></div>
+                        <div class="demo-actions">
+                            <button id="demo-reset" type="button" class="text-button" data-i18n="demo_reset">Reset board</button>
+                            <span class="cross-key" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
                         </div>
-                        <p class="grid-hint" data-i18n="grid_hint" style="text-align: center; margin-top: 1rem;">TAP TO
-                            ALIGN THE STARS</p>
+                    </div>
+                    <div id="demo-reveal" class="demo-reveal" hidden tabindex="-1" role="region" aria-live="polite">
+                        <div class="constellation-stage">
+                            <picture>
+                                <source srcset="assets/images/game/constellation-key.webp" type="image/webp">
+                                <img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" decoding="async">
+                            </picture>
+                        </div>
+                        <p class="eyebrow" data-i18n="demo_reveal_eyebrow">Constellation revealed</p>
+                        <h2 data-i18n="demo_reveal_title">Key of Dreams</h2>
+                        <p data-i18n="demo_reveal_lore">The Key of Dreams was said to unlock hidden celestial paths.</p>
+                        <button id="demo-new-game" type="button" class="btn secondary" data-i18n="demo_play_again">Try another puzzle</button>
+                        <div class="store-row compact">
+                            <a href="https://apps.apple.com/app/id6751862462" class="store-btn" data-store="app_store" data-placement="demo_reveal"><img src="assets/images/logo-apple.svg" alt="" width="22" height="22"><span><small data-i18n="store_apple_small">Download on the</small><strong data-i18n="store_apple_large">App Store</strong></span></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild" class="store-btn" data-store="google_play" data-placement="demo_reveal"><img src="assets/images/logo-google.svg" alt="" width="22" height="22"><span><small data-i18n="store_google_small">GET IT ON</small><strong data-i18n="store_google_large">Google Play</strong></span></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="gallery" class="gallery-section">
+        <section id="journey" class="section journey-section">
             <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="gallery_title">Visual Records</h2>
-                    <div class="line"></div>
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="journey_eyebrow">From puzzle to constellation</p>
+                    <h2 data-i18n="how_to_play_title">How it works</h2>
+                    <p data-i18n="journey_intro">Solve puzzles, adjust seven lenses, and reveal a new constellation.</p>
                 </div>
-                <!-- Simple CSS Scroll Snap Gallery -->
-                <div class="gallery-track" id="gallery-track">
-                    <!-- Items generated by JS -->
+                <ol class="journey-grid">
+                    <li class="journey-card"><span class="step-number">01</span><div class="mini-grid" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on core"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div><h3 data-i18n="journey_solve_title">Solve the puzzle</h3><p data-i18n="journey_solve_body">Tap a cell to switch it and the cells above, below, left, and right.</p></li>
+                    <li class="journey-card"><span class="step-number">02</span><picture><source srcset="assets/images/game/light-shards.webp" type="image/webp"><img src="assets/images/game/light-shards.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_shards_title">Collect Light Shards</h3><p data-i18n="journey_shards_body">Solve puzzles to collect Light Shards.</p></li>
+                    <li class="journey-card"><span class="step-number">03</span><picture><source srcset="assets/images/game/lenses.webp" type="image/webp"><img src="assets/images/game/lenses.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_lenses_title">Adjust seven lenses</h3><p data-i18n="journey_lenses_body">Each solved puzzle helps adjust one lens.</p></li>
+                    <li class="journey-card"><span class="step-number">04</span><picture><source srcset="assets/images/game/constellation-key.webp" type="image/webp"><img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_reveal_title">Reveal a constellation</h3><p data-i18n="journey_reveal_body">Add its illustrated story to your constellation archive.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="features" class="section features-section">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow" data-i18n="features_eyebrow">New goals every day</p><h2 data-i18n="features_title">Play your way</h2></div>
+                <div class="features-grid">
+                    <article class="feature-card calm-card"><div class="feature-symbol" aria-hidden="true">5×5</div><h3 data-i18n="feature_calm_title">No timer — think at your own pace</h3><p data-i18n="feature_calm_body">Plan each move and clear the grid within the move limit.</p></article>
+                        <article class="feature-card"><picture><source srcset="assets/images/game/daily-challenge.webp" type="image/webp"><img src="assets/images/game/daily-challenge.png" alt="" width="114" height="128" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_daily_title">Daily Challenge</h3><p data-i18n="feature_daily_body">Complete five stages each day and work toward a monthly collectible reward.</p></article>
+                    <article class="feature-card"><picture><source srcset="assets/images/game/missions.webp" type="image/webp"><img src="assets/images/game/missions.png" alt="" width="72" height="72" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_missions_title">Missions</h3><p data-i18n="feature_missions_body">Complete easy, medium, and hard goals to earn milestone rewards.</p></article>
+                    <article class="feature-card"><div class="feature-symbol" aria-hidden="true">∞</div><h3 data-i18n="feature_practice_title">Practice</h3><p data-i18n="feature_practice_body">When you run out of Hearts, keep solving in Practice without rewards. Core puzzles work offline.</p></article>
                 </div>
             </div>
         </section>
 
-        <section id="download" class="cta-section">
+        <section id="collection" class="section collection-section">
+            <div class="container collection-layout">
+                <div class="collection-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><picture><source srcset="assets/images/game/constellation-key.webp" type="image/webp"><img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" loading="lazy" decoding="async"></picture></div>
+                <div class="collection-copy"><p class="eyebrow" data-i18n="collection_eyebrow">Constellation archive</p><h2 data-i18n="collection_title">100 constellations. 100 stories.</h2><p data-i18n="collection_body">Rebuild your telescope, reveal the Key of Dreams, and add every illustrated story to your archive.</p><div class="collection-stat"><strong>100</strong><span data-i18n="collection_stat">constellations to reveal</span></div></div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section gallery-section">
             <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="cta_title">Ready to Launch?</h2>
-                    <div class="line"></div>
-                </div>
-                <p data-i18n="cta_subtitle">Available now on iOS and Android.</p>
-                <div class="cta-group justify-center">
-                    <a href="https://apps.apple.com/rs/app/astronigma-star-logic-puzzle/id6751862462" class="store-btn">
-                        <img src="assets/images/logo-apple.svg" alt="Apple Logo" class="store-icon">
-                        <div class="store-text">
-                            <span class="small-text" data-i18n="store_apple_small">Download on the</span>
-                            <span class="large-text" data-i18n="store_apple_large">App Store</span>
-                        </div>
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild"
-                        class="store-btn">
-                        <img src="assets/images/logo-google.svg" alt="Google Play Logo" class="store-icon">
-                        <div class="store-text">
-                            <span class="small-text" data-i18n="store_google_small">GET IT ON</span>
-                            <span class="large-text" data-i18n="store_google_large">Google Play</span>
-                        </div>
-                    </a>
+                <div class="section-heading"><p class="eyebrow" data-i18n="gallery_eyebrow">In-game screenshots</p><h2 data-i18n="gallery_title">Gallery</h2><p data-i18n="gallery_intro">From the first grid to a growing archive of celestial stories.</p></div>
+                <div class="gallery-track" id="gallery-track"></div>
+            </div>
+        </section>
+
+        <section id="download" class="section final-cta">
+            <div class="container final-cta-inner">
+                <p class="eyebrow" data-i18n="final_eyebrow">Your telescope is waiting</p>
+                <h2 data-i18n="cta_title">Make the first constellation appear.</h2>
+                <p data-i18n="cta_subtitle">Start free on iOS or Android and solve at your own pace.</p>
+                <div class="store-row centered">
+                    <a href="https://apps.apple.com/app/id6751862462" class="store-btn" data-store="app_store" data-placement="final"><img src="assets/images/logo-apple.svg" alt="" width="26" height="26"><span><small data-i18n="store_apple_small">Download on the</small><strong data-i18n="store_apple_large">App Store</strong></span></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.NialivGames.TelescopeBuild" class="store-btn" data-store="google_play" data-placement="final"><img src="assets/images/logo-google.svg" alt="" width="26" height="26"><span><small data-i18n="store_google_small">GET IT ON</small><strong data-i18n="store_google_large">Google Play</strong></span></a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">ASTRONIGMA</div>
-                <div class="footer-links">
-                    <a href="privacy.html" target="_blank" data-i18n="footer_privacy">Privacy Policy</a>
-                    <a href="terms.html" target="_blank" data-i18n="footer_terms">Terms of Use</a>
-                    <a href="mailto:nikitaivanov95@gmail.com" data-i18n="footer_support">Support</a>
-                </div>
-                <div class="socials">
-                    <a href="https://www.instagram.com/nialiv.games/" target="_blank" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path
-                                d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,6.8A5.2,5.2 0 0,1 17.2,12A5.2,5.2 0 0,1 12,17.2A5.2,5.2 0 0,1 6.8,12A5.2,5.2 0 0,1 12,6.8M12,8.8A3.2,3.2 0 0,0 8.8,12A3.2,3.2 0 0,0 12,15.2A3.2,3.2 0 0,0 15.2,12A3.2,3.2 0 0,0 12,8.8M18,5A1,1 0 0,1 19,6A1,1 0 0,1 18,7A1,1 0 0,1 17,6A1,1 0 0,1 18,5Z" />
-                        </svg>
-                    </a>
-                </div>
+        <div class="container footer-content">
+            <a href="#hero" class="footer-logo">ASTRONIGMA</a>
+            <div class="footer-links">
+                <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+                <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+                <a href="mailto:nikitaivanov95@gmail.com" data-i18n="footer_support">Support</a>
+                <button type="button" id="analytics-settings" class="footer-link-button">Analytics settings</button>
             </div>
-            <div class="footer-bottom" data-i18n="footer_rights">
-                &copy; 2026 Nikita Ivanov. All rights reserved.
-            </div>
+            <p data-i18n="footer_rights">&copy; 2026 Nikita Ivanov. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <img id="lightbox-img" class="lightbox-img" src="" alt="Screenshot">
-        <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
+        <button id="lightbox-close" class="lightbox-close" type="button" data-i18n-aria-label="lightbox_close">×</button>
+        <figure><img id="lightbox-img" src="" alt="" decoding="async"><figcaption id="lightbox-caption"></figcaption></figure>
     </div>
 
-    <script src="localization.js"></script>
-    <script src="script.js"></script>
-</body>
+    <section id="analytics-consent" class="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-description" hidden>
+        <div class="analytics-consent-copy"><h2 id="analytics-consent-title">Help improve Astronigma</h2><p id="analytics-consent-description">With your permission, we use Google Analytics to understand visits and interactions on this website. Analytics stays off until you accept.</p></div>
+        <div class="analytics-consent-actions"><button type="button" id="analytics-consent-reject" class="consent-button">Reject</button><button type="button" id="analytics-consent-accept" class="consent-button">Accept</button></div>
+    </section>
 
+    <script src="stage2-localization.js?v=stage3-copy2" defer></script>
+    <script src="localization.js?v=stage3-copy2" defer></script>
+    <script src="lights-out.js?v=stage2" defer></script>
+    <script src="analytics.js?v=stage2" defer></script>
+    <script src="script.js?v=stage2" defer></script>
+</body>
 </html>
