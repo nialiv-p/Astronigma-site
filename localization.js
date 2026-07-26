@@ -486,33 +486,60 @@ class LocalizationManager {
         const track = document.getElementById('gallery-track');
         if (!track) return;
 
-        track.innerHTML = '';
+        const render = () => {
+            track.dataset.loaded = 'true';
+            track.innerHTML = '';
 
-        // We have 5 screenshots per language
-        for (let i = 1; i <= 5; i++) {
-            const item = document.createElement('figure');
-            item.className = 'gallery-item glass-card';
-            const button = document.createElement('button');
-            button.type = 'button';
-            button.className = 'gallery-button';
-            const picture = document.createElement('picture');
-            const source = document.createElement('source');
-            source.type = 'image/webp';
-            source.srcset = `assets/screenshots/thumbs-webp/${this.currentLang}_${i}.webp`;
-            const img = document.createElement('img');
-            const thumbSrc = `assets/screenshots/thumbs/${this.currentLang}_${i}.png`;
-            const fullSrc = `assets/screenshots/${this.currentLang}_${i}.png`;
-            const caption = this.translate('gallery_screenshot').replace('{count}', i);
-            img.src = thumbSrc;
-            img.alt = caption;
-            img.loading = 'lazy';
-            img.decoding = 'async';
-            button.setAttribute('aria-label', caption);
-            button.addEventListener('click', () => window.openLightbox?.(fullSrc, caption, button));
-            picture.append(source, img);
-            button.appendChild(picture);
-            item.appendChild(button);
-            track.appendChild(item);
+            // We have 5 screenshots per language.
+            for (let i = 1; i <= 5; i++) {
+                const item = document.createElement('figure');
+                item.className = 'gallery-item glass-card';
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'gallery-button';
+                const picture = document.createElement('picture');
+                const source = document.createElement('source');
+                source.type = 'image/webp';
+                source.srcset = `assets/screenshots/thumbs-webp/${this.currentLang}_${i}.webp`;
+                const img = document.createElement('img');
+                const thumbSrc = `assets/screenshots/thumbs/${this.currentLang}_${i}.png`;
+                const fullSrc = `assets/screenshots/${this.currentLang}_${i}.png`;
+                const caption = this.translate('gallery_screenshot').replace('{count}', i);
+                img.src = thumbSrc;
+                img.alt = caption;
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                button.setAttribute('aria-label', caption);
+                button.addEventListener('click', () => window.openLightbox?.(fullSrc, caption, button));
+                picture.append(source, img);
+                button.appendChild(picture);
+                item.appendChild(button);
+                track.appendChild(item);
+            }
+        };
+
+        if (track.dataset.loaded === 'true') {
+            render();
+            return;
+        }
+
+        if (track.dataset.observing === 'true') return;
+
+        const loadGallery = () => {
+            observer?.disconnect();
+            render();
+        };
+        const observer = 'IntersectionObserver' in window
+            ? new IntersectionObserver(entries => {
+                if (entries.some(entry => entry.isIntersecting)) loadGallery();
+            })
+            : null;
+
+        if (observer) {
+            track.dataset.observing = 'true';
+            observer.observe(track);
+        } else {
+            loadGallery();
         }
     }
 

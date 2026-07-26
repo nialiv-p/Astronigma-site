@@ -1,8 +1,8 @@
 (() => {
     'use strict';
 
-    // Public client-side identifier. Keep empty until a GA4 Web Data Stream is created.
-    const DEFAULT_GA4_MEASUREMENT_ID = '';
+    // Public client-side identifier for the Astronigma Website GA4 Web Data Stream.
+    const DEFAULT_GA4_MEASUREMENT_ID = 'G-40RH76JTT5';
     const GA4_MEASUREMENT_ID = window.ASTRONIGMA_GA4_MEASUREMENT_ID || DEFAULT_GA4_MEASUREMENT_ID;
     const CONSENT_KEY = 'astronigma_analytics_consent_v1';
     const ACCEPTED = 'accepted';
