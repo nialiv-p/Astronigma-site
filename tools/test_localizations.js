@@ -46,4 +46,25 @@ for (const locale of locales) {
         }
     });
 }
+
+const naturalHeroHeadlines = {
+    en: 'Tap a cell.<br>Reveal the cosmos.',
+    ru: 'Меняйте клетки.<br>Открывайте созвездия.',
+    sr: 'Menjaj polja.<br>Otkrivaj sazvežđa.',
+    es: 'Cambia casillas.<br>Revela constelaciones.',
+    pt: 'Alterne as células.<br>Revele constelações.',
+    de: 'Schalte Felder um.<br>Enthülle Sternbilder.',
+    fr: 'Inversez des cases.<br>Révélez des constellations.',
+    ja: 'マスを切り替えて、<br>星座を見つけよう。',
+    ko: '칸을 전환해<br>별자리를 밝혀 보세요.',
+    tr: 'Kareleri değiştir.<br>Takımyıldızları keşfet.',
+    th: 'สลับช่องในตาราง<br>ค้นพบกลุ่มดาว',
+    id: 'Ubah petak.<br>Ungkap rasi bintang.',
+    zh: '切换方块，<br>探索星座。',
+};
+for (const locale of locales) {
+    if (translations[locale].hero_title_stage2 !== naturalHeroHeadlines[locale]) {
+        throw new Error(`${locale}.hero_title_stage2 must use the reviewed, locale-native headline.`);
+    }
+}
 console.log(`Localization test passed: ${locales.length} locales × ${englishKeys.length} Stage 2 keys.`);

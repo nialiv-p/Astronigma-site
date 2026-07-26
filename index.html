@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
     <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=stage2">
+    <link rel="stylesheet" href="style.css?v=stage3-copy2">
     <link rel="canonical" href="https://astronigma.net">
     <script type="application/ld+json">
     {
@@ -97,7 +97,7 @@
                     </div>
                     <div id="demo-play" class="demo-play">
                         <h2 id="demo-title" data-i18n="demo_title">Clear all lights</h2>
-                        <p id="demo-instruction" data-i18n="demo_instruction">Tap a cell — it and its adjacent cells will switch their state.</p>
+                        <p id="demo-instruction" data-i18n="demo_instruction">Tap a cell to switch it and the cells above, below, left, and right.</p>
                         <div id="lights-out-grid" class="lights-out-grid" role="group" aria-describedby="demo-instruction"></div>
                         <div class="demo-actions">
                             <button id="demo-reset" type="button" class="text-button" data-i18n="demo_reset">Reset board</button>
@@ -129,13 +129,13 @@
                 <div class="section-heading">
                     <p class="eyebrow" data-i18n="journey_eyebrow">From puzzle to constellation</p>
                     <h2 data-i18n="how_to_play_title">How it works</h2>
-                    <p data-i18n="journey_intro">Solve puzzles, adjust seven lenses, and capture a new constellation.</p>
+                    <p data-i18n="journey_intro">Solve puzzles, adjust seven lenses, and reveal a new constellation.</p>
                 </div>
                 <ol class="journey-grid">
-                    <li class="journey-card"><span class="step-number">01</span><div class="mini-grid" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on core"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div><h3 data-i18n="journey_solve_title">Solve the puzzle</h3><p data-i18n="journey_solve_body">Tap a cell — it and its adjacent cells will switch their state.</p></li>
+                    <li class="journey-card"><span class="step-number">01</span><div class="mini-grid" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on core"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div><h3 data-i18n="journey_solve_title">Solve the puzzle</h3><p data-i18n="journey_solve_body">Tap a cell to switch it and the cells above, below, left, and right.</p></li>
                     <li class="journey-card"><span class="step-number">02</span><picture><source srcset="assets/images/game/light-shards.webp" type="image/webp"><img src="assets/images/game/light-shards.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_shards_title">Collect Light Shards</h3><p data-i18n="journey_shards_body">Solve puzzles to collect Light Shards.</p></li>
                     <li class="journey-card"><span class="step-number">03</span><picture><source srcset="assets/images/game/lenses.webp" type="image/webp"><img src="assets/images/game/lenses.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_lenses_title">Adjust seven lenses</h3><p data-i18n="journey_lenses_body">Each solved puzzle helps adjust one lens.</p></li>
-                    <li class="journey-card"><span class="step-number">04</span><picture><source srcset="assets/images/game/constellation-key.webp" type="image/webp"><img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_reveal_title">Reveal a constellation</h3><p data-i18n="journey_reveal_body">Add its illustrated story to your Constellation archive.</p></li>
+                    <li class="journey-card"><span class="step-number">04</span><picture><source srcset="assets/images/game/constellation-key.webp" type="image/webp"><img src="assets/images/game/constellation-key.png" alt="" width="374" height="376" loading="lazy" decoding="async"></picture><h3 data-i18n="journey_reveal_title">Reveal a constellation</h3><p data-i18n="journey_reveal_body">Add its illustrated story to your constellation archive.</p></li>
                 </ol>
             </div>
         </section>
@@ -144,10 +144,10 @@
             <div class="container">
                 <div class="section-heading"><p class="eyebrow" data-i18n="features_eyebrow">New goals every day</p><h2 data-i18n="features_title">Play your way</h2></div>
                 <div class="features-grid">
-                    <article class="feature-card calm-card"><div class="feature-symbol" aria-hidden="true">5×5</div><h3 data-i18n="feature_calm_title">No timer—think at your own pace</h3><p data-i18n="feature_calm_body">Plan each move and clear the grid within the move limit.</p></article>
-                        <article class="feature-card"><picture><source srcset="assets/images/game/daily-challenge.webp" type="image/webp"><img src="assets/images/game/daily-challenge.png" alt="" width="114" height="128" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_daily_title">Daily Challenge</h3><p data-i18n="feature_daily_body">Every day has five stages. Clear all five to complete the day.</p></article>
-                    <article class="feature-card"><picture><source srcset="assets/images/game/missions.webp" type="image/webp"><img src="assets/images/game/missions.png" alt="" width="72" height="72" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_missions_title">Missions</h3><p data-i18n="feature_missions_body">Complete goals as you play, earn Mission points, and claim milestone rewards.</p></article>
-                    <article class="feature-card"><div class="feature-symbol" aria-hidden="true">∞</div><h3 data-i18n="feature_practice_title">Practice</h3><p data-i18n="feature_practice_body">Keep solving without rewards when you run out of Hearts. Core puzzles work offline.</p></article>
+                    <article class="feature-card calm-card"><div class="feature-symbol" aria-hidden="true">5×5</div><h3 data-i18n="feature_calm_title">No timer — think at your own pace</h3><p data-i18n="feature_calm_body">Plan each move and clear the grid within the move limit.</p></article>
+                        <article class="feature-card"><picture><source srcset="assets/images/game/daily-challenge.webp" type="image/webp"><img src="assets/images/game/daily-challenge.png" alt="" width="114" height="128" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_daily_title">Daily Challenge</h3><p data-i18n="feature_daily_body">Complete five stages each day and work toward a monthly collectible reward.</p></article>
+                    <article class="feature-card"><picture><source srcset="assets/images/game/missions.webp" type="image/webp"><img src="assets/images/game/missions.png" alt="" width="72" height="72" loading="lazy" decoding="async"></picture><h3 data-i18n="feature_missions_title">Missions</h3><p data-i18n="feature_missions_body">Complete easy, medium, and hard goals to earn milestone rewards.</p></article>
+                    <article class="feature-card"><div class="feature-symbol" aria-hidden="true">∞</div><h3 data-i18n="feature_practice_title">Practice</h3><p data-i18n="feature_practice_body">When you run out of Hearts, keep solving in Practice without rewards. Core puzzles work offline.</p></article>
                 </div>
             </div>
         </section>
@@ -202,8 +202,8 @@
         <div class="analytics-consent-actions"><button type="button" id="analytics-consent-reject" class="consent-button">Reject</button><button type="button" id="analytics-consent-accept" class="consent-button">Accept</button></div>
     </section>
 
-    <script src="stage2-localization.js?v=stage3-copy" defer></script>
-    <script src="localization.js?v=stage3-copy" defer></script>
+    <script src="stage2-localization.js?v=stage3-copy2" defer></script>
+    <script src="localization.js?v=stage3-copy2" defer></script>
     <script src="lights-out.js?v=stage2" defer></script>
     <script src="analytics.js?v=stage2" defer></script>
     <script src="script.js?v=stage2" defer></script>
