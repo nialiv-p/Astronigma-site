@@ -6,7 +6,7 @@ const translations = {
         "grid_hint": "TAP TO ALIGN STARS",
         "how_to_play_title": "How to play",
         "story_title": "Story",
-        "story_text": "You found an ancient telescope that can reveal forgotten constellations. To look through it, you'll need to align the lenses using Light Shards — which you collect by solving logic puzzles. Take on a new Daily Challenge every day. Seasonal Missions are here. Complete goals, earn milestone rewards, and reveal 20 new constellations—100 celestial stories now await.",
+        "story_text": "You found an ancient telescope that can reveal forgotten constellations. To look through it, you'll need to align the lenses using Light Shards — which you collect by solving logic puzzles. Take on a new Daily Challenge every day. Seasonal Missions are here. Complete goals, earn milestone rewards, and reveal 20 new constellations—120 celestial stories now await.",
         "rules_title": "Rules",
         "rule_1": "The game is played on a 5x5 grid of lights.",
         "rule_2": "Tapping a light toggles it and its neighbors (cross shape).",
@@ -25,7 +25,7 @@ const translations = {
         "store_google_small": "GET IT ON",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Star Logic Puzzle",
-        "meta_description": "Flip grid tiles, solve calm logic puzzles, and reveal 100 constellations."
+        "meta_description": "Flip grid tiles, solve calm logic puzzles, and reveal 120 constellations."
     },
     "ru": {
         "hero_title": "ASTRONIGMA",
@@ -34,7 +34,7 @@ const translations = {
         "grid_hint": "НАЖМИТЕ, ЧТОБЫ ВЫРОВНЯТЬ ЗВЕЗДЫ",
         "how_to_play_title": "Как играть",
         "story_title": "История",
-        "story_text": "Вы нашли древний телескоп, способный открыть забытые созвездия. Чтобы заглянуть в него, нужно настроить линзы с помощью Осколков света, которые вы собираете, решая логические загадки. Каждый день выполняйте новое Ежедневное задание. Сезонные миссии уже в игре. Выполните цели, получите награды за этапы и откройте 20 новых созвездий — теперь их 100.",
+        "story_text": "Вы нашли древний телескоп, способный открыть забытые созвездия. Чтобы заглянуть в него, нужно настроить линзы с помощью Осколков света, которые вы собираете, решая логические загадки. Каждый день выполняйте новое Ежедневное задание. Сезонные миссии уже в игре. Выполните цели, получите награды за этапы и откройте 20 новых созвездий — теперь их 120.",
         "rules_title": "Правила",
         "rule_1": "Игра проходит на сетке огней 5x5.",
         "rule_2": "Нажатие на свет переключает его и соседние огни (крестом).",
@@ -53,7 +53,7 @@ const translations = {
         "store_google_small": "ДОСТУПНО В",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Космос и логика",
-        "meta_description": "Меняйте клетки на сетке 5×5 и открывайте 100 созвездий в своём ритме."
+        "meta_description": "Меняйте клетки на сетке 5×5 и открывайте 120 созвездий в своём ритме."
     },
     "sr": {
         "hero_title": "ASTRONIGMA",
@@ -62,7 +62,7 @@ const translations = {
         "grid_hint": "DODIRNITE DA BISTE PORAVNALI ZVEZDE",
         "how_to_play_title": "Kako igrati",
         "story_title": "Priča",
-        "story_text": "Pronašli ste drevni teleskop koji može otkriti zaboravljena sazvežđa. Da biste gledali kroz njega, morate podesiti sočiva koristeći Oskolke svetla — koje sakupljate rešavanjem logičkih zagonetki. Suočite se s novim Dnevnim izazovom svaki dan. Sezonske misije su stigle. Ispuni ciljeve, osvoji nagrade za etape i otkrij 20 novih sazvežđa — sada te čeka 100 nebeskih priča.",
+        "story_text": "Pronašli ste drevni teleskop koji može otkriti zaboravljena sazvežđa. Da biste gledali kroz njega, morate podesiti sočiva koristeći Oskolke svetla — koje sakupljate rešavanjem logičkih zagonetki. Suočite se s novim Dnevnim izazovom svaki dan. Sezonske misije su stigle. Ispuni ciljeve, osvoji nagrade za etape i otkrij 20 novih sazvežđa — sada te čeka 120 nebeskih priča.",
         "rules_title": "Pravila",
         "rule_1": "Igra se na mreži svetala 5x5.",
         "rule_2": "Dodirom na svetlo menjate njegovo stanje i stanje suseda (u obliku krsta).",
@@ -81,7 +81,7 @@ const translations = {
         "store_google_small": "NABAVITE NA",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Logika zvezda",
-        "meta_description": "Menjaj polja na mreži 5×5, rešavaj logičke zagonetke i otkrij 100 sazvežđa."
+        "meta_description": "Menjaj polja na mreži 5×5, rešavaj logičke zagonetke i otkrij 120 sazvežđa."
     },
     "es": {
         "hero_title": "ASTRONIGMA",
@@ -90,7 +90,7 @@ const translations = {
         "grid_hint": "TOCA PARA ALINEAR ESTRELLAS",
         "how_to_play_title": "Cómo jugar",
         "story_title": "Historia",
-        "story_text": "Has encontrado un antiguo telescopio que puede revelar constelaciones olvidadas. Para mirar a través de él, debes ajustar las lentes usando Fragmentos de luz, que obtienes resolviendo acertijos lógicos. Supera un nuevo Desafío Diario cada día. Llegaron las misiones de temporada. Cumple objetivos, consigue recompensas por hitos y revela 20 constelaciones nuevas: ya hay 100.",
+        "story_text": "Has encontrado un antiguo telescopio que puede revelar constelaciones olvidadas. Para mirar a través de él, debes ajustar las lentes usando Fragmentos de luz, que obtienes resolviendo acertijos lógicos. Supera un nuevo Desafío Diario cada día. Llegaron las misiones de temporada. Cumple objetivos, consigue recompensas por hitos y revela 20 constelaciones nuevas: ya hay 120.",
         "rules_title": "Reglas",
         "rule_1": "El juego se desarrolla en una cuadrícula de luces de 5x5.",
         "rule_2": "Tocar una luz cambia su estado y el de sus vecinas (en forma de cruz).",
@@ -109,7 +109,7 @@ const translations = {
         "store_google_small": "DISPONIBLE EN",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Lógica estelar",
-        "meta_description": "Cambia casillas, resuelve acertijos 5×5 y revela 100 constelaciones."
+        "meta_description": "Cambia casillas, resuelve acertijos 5×5 y revela 120 constelaciones."
     },
     "pt": {
         "hero_title": "ASTRONIGMA",
@@ -118,7 +118,7 @@ const translations = {
         "grid_hint": "TOQUE PARA ALINHAR ESTRELAS",
         "how_to_play_title": "Como jogar",
         "story_title": "História",
-        "story_text": "Você encontrou um antigo telescópio capaz de revelar constelações esquecidas. Para olhar através dele, você deve ajustar as lentes usando Fragmentos de luz — que você coleta resolvendo quebra-cabeças lógicos. Enfrente um novo Desafio Diário a cada dia. As Missões Sazonais chegaram. Cumpra objetivos, ganhe recompensas por marcos e revele 20 novas constelações — agora são 100.",
+        "story_text": "Você encontrou um antigo telescópio capaz de revelar constelações esquecidas. Para olhar através dele, você deve ajustar as lentes usando Fragmentos de luz — que você coleta resolvendo quebra-cabeças lógicos. Enfrente um novo Desafio Diário a cada dia. As Missões Sazonais chegaram. Cumpra objetivos, ganhe recompensas por marcos e revele 20 novas constelações — agora são 120.",
         "rules_title": "Regras",
         "rule_1": "O jogo acontece em uma grade de luzes 5x5.",
         "rule_2": "Tocar em uma luz alterna seu estado e o de suas vizinhas (em forma de cruz).",
@@ -137,7 +137,7 @@ const translations = {
         "store_google_small": "DISPONÍVEL NO",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Lógica estelar",
-        "meta_description": "Alterne células em uma grade 5×5, resolva desafios e revele 100 constelações."
+        "meta_description": "Alterne células em uma grade 5×5, resolva desafios e revele 120 constelações."
     },
     "de": {
         "hero_title": "ASTRONIGMA",
@@ -146,7 +146,7 @@ const translations = {
         "grid_hint": "TIPPEN ZUM AUSRICHTEN",
         "how_to_play_title": "Wie man spielt",
         "story_title": "Geschichte",
-        "story_text": "Du hast ein uraltes Teleskop gefunden, das vergessene Sternbilder enthüllen kann. Um hindurchzusehen, musst du die Linsen mit Lichtfragmenten justieren — die du durch das Lösen logischer Rätsel sammelst. Stelle dich jeden Tag einer neuen Täglichen Herausforderung. Saisonmissionen sind da. Erfülle Ziele, sichere dir Meilenstein-Belohnungen und enthülle 20 neue Sternbilder – jetzt warten 100 auf dich.",
+        "story_text": "Du hast ein uraltes Teleskop gefunden, das vergessene Sternbilder enthüllen kann. Um hindurchzusehen, musst du die Linsen mit Lichtfragmenten justieren — die du durch das Lösen logischer Rätsel sammelst. Stelle dich jeden Tag einer neuen Täglichen Herausforderung. Saisonmissionen sind da. Erfülle Ziele, sichere dir Meilenstein-Belohnungen und enthülle 20 neue Sternbilder – jetzt warten 120 auf dich.",
         "rules_title": "Regeln",
         "rule_1": "Das Spiel wird auf einem 5x5-Lichterraster gespielt.",
         "rule_2": "Ein Tippen auf ein Licht schaltet es und seine Nachbarn um (in Kreuzform).",
@@ -165,7 +165,7 @@ const translations = {
         "store_google_small": "JETZT BEI",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Sternenlogik",
-        "meta_description": "Schalte 5×5-Felder um, löse Logikrätsel und enthülle 100 Sternbilder."
+        "meta_description": "Schalte 5×5-Felder um, löse Logikrätsel und enthülle 120 Sternbilder."
     },
     "fr": {
         "hero_title": "ASTRONIGMA",
@@ -174,7 +174,7 @@ const translations = {
         "grid_hint": "TOUCHEZ POUR ALIGNER",
         "how_to_play_title": "Comment jouer",
         "story_title": "Histoire",
-        "story_text": "Vous avez trouvé un ancien télescope capable de révéler des constellations oubliées. Pour regarder à travers, vous devez ajuster les lentilles en utilisant des Fragments de lumière — que vous collectez en résolvant des énigmes logiques. Relevez un nouveau Défi quotidien chaque jour. Les missions saisonnières sont là. Atteignez des objectifs, gagnez des récompenses de palier et révélez 20 constellations inédites : 100 récits célestes vous attendent.",
+        "story_text": "Vous avez trouvé un ancien télescope capable de révéler des constellations oubliées. Pour regarder à travers, vous devez ajuster les lentilles en utilisant des Fragments de lumière — que vous collectez en résolvant des énigmes logiques. Relevez un nouveau Défi quotidien chaque jour. Les missions saisonnières sont là. Atteignez des objectifs, gagnez des récompenses de palier et révélez 20 constellations inédites : 120 récits célestes vous attendent.",
         "rules_title": "Règles",
         "rule_1": "Le jeu se joue sur une grille de lumières 5x5.",
         "rule_2": "Toucher une lumière l'inverse ainsi que ses voisines (en forme de croix).",
@@ -193,7 +193,7 @@ const translations = {
         "store_google_small": "DISPONIBLE SUR",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma : Logique stellaire",
-        "meta_description": "Inversez des cases, résolvez des grilles 5×5 et révélez 100 constellations."
+        "meta_description": "Inversez des cases, résolvez des grilles 5×5 et révélez 120 constellations."
     },
     "ja": {
         "hero_title": "ASTRONIGMA",
@@ -202,7 +202,7 @@ const translations = {
         "grid_hint": "タップして星を揃える",
         "how_to_play_title": "遊び方",
         "story_title": "ストーリー",
-        "story_text": "あなたは忘れられた星座を映し出す古代の望遠鏡を見つけました。それを覗くには、論理パズルを解いて集めた「光のかけら」を使ってレンズを調整する必要があります。毎日新しいデイリーチャレンジに挑戦しましょう。シーズンミッションが登場。目標を達成してマイルストーン報酬を獲得し、20個の新しい星座を発見しよう。100個の星座と物語が待っています。",
+        "story_text": "あなたは忘れられた星座を映し出す古代の望遠鏡を見つけました。それを覗くには、論理パズルを解いて集めた「光のかけら」を使ってレンズを調整する必要があります。毎日新しいデイリーチャレンジに挑戦しましょう。シーズンミッションが登場。目標を達成してマイルストーン報酬を獲得し、20個の新しい星座を発見しよう。120個の星座と物語が待っています。",
         "rules_title": "ルール",
         "rule_1": "ゲームは5x5のライトのグリッドで行われます。",
         "rule_2": "ライトをタップすると、そのライトと隣接するライト（十字形）が切り替わります。",
@@ -221,7 +221,7 @@ const translations = {
         "store_google_small": "手に入れよう",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma：星空ロジック",
-        "meta_description": "5×5のマスを切り替えて論理パズルを解き、100個の星座を見つけよう。"
+        "meta_description": "5×5のマスを切り替えて論理パズルを解き、120個の星座を見つけよう。"
     },
     "ko": {
         "hero_title": "ASTRONIGMA",
@@ -230,7 +230,7 @@ const translations = {
         "grid_hint": "탭하여 별 정렬",
         "how_to_play_title": "게임 방법",
         "story_title": "스토리",
-        "story_text": "당신은 잊혀진 별자리를 드러낼 수 있는 고대의 망원경을 발견했습니다. 그곳을 들여다보려면 논리 퍼즐을 풀어 모은 '빛의 파편'을 사용하여 렌즈를 조정해야 합니다. 매일 새로운 데일리 챌린지에 도전해 보세요. 시즌 미션이 시작됐습니다. 목표를 달성하고 마일스톤 보상을 받으며 새로운 별자리 20개를 밝혀 보세요. 이제 총 100개의 이야기가 기다립니다.",
+        "story_text": "당신은 잊혀진 별자리를 드러낼 수 있는 고대의 망원경을 발견했습니다. 그곳을 들여다보려면 논리 퍼즐을 풀어 모은 '빛의 파편'을 사용하여 렌즈를 조정해야 합니다. 매일 새로운 데일리 챌린지에 도전해 보세요. 시즌 미션이 시작됐습니다. 목표를 달성하고 마일스톤 보상을 받으며 새로운 별자리 20개를 밝혀 보세요. 이제 총 120개의 이야기가 기다립니다.",
         "rules_title": "규칙",
         "rule_1": "게임은 5x5 라이트 그리드에서 진행됩니다.",
         "rule_2": "라이트를 탭하면 해당 라이트와 이웃한 라이트(십자 모양)가 전환됩니다.",
@@ -249,7 +249,7 @@ const translations = {
         "store_google_small": "다운로드하기",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: 별빛 논리 퍼즐",
-        "meta_description": "5×5 격자의 칸을 전환해 논리 퍼즐을 풀고 100개의 별자리를 밝혀 보세요."
+        "meta_description": "5×5 격자의 칸을 전환해 논리 퍼즐을 풀고 120개의 별자리를 밝혀 보세요."
     },
     "tr": {
         "hero_title": "ASTRONIGMA",
@@ -258,7 +258,7 @@ const translations = {
         "grid_hint": "HİZALAMAK İÇİN DOKUN",
         "how_to_play_title": "Nasıl Oynanır",
         "story_title": "Hikaye",
-        "story_text": "Unutulmuş takımyıldızları ortaya çıkarabilen kadim bir teleskop buldun. İçinden bakmak için, mantık bulmacalarını çözerek topladığın Işık parçalarını kullanarak mercekleri ayarlamalısın. Her gün yeni bir Günlük Meydan Okuma ile yüzleş. Sezon Görevleri başladı. Hedefleri tamamla, aşama ödülleri kazan ve 20 yeni takımyıldızı ortaya çıkar — artık keşfedilecek 100 hikâye var.",
+        "story_text": "Unutulmuş takımyıldızları ortaya çıkarabilen kadim bir teleskop buldun. İçinden bakmak için, mantık bulmacalarını çözerek topladığın Işık parçalarını kullanarak mercekleri ayarlamalısın. Her gün yeni bir Günlük Meydan Okuma ile yüzleş. Sezon Görevleri başladı. Hedefleri tamamla, aşama ödülleri kazan ve 20 yeni takımyıldızı ortaya çıkar — artık keşfedilecek 120 hikâye var.",
         "rules_title": "Kurallar",
         "rule_1": "Oyun 5x5'lik bir ışık ızgarasında oynanır.",
         "rule_2": "Bir ışığa dokunmak, onu ve komşularını (artı şeklinde) değiştirir.",
@@ -277,7 +277,7 @@ const translations = {
         "store_google_small": "EDİNİN",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Yıldız Mantığı",
-        "meta_description": "5×5 kareleri değiştir, mantık bulmacalarını çöz ve 100 takımyıldızı keşfet."
+        "meta_description": "5×5 kareleri değiştir, mantık bulmacalarını çöz ve 120 takımyıldızı keşfet."
     },
     "th": {
         "hero_title": "ASTRONIGMA",
@@ -286,7 +286,7 @@ const translations = {
         "grid_hint": "แตะเพื่อจัดเรียงดาว",
         "how_to_play_title": "วิธีการเล่น",
         "story_title": "เรื่องราว",
-        "story_text": "คุณได้พบกล้องโทรทรรศน์โบราณที่สามารถเผยกลุ่มดาวที่ถูกลืม เพื่อที่จะมองผ่านมัน คุณต้องปรับเลนส์โดยใช้ 'เศษแสง' ซึ่งคุณรวบรวมได้จากการแก้ปริศนาตรรกะ รับความท้าทายรายวันใหม่ทุกวัน ภารกิจประจำซีซันมาแล้ว ทำเป้าหมายให้สำเร็จ รับรางวัลตามขั้น และเปิดเผยกลุ่มดาวใหม่ 20 กลุ่ม — ตอนนี้มีเรื่องราวบนฟ้าครบ 100 เรื่อง",
+        "story_text": "คุณได้พบกล้องโทรทรรศน์โบราณที่สามารถเผยกลุ่มดาวที่ถูกลืม เพื่อที่จะมองผ่านมัน คุณต้องปรับเลนส์โดยใช้ 'เศษแสง' ซึ่งคุณรวบรวมได้จากการแก้ปริศนาตรรกะ รับความท้าทายรายวันใหม่ทุกวัน ภารกิจประจำซีซันมาแล้ว ทำเป้าหมายให้สำเร็จ รับรางวัลตามขั้น และเปิดเผยกลุ่มดาวใหม่ 20 กลุ่ม — ตอนนี้มีเรื่องราวบนฟ้าครบ 120 เรื่อง",
         "rules_title": "กฎกติกา",
         "rule_1": "เกมเล่นบนตารางไฟขนาด 5x5",
         "rule_2": "การแตะที่ไฟจะเปลี่ยนสถานะของมันและไฟข้างเคียง (รูปกากบาท)",
@@ -305,7 +305,7 @@ const translations = {
         "store_google_small": "ดาวน์โหลดได้จาก",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: ตรรกะดวงดาว",
-        "meta_description": "สลับช่องในตาราง 5×5 ไขปริศนาตรรกะ และค้นพบกลุ่มดาว 100 กลุ่ม"
+        "meta_description": "สลับช่องในตาราง 5×5 ไขปริศนาตรรกะ และค้นพบกลุ่มดาว 120 กลุ่ม"
     },
     "id": {
         "hero_title": "ASTRONIGMA",
@@ -314,7 +314,7 @@ const translations = {
         "grid_hint": "KETUK UNTUK MENYELARASKAN",
         "how_to_play_title": "Cara Bermain",
         "story_title": "Cerita",
-        "story_text": "Anda menemukan teleskop kuno yang dapat mengungkap rasi bintang yang terlupakan. Untuk melihat melaluinya, Anda harus menyesuaikan lensa menggunakan Pecahan cahaya — yang Anda kumpulkan dengan memecahkan teka-teki logika. Hadapi Tantangan Harian baru setiap hari. Misi Musiman telah hadir. Tuntaskan target, raih hadiah pencapaian, dan ungkap 20 rasi baru — kini ada 100 kisah langit untuk ditemukan.",
+        "story_text": "Anda menemukan teleskop kuno yang dapat mengungkap rasi bintang yang terlupakan. Untuk melihat melaluinya, Anda harus menyesuaikan lensa menggunakan Pecahan cahaya — yang Anda kumpulkan dengan memecahkan teka-teki logika. Hadapi Tantangan Harian baru setiap hari. Misi Musiman telah hadir. Tuntaskan target, raih hadiah pencapaian, dan ungkap 20 rasi baru — kini ada 120 kisah langit untuk ditemukan.",
         "rules_title": "Aturan",
         "rule_1": "Permainan dimainkan di grid cahaya 5x5.",
         "rule_2": "Mengetuk cahaya akan mengubah statusnya dan tetangganya (bentuk tambah).",
@@ -333,7 +333,7 @@ const translations = {
         "store_google_small": "TEMUKAN DI",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma: Logika Bintang",
-        "meta_description": "Ubah petak 5×5, pecahkan teka-teki, dan ungkap 100 rasi bintang."
+        "meta_description": "Ubah petak 5×5, pecahkan teka-teki, dan ungkap 120 rasi bintang."
     },
     "zh": {
         "hero_title": "ASTRONIGMA",
@@ -342,7 +342,7 @@ const translations = {
         "grid_hint": "点击对齐星辰",
         "how_to_play_title": "怎么玩",
         "story_title": "故事",
-        "story_text": "你发现了一架能够揭示被遗忘星座的古老望远镜。为了通过它观察，你需要使用光之碎片来调整镜片——这些碎片是你通过解开逻辑谜题收集到的。每天迎接新的每日挑战。赛季任务现已上线。完成目标，领取里程碑奖励，探索20个全新星座——现在共有100段星空故事等待发现。",
+        "story_text": "你发现了一架能够揭示被遗忘星座的古老望远镜。为了通过它观察，你需要使用光之碎片来调整镜片——这些碎片是你通过解开逻辑谜题收集到的。每天迎接新的每日挑战。赛季任务现已上线。完成目标，领取里程碑奖励，探索20个全新星座——现在共有120段星空故事等待发现。",
         "rules_title": "规则",
         "rule_1": "游戏在 5x5 的灯光网格上进行。",
         "rule_2": "点击灯光会切换它及其邻居（十字形）的状态。",
@@ -361,7 +361,7 @@ const translations = {
         "store_google_small": "即刻下载",
         "store_google_large": "Google Play",
         "meta_title": "Astronigma：星空逻辑谜题",
-        "meta_description": "切换5×5网格中的方块，解开静心逻辑谜题，探索100个星座及其故事。"
+        "meta_description": "切换5×5网格中的方块，解开静心逻辑谜题，探索120个星座及其故事。"
     }
 };
 
